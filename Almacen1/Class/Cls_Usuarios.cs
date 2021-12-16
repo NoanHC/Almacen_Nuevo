@@ -27,7 +27,7 @@ namespace Almacen1.Class
         }
         public void _get(DataGridView dgv)
         {
-            query = "SELECT * FROM tb_usuarios";
+            query = "SELECT tu.id_usuario as ID, tu.user as USER, tu.password as PASSWORD, te.nombre as NOMBRE, tp.privilegio as PRIVILEGIO FROM tb_usuarios tu INNER JOIN tb_privilegios tp ON tu.id_privilegio = tp.id_privilegio INNER JOIN tb_empleados te ON tu.id_empleado = te.id_empleado;";
             method.ExecuteQuery(query, dgv);
         }
         public void _consult(DataTable dt, string id)

@@ -55,7 +55,7 @@ namespace Almacen1.Usuarios
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(499, 464);
+            this.panel2.Size = new System.Drawing.Size(499, 419);
             this.panel2.TabIndex = 3;
             // 
             // panel1
@@ -78,14 +78,14 @@ namespace Almacen1.Usuarios
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(7, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 449);
+            this.panel1.Size = new System.Drawing.Size(485, 403);
             this.panel1.TabIndex = 1;
             // 
             // cbx_privilegio
             // 
             this.cbx_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_privilegio.FormattingEnabled = true;
-            this.cbx_privilegio.Location = new System.Drawing.Point(17, 305);
+            this.cbx_privilegio.Location = new System.Drawing.Point(18, 295);
             this.cbx_privilegio.Name = "cbx_privilegio";
             this.cbx_privilegio.Size = new System.Drawing.Size(451, 26);
             this.cbx_privilegio.TabIndex = 55;
@@ -94,7 +94,7 @@ namespace Almacen1.Usuarios
             // 
             this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_empleado.FormattingEnabled = true;
-            this.cbx_empleado.Location = new System.Drawing.Point(18, 240);
+            this.cbx_empleado.Location = new System.Drawing.Point(19, 230);
             this.cbx_empleado.Name = "cbx_empleado";
             this.cbx_empleado.Size = new System.Drawing.Size(451, 26);
             this.cbx_empleado.TabIndex = 54;
@@ -102,7 +102,7 @@ namespace Almacen1.Usuarios
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(18, 334);
+            this.label10.Location = new System.Drawing.Point(19, 324);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(452, 2);
             this.label10.TabIndex = 53;
@@ -112,7 +112,7 @@ namespace Almacen1.Usuarios
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(208, 284);
+            this.label11.Location = new System.Drawing.Point(209, 274);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 18);
             this.label11.TabIndex = 52;
@@ -121,7 +121,7 @@ namespace Almacen1.Usuarios
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(18, 269);
+            this.label5.Location = new System.Drawing.Point(19, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(452, 2);
             this.label5.TabIndex = 50;
@@ -131,7 +131,7 @@ namespace Almacen1.Usuarios
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(207, 218);
+            this.label6.Location = new System.Drawing.Point(208, 208);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 18);
             this.label6.TabIndex = 49;
@@ -142,7 +142,7 @@ namespace Almacen1.Usuarios
             this.btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.Location = new System.Drawing.Point(168, 345);
+            this.btn_guardar.Location = new System.Drawing.Point(169, 335);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(149, 44);
             this.btn_guardar.TabIndex = 6;
@@ -153,7 +153,7 @@ namespace Almacen1.Usuarios
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(17, 198);
+            this.label3.Location = new System.Drawing.Point(18, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(452, 2);
             this.label3.TabIndex = 34;
@@ -162,10 +162,11 @@ namespace Almacen1.Usuarios
             // 
             this.txt_pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pass.Location = new System.Drawing.Point(17, 172);
+            this.txt_pass.Location = new System.Drawing.Point(18, 162);
             this.txt_pass.MaxLength = 50;
             this.txt_pass.Multiline = true;
             this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '●';
             this.txt_pass.Size = new System.Drawing.Size(452, 29);
             this.txt_pass.TabIndex = 3;
             this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -175,7 +176,7 @@ namespace Almacen1.Usuarios
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(200, 151);
+            this.label4.Location = new System.Drawing.Point(201, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 18);
             this.label4.TabIndex = 32;
@@ -184,7 +185,7 @@ namespace Almacen1.Usuarios
             // label8
             // 
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(17, 137);
+            this.label8.Location = new System.Drawing.Point(18, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(452, 2);
             this.label8.TabIndex = 31;
@@ -193,7 +194,7 @@ namespace Almacen1.Usuarios
             // 
             this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.Location = new System.Drawing.Point(17, 111);
+            this.txt_usuario.Location = new System.Drawing.Point(18, 101);
             this.txt_usuario.MaxLength = 50;
             this.txt_usuario.Multiline = true;
             this.txt_usuario.Name = "txt_usuario";
@@ -206,7 +207,7 @@ namespace Almacen1.Usuarios
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(212, 90);
+            this.label2.Location = new System.Drawing.Point(213, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 18);
             this.label2.TabIndex = 29;
@@ -227,7 +228,7 @@ namespace Almacen1.Usuarios
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(521, 488);
+            this.ClientSize = new System.Drawing.Size(521, 440);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmAlta";

@@ -19,6 +19,7 @@ namespace Almacen1.Usuarios
         Usuarios.FrmAlta alta = new FrmAlta();
         //Variables
         public static string cambio = "0";
+
         public FrmListadoUsuarios()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Almacen1.Usuarios
         void load()
         {
             usuarios._get(dgvUsuarios);
+            dgvUsuarios.Columns[0].Visible = false;
         }
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
