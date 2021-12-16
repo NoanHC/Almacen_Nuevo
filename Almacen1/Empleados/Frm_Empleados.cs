@@ -14,31 +14,27 @@ namespace Almacen1.Empleados
     {
         // Clases
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();
-        // Datatables
-        DataTable dt = new DataTable();
 
+        // Datatable
+        DataTable TablaAux2 = new DataTable();
+        DataTable TablaAuxiiar = new DataTable();
         public Frm_Empleados()
         {
             InitializeComponent();
         }
-
-        private void btnAñadir_Click(object sender, EventArgs e)
+        void Carga()
         {
-            ObjEmpleados._set(txtNombre.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, txtPuesto.Text, dt.Rows[cbEstatus.SelectedIndex][0].ToString(), txtMatricula.Text);
+
         }
 
         private void Frm_Empleados_Load(object sender, EventArgs e)
         {
-            Status();
+            ObjEmpleados._consult_Empleado(TablaAuxiiar);
+            TablaAux2 = TablaAuxiiar.Copy();
+            TablaAux2.Columns.Remove("id");
+            dataGridView1.DataSource = TablaAux2;
+            this.Invoke(new Action(() => dataGridView1.Columns["Editar"].DisplayIndex = dataGridView1.Columns.Count - 1));
+            this.Invoke(new Action(() => dataGridView1.Columns["Borrar"].DisplayIndex = dataGridView1.Columns.Count - 1));
         }
-        void Status()
-        {
-            ObjEmpleados._consult_status(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                cbEstatus.Items.Add(dt.Rows[i][1].ToString());
-            }
-        }
-
     }
 }

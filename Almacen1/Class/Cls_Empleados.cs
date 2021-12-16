@@ -27,12 +27,17 @@ namespace Almacen1.Class
         }
         public void _get(DataGridView dgv)
         {
-            query = "SELECT id_factura_almacen FROM `tb_factura_almacen` ORDER BY id_factura_almacen DESC limit 1";
+            query = "SELECT T_E.id_empleado as id, T_E.nombre as Nombre, T_E.telefono as Telefono, T_E.correo as Correo, T_E.direccion as Dirección, T_E.puesto as Puesto, T_S_E.status_empleado as Estatus, T_E.matricula FROM `tb_empleados` as T_E INNER JOIN tb_status_empleado as T_S_E on T_E.status = T_S_E.id_status_empleado";
             method.ExecuteQuery(query, dgv);
         }
         public void _consult_status(DataTable dt)
         {
             query = "SELECT * FROM `tb_status_empleado`";
+            method.Consultar(query, dt);
+        }
+        public void _consult_Empleado(DataTable dt)
+        {
+            query = "SELECT T_E.id_empleado as id, T_E.nombre as Nombre, T_E.telefono as Telefono, T_E.correo as Correo, T_E.direccion as Dirección, T_E.puesto as Puesto, T_S_E.status_empleado as Estatus, T_E.matricula FROM `tb_empleados` as T_E INNER JOIN tb_status_empleado as T_S_E on T_E.status = T_S_E.id_status_empleado";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)

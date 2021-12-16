@@ -28,169 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
-            this.lblPuesto = new System.Windows.Forms.Label();
-            this.cbEstatus = new System.Windows.Forms.ComboBox();
-            this.lblEstatus = new System.Windows.Forms.Label();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.btnAñadir = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNombre
+            // panel1
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(36, 54);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 373);
+            this.panel1.TabIndex = 0;
             // 
-            // txtNombre
+            // button1
             // 
-            this.txtNombre.Location = new System.Drawing.Point(39, 70);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(178, 20);
-            this.txtNombre.TabIndex = 1;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 48);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtTelefono
+            // lblBuscar
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(39, 118);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(178, 20);
-            this.txtTelefono.TabIndex = 3;
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(142, 30);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblBuscar.TabIndex = 2;
+            this.lblBuscar.Text = "Buscar";
             // 
-            // lblTelefono
+            // dataGridView1
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(36, 102);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 2;
-            this.lblTelefono.Text = "Telefono";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Borrar});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 373);
+            this.dataGridView1.TabIndex = 3;
             // 
-            // txtCorreo
+            // Editar
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(39, 166);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(178, 20);
-            this.txtCorreo.TabIndex = 5;
+            this.Editar.HeaderText = "";
+            this.Editar.Name = "Editar";
             // 
-            // lblCorreo
+            // Borrar
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Location = new System.Drawing.Point(36, 150);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
-            this.lblCorreo.TabIndex = 4;
-            this.lblCorreo.Text = "Correo";
+            this.Borrar.HeaderText = "";
+            this.Borrar.Name = "Borrar";
             // 
-            // txtDireccion
+            // textBox1
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(39, 215);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(178, 20);
-            this.txtDireccion.TabIndex = 7;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(36, 199);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 6;
-            this.lblDireccion.Text = "Dirección";
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Location = new System.Drawing.Point(39, 265);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(178, 20);
-            this.txtPuesto.TabIndex = 9;
-            // 
-            // lblPuesto
-            // 
-            this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(36, 249);
-            this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(40, 13);
-            this.lblPuesto.TabIndex = 8;
-            this.lblPuesto.Text = "Puesto";
-            // 
-            // cbEstatus
-            // 
-            this.cbEstatus.FormattingEnabled = true;
-            this.cbEstatus.Location = new System.Drawing.Point(39, 310);
-            this.cbEstatus.Name = "cbEstatus";
-            this.cbEstatus.Size = new System.Drawing.Size(178, 21);
-            this.cbEstatus.TabIndex = 10;
-            // 
-            // lblEstatus
-            // 
-            this.lblEstatus.AutoSize = true;
-            this.lblEstatus.Location = new System.Drawing.Point(36, 294);
-            this.lblEstatus.Name = "lblEstatus";
-            this.lblEstatus.Size = new System.Drawing.Size(42, 13);
-            this.lblEstatus.TabIndex = 11;
-            this.lblEstatus.Text = "Estatus";
-            // 
-            // txtMatricula
-            // 
-            this.txtMatricula.Location = new System.Drawing.Point(39, 354);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(178, 20);
-            this.txtMatricula.TabIndex = 13;
-            // 
-            // lblMatricula
-            // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Location = new System.Drawing.Point(36, 338);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(50, 13);
-            this.lblMatricula.TabIndex = 12;
-            this.lblMatricula.Text = "Matricula";
-            // 
-            // btnAñadir
-            // 
-            this.btnAñadir.Location = new System.Drawing.Point(85, 401);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(75, 23);
-            this.btnAñadir.TabIndex = 14;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = true;
-            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            this.textBox1.Location = new System.Drawing.Point(188, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(348, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // Frm_Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 450);
-            this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.txtMatricula);
-            this.Controls.Add(this.lblMatricula);
-            this.Controls.Add(this.lblEstatus);
-            this.Controls.Add(this.cbEstatus);
-            this.Controls.Add(this.txtPuesto);
-            this.Controls.Add(this.lblPuesto);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.lblDireccion);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.lblTelefono);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Name = "Frm_Empleados";
             this.Text = "Frm_Empleados";
             this.Load += new System.EventHandler(this.Frm_Empleados_Load);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,20 +118,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtPuesto;
-        private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.ComboBox cbEstatus;
-        private System.Windows.Forms.Label lblEstatus;
-        private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.Label lblMatricula;
-        private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Borrar;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
