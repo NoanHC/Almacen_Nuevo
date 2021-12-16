@@ -8,17 +8,16 @@ using System.Windows.Forms;
 
 namespace Almacen1.Class
 {
-    class Cls_Facturas
+    class Cls_Facturas_Detalle
     {
         ClsMethod method = new ClsMethod();
-        DataTable dt = new DataTable();
-        string table = "tb_factura_almacen";
+        string table = "tb_factura_detalle_almacen";
         string query = "";
 
-        public bool _set(string folio_factura, string fecha_compra, string subtotal, string iva, string total)
+        public bool _set(string id_factura_almacen, string nombre, string marca, string parte, string modelo, string precio_unitario, string cantidad, string importe)
         {
-            string campos = "folio_factura, fecha_compra, subtotal, iva, total";
-            string values = "'" + folio_factura + "','" + fecha_compra + "','" + subtotal + "','" + iva + "','" + total + "'";
+            string campos = "id_factura_almacen, nombre, marca, parte, modelo, precio_unitario, cantidad, importe";
+            string values = "'" + id_factura_almacen + "','" + nombre + "','" + marca + "','" + parte + "','" + modelo + "','" + precio_unitario + "','" + cantidad + "','" + importe + "'";
             return method.set(table, campos, values);
         }
         public bool _update(string nombre, string matricula, string direccion, string celular, string id)
@@ -28,12 +27,12 @@ namespace Almacen1.Class
         }
         public void _get(DataGridView dgv)
         {
-            query = "SELECT id_factura_almacen FROM `tb_factura_almacen` ORDER BY id_factura_almacen DESC limit 1";
+            query = "SELECT id_estudiante as 'Id', nombre as 'Nombre', matricula as 'Matricula', direccion as 'Direccion', celular as 'Celular' FROM tb_estudiante";
             method.ExecuteQuery(query, dgv);
         }
-        public void _consult(DataTable dt)
+        public void _consult(DataTable dt, string id)
         {
-            query = "SELECT id_factura_almacen FROM `tb_factura_almacen` ORDER BY id_factura_almacen DESC limit 1";
+            query = "SELECT id_estudiante, nombre, matricula, direccion, celular FROM " + table + " WHERE id_estudiante='" + id + "'";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)
