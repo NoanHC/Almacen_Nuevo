@@ -74,6 +74,7 @@
     <Compile Include="Class\ClsLogin.cs" />
     <Compile Include="Class\ClsMethod.cs" />
     <Compile Include="Class\ClsUtilidades.cs" />
+    <Compile Include="Class\Cls_Facturas.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
     <Compile Include="Login.cs">
