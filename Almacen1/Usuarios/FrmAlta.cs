@@ -23,6 +23,29 @@ namespace Almacen1.Usuarios
             InitializeComponent();
         }
 
+        void registrar()
+        {
+            try
+            {
+                if (txt_usuario.Text == "" || txt_pass.Text == "" || cbx_empleado.Text == "" || cbx_privilegio.Text == "")
+                {
+                    MessageBox.Show("Favor de llenar todos los campos");
+                }
+                else
+                {
+                    usuarios._set(txt_usuario.Text, txt_pass.Text, cbx_privilegio.SelectedValue.ToString(), cbx_empleado.SelectedValue.ToString());
+                    MessageBox.Show("Registrado con éxito");
+                    FrmListadoUsuarios.cambio = "1";
+                    this.Close();
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se puede registrar el empleado Codigo de error: U-001");
+            }
+        }
+
         void load()
         {
             util._get_select(cbx_empleado, "tb_empleados");
@@ -32,6 +55,11 @@ namespace Almacen1.Usuarios
         private void FrmAlta_Load(object sender, EventArgs e)
         {
             load();
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            registrar();
         }
     }
 }
