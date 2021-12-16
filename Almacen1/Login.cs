@@ -14,6 +14,7 @@ namespace Almacen1
     {
         //Clases
         Class.ClsLogin login = new Class.ClsLogin();
+        Class.ClsUtilidades util = new Class.ClsUtilidades();
 
         //Datatables
         DataTable dt = new DataTable();
@@ -30,6 +31,8 @@ namespace Almacen1
         }
         void login_in()
         {
+            try
+            {
 
             login.login(txt_user.Text, txt_pass.Text, dt);
             if (dt.Rows.Count > 0)
@@ -47,11 +50,72 @@ namespace Almacen1
                 MessageBox.Show("Usuario y/o password incorrectos");
                 txt_pass.Text = "";
             }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error 001");
+            }
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
             login_in();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_cerrar_Click(object sender, EventArgs e)
+        {
+            util.close();
+        }
+
+        private void txt_pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    login_in();
+                    txt_user.Text = "";
+                    txt_pass.Text = "";
+                    txt_user.Focus();
+                }
+                catch (Exception)
+                {
+                    txt_user.Text = "";
+                    txt_pass.Text = "";
+                    txt_user.Focus();
+                }
+            }
+        }
+
+        private void lbl_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txt_user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    login_in();
+                    txt_user.Text = "";
+                    txt_pass.Text = "";
+                    txt_user.Focus();
+                }
+                catch (Exception)
+                {
+                    txt_user.Text = "";
+                    txt_pass.Text = "";
+                    txt_user.Focus();
+                }
+            }
         }
     }
 }

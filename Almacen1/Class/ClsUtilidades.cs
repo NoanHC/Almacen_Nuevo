@@ -14,5 +14,9 @@ namespace Almacen1.Class
             formulario.Location = Screen.PrimaryScreen.WorkingArea.Location;
             formulario.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
+        public void close()
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
