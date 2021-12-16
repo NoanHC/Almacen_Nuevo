@@ -16,7 +16,7 @@ namespace Almacen1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empleados.Frm_Empleados());
+            Application.Run(new Login());
         }
     }
 }

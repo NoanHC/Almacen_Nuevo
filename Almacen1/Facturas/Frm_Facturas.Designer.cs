@@ -40,6 +40,12 @@
             this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblParte = new System.Windows.Forms.Label();
+            this.lbModelo = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.lklblAgregar = new System.Windows.Forms.LinkLabel();
             this.cbNombre = new System.Windows.Forms.ComboBox();
@@ -60,12 +66,6 @@
             this.lblIVA = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.lbModelo = new System.Windows.Forms.Label();
-            this.lblParte = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -130,6 +130,60 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1235, 73);
             this.panel3.TabIndex = 11;
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(916, 31);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(74, 13);
+            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.Text = "Precio unitario";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(740, 31);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.TabIndex = 14;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // lblParte
+            // 
+            this.lblParte.AutoSize = true;
+            this.lblParte.Location = new System.Drawing.Point(569, 31);
+            this.lblParte.Name = "lblParte";
+            this.lblParte.Size = new System.Drawing.Size(32, 13);
+            this.lblParte.TabIndex = 13;
+            this.lblParte.Text = "Parte";
+            // 
+            // lbModelo
+            // 
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Location = new System.Drawing.Point(388, 31);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(42, 13);
+            this.lbModelo.TabIndex = 12;
+            this.lbModelo.Text = "Modelo";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(212, 31);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 11;
+            this.lblMarca.Text = "Marca";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(36, 31);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre";
             // 
             // txtMarca
             // 
@@ -314,60 +368,6 @@
             this.lblSubtotal.Size = new System.Drawing.Size(0, 13);
             this.lblSubtotal.TabIndex = 17;
             // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(36, 31);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(212, 31);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
-            this.lblMarca.TabIndex = 11;
-            this.lblMarca.Text = "Marca";
-            // 
-            // lbModelo
-            // 
-            this.lbModelo.AutoSize = true;
-            this.lbModelo.Location = new System.Drawing.Point(388, 31);
-            this.lbModelo.Name = "lbModelo";
-            this.lbModelo.Size = new System.Drawing.Size(42, 13);
-            this.lbModelo.TabIndex = 12;
-            this.lbModelo.Text = "Modelo";
-            // 
-            // lblParte
-            // 
-            this.lblParte.AutoSize = true;
-            this.lblParte.Location = new System.Drawing.Point(569, 31);
-            this.lblParte.Name = "lblParte";
-            this.lblParte.Size = new System.Drawing.Size(32, 13);
-            this.lblParte.TabIndex = 13;
-            this.lblParte.Text = "Parte";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(740, 31);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
-            this.lblCantidad.TabIndex = 14;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(916, 31);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(74, 13);
-            this.lblPrecio.TabIndex = 15;
-            this.lblPrecio.Text = "Precio unitario";
-            // 
             // Frm_Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,6 +380,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Facturas";
             this.Text = "Frm_Facturas";
             this.panel2.ResumeLayout(false);

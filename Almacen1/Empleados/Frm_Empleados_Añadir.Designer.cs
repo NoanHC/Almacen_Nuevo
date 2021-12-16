@@ -188,7 +188,10 @@
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "Frm_Empleados_Añadir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frm_Empleados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

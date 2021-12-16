@@ -80,6 +80,12 @@
     <Compile Include="Class\Cls_Facturas_Detalle.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
+    <Compile Include="Empleados\Frm_Emplados_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\Frm_Emplados_Editar.Designer.cs">
+      <DependentUpon>Frm_Emplados_Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empleados\Frm_Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,15 @@
     <Compile Include="Usuarios\FrmListadoUsuarios.Designer.cs">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Empleados\Frm_Emplados_Editar.resx">
+      <DependentUpon>Frm_Emplados_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\Frm_Empleados.resx">
+      <DependentUpon>Frm_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\Frm_Empleados_Añadir.resx">
+      <DependentUpon>Frm_Empleados_Añadir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturas\Frm_Facturas.resx">
       <DependentUpon>Frm_Facturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +208,11 @@
   <ItemGroup>
     <None Include="Resources\programador.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Editar345.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

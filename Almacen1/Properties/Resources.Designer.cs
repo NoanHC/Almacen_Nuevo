@@ -63,6 +63,16 @@ namespace Almacen1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Borrar {
+            get {
+                object obj = ResourceManager.GetObject("Borrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap caja {
             get {
                 object obj = ResourceManager.GetObject("caja", resourceCulture);
@@ -76,6 +86,16 @@ namespace Almacen1.Properties {
         internal static System.Drawing.Bitmap caja__1_ {
             get {
                 object obj = ResourceManager.GetObject("caja (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editar345 {
+            get {
+                object obj = ResourceManager.GetObject("Editar345", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
