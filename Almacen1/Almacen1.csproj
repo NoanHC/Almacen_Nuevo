@@ -76,6 +76,7 @@
     <Compile Include="Class\ClsPrivilegios.cs" />
     <Compile Include="Class\ClsUtilidades.cs" />
     <Compile Include="Class\Cls_Facturas.cs" />
+    <Compile Include="Class\Cls_Facturas_Detalle.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
     <Compile Include="Facturas\Frm_Facturas.cs">

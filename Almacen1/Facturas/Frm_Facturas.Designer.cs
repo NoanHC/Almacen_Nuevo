@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtNoFactura = new System.Windows.Forms.TextBox();
             this.cbProveedor = new System.Windows.Forms.ComboBox();
@@ -60,6 +60,12 @@
             this.lblIVA = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lbModelo = new System.Windows.Forms.Label();
+            this.lblParte = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -106,6 +112,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPrecio);
+            this.panel3.Controls.Add(this.lblCantidad);
+            this.panel3.Controls.Add(this.lblParte);
+            this.panel3.Controls.Add(this.lbModelo);
+            this.panel3.Controls.Add(this.lblMarca);
+            this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.txtMarca);
             this.panel3.Controls.Add(this.lklblAgregar);
             this.panel3.Controls.Add(this.cbNombre);
@@ -122,7 +134,7 @@
             // txtMarca
             // 
             this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMarca.Location = new System.Drawing.Point(216, 20);
+            this.txtMarca.Location = new System.Drawing.Point(215, 47);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(170, 20);
             this.txtMarca.TabIndex = 3;
@@ -132,7 +144,7 @@
             this.lklblAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklblAgregar.AutoSize = true;
             this.lklblAgregar.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblAgregar.Location = new System.Drawing.Point(1114, 15);
+            this.lklblAgregar.Location = new System.Drawing.Point(1113, 42);
             this.lklblAgregar.Name = "lklblAgregar";
             this.lklblAgregar.Size = new System.Drawing.Size(83, 23);
             this.lklblAgregar.TabIndex = 8;
@@ -147,7 +159,7 @@
             this.cbNombre.FormattingEnabled = true;
             this.cbNombre.Items.AddRange(new object[] {
             ""});
-            this.cbNombre.Location = new System.Drawing.Point(40, 20);
+            this.cbNombre.Location = new System.Drawing.Point(39, 47);
             this.cbNombre.Name = "cbNombre";
             this.cbNombre.Size = new System.Drawing.Size(170, 21);
             this.cbNombre.TabIndex = 2;
@@ -156,7 +168,7 @@
             // txtP_Unitario
             // 
             this.txtP_Unitario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtP_Unitario.Location = new System.Drawing.Point(920, 20);
+            this.txtP_Unitario.Location = new System.Drawing.Point(919, 47);
             this.txtP_Unitario.Name = "txtP_Unitario";
             this.txtP_Unitario.Size = new System.Drawing.Size(170, 20);
             this.txtP_Unitario.TabIndex = 7;
@@ -164,7 +176,7 @@
             // txtModelo
             // 
             this.txtModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtModelo.Location = new System.Drawing.Point(392, 20);
+            this.txtModelo.Location = new System.Drawing.Point(391, 47);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(170, 20);
             this.txtModelo.TabIndex = 4;
@@ -172,7 +184,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCantidad.Location = new System.Drawing.Point(744, 20);
+            this.txtCantidad.Location = new System.Drawing.Point(743, 47);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(170, 20);
             this.txtCantidad.TabIndex = 6;
@@ -180,7 +192,7 @@
             // txtParte
             // 
             this.txtParte.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtParte.Location = new System.Drawing.Point(568, 20);
+            this.txtParte.Location = new System.Drawing.Point(567, 47);
             this.txtParte.Name = "txtParte";
             this.txtParte.Size = new System.Drawing.Size(170, 20);
             this.txtParte.TabIndex = 5;
@@ -207,50 +219,50 @@
             // 
             // C_Nombre
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Nombre.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Nombre.DefaultCellStyle = dataGridViewCellStyle1;
             this.C_Nombre.HeaderText = "Nombre";
             this.C_Nombre.Name = "C_Nombre";
             // 
             // C_Marca
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Marca.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Marca.DefaultCellStyle = dataGridViewCellStyle2;
             this.C_Marca.HeaderText = "Marca";
             this.C_Marca.Name = "C_Marca";
             // 
             // C_Modelo
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Modelo.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Modelo.DefaultCellStyle = dataGridViewCellStyle3;
             this.C_Modelo.HeaderText = "Modelo";
             this.C_Modelo.Name = "C_Modelo";
             // 
             // C_Parte
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Parte.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Parte.DefaultCellStyle = dataGridViewCellStyle4;
             this.C_Parte.HeaderText = "Parte";
             this.C_Parte.Name = "C_Parte";
             // 
             // C_Cantidad
             // 
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Cantidad.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Cantidad.DefaultCellStyle = dataGridViewCellStyle5;
             this.C_Cantidad.HeaderText = "Cantidad";
             this.C_Cantidad.Name = "C_Cantidad";
             // 
             // C_P_Unitario
             // 
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_P_Unitario.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_P_Unitario.DefaultCellStyle = dataGridViewCellStyle6;
             this.C_P_Unitario.HeaderText = "P.Unitario";
             this.C_P_Unitario.Name = "C_P_Unitario";
             // 
             // C_Importe
             // 
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.C_Importe.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.C_Importe.DefaultCellStyle = dataGridViewCellStyle7;
             this.C_Importe.HeaderText = "Importe";
             this.C_Importe.Name = "C_Importe";
             // 
@@ -301,6 +313,60 @@
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(0, 13);
             this.lblSubtotal.TabIndex = 17;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(36, 31);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(212, 31);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 11;
+            this.lblMarca.Text = "Marca";
+            // 
+            // lbModelo
+            // 
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Location = new System.Drawing.Point(388, 31);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(42, 13);
+            this.lbModelo.TabIndex = 12;
+            this.lbModelo.Text = "Modelo";
+            // 
+            // lblParte
+            // 
+            this.lblParte.AutoSize = true;
+            this.lblParte.Location = new System.Drawing.Point(569, 31);
+            this.lblParte.Name = "lblParte";
+            this.lblParte.Size = new System.Drawing.Size(32, 13);
+            this.lblParte.TabIndex = 13;
+            this.lblParte.Text = "Parte";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(740, 31);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.TabIndex = 14;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(916, 31);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(74, 13);
+            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.Text = "Precio unitario";
             // 
             // Frm_Facturas
             // 
@@ -354,5 +420,11 @@
         private System.Windows.Forms.Label lblIVA;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label lblParte;
+        private System.Windows.Forms.Label lbModelo;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblNombre;
     }
 }

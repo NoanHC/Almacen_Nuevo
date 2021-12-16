@@ -13,7 +13,11 @@ namespace Almacen1.Facturas
     public partial class Frm_Facturas : Form
     {
         // Clases
-        Class.Cls_Facturas ObjFacturas = new Class.Cls_Facturas();
+        Class.Cls_Facturas Obj_Facturas = new Class.Cls_Facturas();
+        Class.Cls_Facturas_Detalle Obj_Facurtas_Detalle = new Class.Cls_Facturas_Detalle();
+
+        //Tablas
+        DataTable dt = new DataTable();
 
         // Variables
         double Subtotal = 0;
@@ -28,12 +32,12 @@ namespace Almacen1.Facturas
         {
             DateTime ObjFecha = DateTime.Now;
             string Fecha = ObjFecha.ToString("yyyy-MM-dd HH:mm:ss");
-            ObjFacturas._set(txtNoFactura.Text, Fecha, Subtotal.ToString(), IVA.ToString(), Total.ToString());
-            //string Id_Factura = ObjFacturas.Id_Factura();
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    ObjFacturas.InsertarDetalleFactura(Id_Factura, dataGridView1[0, i].Value.ToString(), dataGridView1[1, i].Value.ToString(), dataGridView1[3, i].Value.ToString(), dataGridView1[2, i].Value.ToString(), dataGridView1[5, i].Value.ToString(), dataGridView1[4, i].Value.ToString(), dataGridView1[6, i].Value.ToString());
-            //}
+            Obj_Facturas._set(txtNoFactura.Text, Fecha, Subtotal.ToString(), IVA.ToString(), Total.ToString());
+            Obj_Facturas._consult(dt);
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                Obj_Facurtas_Detalle._set(dt.Rows[0][0].ToString(), dataGridView1[0, i].Value.ToString(), dataGridView1[1, i].Value.ToString(), dataGridView1[3, i].Value.ToString(), dataGridView1[2, i].Value.ToString(), dataGridView1[5, i].Value.ToString(), dataGridView1[4, i].Value.ToString(), dataGridView1[6, i].Value.ToString());
+            }
             dataGridView1.Rows.Clear();
             lblSubtotal.Text = "";
             lblIVA.Text = "";
