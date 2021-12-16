@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace Almacen1.Class
 {
-    class Cls_Facturas
+    class Cls_Empleados
     {
         ClsMethod method = new ClsMethod();
-        string table = "tb_factura_almacen";
+        string table = "tb_empleados";
         string query = "";
 
-        public bool _set(string folio_factura, string fecha_compra, string subtotal, string iva, string total)
+        public bool _set(string nombre, string telefono, string correo, string direccion, string puesto, string status, string matricula)
         {
-            string campos = "folio_factura, fecha_compra, subtotal, iva, total";
-            string values = "'" + folio_factura + "','" + fecha_compra + "','" + subtotal + "','" + iva + "','" + total + "'";
+            string campos = "nombre, telefono, correo, direccion, puesto, status , matricula";
+            string values = "'" + nombre + "','" + telefono + "','" + correo + "','" + direccion + "','" + puesto + "','" + status + "','" + matricula + "'";
             return method.set(table, campos, values);
         }
         public bool _update(string nombre, string matricula, string direccion, string celular, string id)
@@ -30,9 +30,9 @@ namespace Almacen1.Class
             query = "SELECT id_factura_almacen FROM `tb_factura_almacen` ORDER BY id_factura_almacen DESC limit 1";
             method.ExecuteQuery(query, dgv);
         }
-        public void _consult(DataTable dt)
+        public void _consult_status(DataTable dt)
         {
-            query = "SELECT id_factura_almacen FROM `tb_factura_almacen` ORDER BY id_factura_almacen DESC limit 1";
+            query = "SELECT * FROM `tb_status_empleado`";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)
