@@ -14,12 +14,12 @@ namespace Almacen1.Class
         string table = "tb_usuarios";
         string query = "";
 
-       /* public bool _set(string matricula, string usuario, string password, string iva, string total)
+        public bool _set(string usuario, string password, string id_privilegio, string id_empleado)
         {
-            string campos = "folio_factura, fecha_compra, subtotal, iva, total";
-            string values = "'" + folio_factura + "','" + fecha_compra + "','" + subtotal + "','" + iva + "','" + total + "'";
+            string campos = "user, password, id_privilegio, id_empleado";
+            string values = "'" + usuario + "','" + password + "','" + id_privilegio + "','" + id_empleado + "'";
             return method.set(table, campos, values);
-        }*/
+        }
         public bool _update(string nombre, string matricula, string direccion, string celular, string id)
         {
             string set = "nombre='" + nombre + "', matricula='" + matricula + "', direccion='" + direccion + "', celular='" + celular + "'";
@@ -27,7 +27,7 @@ namespace Almacen1.Class
         }
         public void _get(DataGridView dgv)
         {
-            query = "SELECT id_estudiante as 'Id', nombre as 'Nombre', matricula as 'Matricula', direccion as 'Direccion', celular as 'Celular' FROM tb_estudiante";
+            query = "SELECT * FROM tb_usuarios";
             method.ExecuteQuery(query, dgv);
         }
         public void _consult(DataTable dt, string id)

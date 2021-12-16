@@ -72,5 +72,11 @@ namespace Almacen1.Main
             Facturas.Frm_Facturas fh = new Facturas.Frm_Facturas();
             add_panel(fh);
         }
+
+        private void btn_usuarios_Click(object sender, EventArgs e)
+        {
+            Usuarios.FrmListadoUsuarios fh = new Usuarios.FrmListadoUsuarios();
+            add_panel(fh);
+        }
     }
 }
