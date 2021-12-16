@@ -53,3 +53,5 @@ C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Main.Menu_princi
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Facturas.Frm_Facturas.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmAlta.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmListadoUsuarios.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmModificarUsuario.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmBajaUsuario.resources
