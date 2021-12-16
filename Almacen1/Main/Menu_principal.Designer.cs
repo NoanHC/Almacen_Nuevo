@@ -30,21 +30,22 @@ namespace Almacen1.Main
         private void InitializeComponent()
         {
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel_forms = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_forms = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pB_mobile = new System.Windows.Forms.PictureBox();
+            this.btn_usuarios = new System.Windows.Forms.Button();
             this.btn_empleados = new System.Windows.Forms.Button();
             this.btn_facturas = new System.Windows.Forms.Button();
             this.btn_productos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl_menu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,6 +56,7 @@ namespace Almacen1.Main
             // pnl_menu
             // 
             this.pnl_menu.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnl_menu.Controls.Add(this.btn_usuarios);
             this.pnl_menu.Controls.Add(this.label5);
             this.pnl_menu.Controls.Add(this.btn_empleados);
             this.pnl_menu.Controls.Add(this.btn_facturas);
@@ -70,37 +72,6 @@ namespace Almacen1.Main
             this.pnl_menu.Name = "pnl_menu";
             this.pnl_menu.Size = new System.Drawing.Size(240, 516);
             this.pnl_menu.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel_forms);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(240, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(646, 516);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.pB_mobile);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(646, 100);
-            this.panel3.TabIndex = 0;
-            // 
-            // panel_forms
-            // 
-            this.panel_forms.BackColor = System.Drawing.Color.White;
-            this.panel_forms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_forms.Location = new System.Drawing.Point(0, 100);
-            this.panel_forms.Name = "panel_forms";
-            this.panel_forms.Size = new System.Drawing.Size(646, 416);
-            this.panel_forms.TabIndex = 1;
             // 
             // label5
             // 
@@ -150,6 +121,47 @@ namespace Almacen1.Main
             this.label8.Size = new System.Drawing.Size(227, 2);
             this.label8.TabIndex = 28;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.panel_forms);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(240, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(646, 516);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel_forms
+            // 
+            this.panel_forms.BackColor = System.Drawing.Color.White;
+            this.panel_forms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_forms.Location = new System.Drawing.Point(0, 100);
+            this.panel_forms.Name = "panel_forms";
+            this.panel_forms.Size = new System.Drawing.Size(646, 416);
+            this.panel_forms.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.pB_mobile);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(646, 100);
+            this.panel3.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(123, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Almacen";
+            // 
             // pB_mobile
             // 
             this.pB_mobile.Image = global::Almacen1.Properties.Resources.mobile;
@@ -160,6 +172,21 @@ namespace Almacen1.Main
             this.pB_mobile.TabIndex = 0;
             this.pB_mobile.TabStop = false;
             this.pB_mobile.Click += new System.EventHandler(this.pB_mobile_Click);
+            // 
+            // btn_usuarios
+            // 
+            this.btn_usuarios.FlatAppearance.BorderSize = 0;
+            this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_usuarios.ForeColor = System.Drawing.Color.White;
+            this.btn_usuarios.Image = global::Almacen1.Properties.Resources.programador;
+            this.btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_usuarios.Location = new System.Drawing.Point(10, 346);
+            this.btn_usuarios.Name = "btn_usuarios";
+            this.btn_usuarios.Size = new System.Drawing.Size(221, 43);
+            this.btn_usuarios.TabIndex = 39;
+            this.btn_usuarios.Text = "Usuarios";
+            this.btn_usuarios.UseVisualStyleBackColor = true;
             // 
             // btn_empleados
             // 
@@ -191,6 +218,7 @@ namespace Almacen1.Main
             this.btn_facturas.TabIndex = 34;
             this.btn_facturas.Text = "Facturas";
             this.btn_facturas.UseVisualStyleBackColor = true;
+            this.btn_facturas.Click += new System.EventHandler(this.btn_facturas_Click);
             // 
             // btn_productos
             // 
@@ -210,22 +238,12 @@ namespace Almacen1.Main
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Almacen1.Properties.Resources.wislogo;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(123, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Almacen";
             // 
             // Menu_principal
             // 
@@ -267,5 +285,6 @@ namespace Almacen1.Main
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_usuarios;
     }
 }

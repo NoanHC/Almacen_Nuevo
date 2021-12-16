@@ -73,6 +73,7 @@
     <Compile Include="Class\ClsGlobales.cs" />
     <Compile Include="Class\ClsLogin.cs" />
     <Compile Include="Class\ClsMethod.cs" />
+    <Compile Include="Class\ClsPrivilegios.cs" />
     <Compile Include="Class\ClsUtilidades.cs" />
     <Compile Include="Class\Cls_Facturas.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\FrmAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmAlta.Designer.cs">
+      <DependentUpon>FrmAlta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Facturas\Frm_Facturas.resx">
       <DependentUpon>Frm_Facturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Usuarios\FrmAlta.resx">
+      <DependentUpon>FrmAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,5 +167,9 @@
   <ItemGroup>
     <None Include="Resources\factura.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\programador.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

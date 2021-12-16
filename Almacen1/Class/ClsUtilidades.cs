@@ -9,6 +9,9 @@ namespace Almacen1.Class
 {
     class ClsUtilidades
     {
+        //Clases
+        ClsMethod method = new ClsMethod();
+
         public void adaptarFormulario(Form formulario)
         {
             formulario.Location = Screen.PrimaryScreen.WorkingArea.Location;
@@ -17,6 +20,11 @@ namespace Almacen1.Class
         public void close()
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        public void _get_select(ComboBox cbx, string table)
+        {
+            method._get_select_cbx(cbx, table);
         }
     }
 }

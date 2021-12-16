@@ -50,3 +50,5 @@ C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.csproj.CopyCompl
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.exe
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.pdb
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Main.Menu_principal.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Facturas.Frm_Facturas.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmAlta.resources
