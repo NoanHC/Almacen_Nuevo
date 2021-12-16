@@ -26,9 +26,24 @@ namespace Almacen1.Usuarios
         }
         void load()
         {
+            dgvUsuarios.Columns.Clear();
             usuarios._get(dgvUsuarios);
-            dgvUsuarios.Columns[0].Visible = false;
+            //dgvUsuarios.Columns[0].Visible = false;
+            DataGridViewImageColumn btngrid = new DataGridViewImageColumn();
+            btngrid.Image = Properties.Resources.editar;
+            dgvUsuarios.Columns.Add(btngrid);
+            btngrid.HeaderText = "Modificar";
+            btngrid.Name = "edit";
+            btngrid.ImageLayout = DataGridViewImageCellLayout.Normal;
+
+            DataGridViewImageColumn btngrid2 = new DataGridViewImageColumn();
+            btngrid2.Image = Properties.Resources.baja;
+            dgvUsuarios.Columns.Add(btngrid2);
+            btngrid2.HeaderText = "Baja";
+            btngrid2.Name = "delete";
+            btngrid2.ImageLayout = DataGridViewImageCellLayout.Normal;
         }
+
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
             alta.ShowDialog();
@@ -45,6 +60,22 @@ namespace Almacen1.Usuarios
             {
                 load();
                 cambio = "0";
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id_usuario = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
+
+            if (e.ColumnIndex == dgvUsuarios.Columns["edit"].Index)
+            {
+                FrmModificarUsuario edit = new FrmModificarUsuario(id_usuario);
+                edit.ShowDialog();
+            }
+            if (e.ColumnIndex == dgvUsuarios.Columns["delete"].Index)
+            {
+                FrmBajaUsuario delete = new FrmBajaUsuario(id_usuario);
+                delete.ShowDialog();
             }
         }
     }

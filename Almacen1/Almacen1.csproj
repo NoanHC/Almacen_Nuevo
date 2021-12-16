@@ -130,11 +130,23 @@
     <Compile Include="Usuarios\FrmAlta.Designer.cs">
       <DependentUpon>FrmAlta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\FrmBajaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmBajaUsuario.Designer.cs">
+      <DependentUpon>FrmBajaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\FrmListadoUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios\FrmListadoUsuarios.Designer.cs">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\FrmModificarUsuario.Designer.cs">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Empleados\Frm_Emplados_Editar.resx">
       <DependentUpon>Frm_Emplados_Editar.cs</DependentUpon>
@@ -170,8 +182,14 @@
     <EmbeddedResource Include="Usuarios\FrmAlta.resx">
       <DependentUpon>FrmAlta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmBajaUsuario.resx">
+      <DependentUpon>FrmBajaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FrmListadoUsuarios.resx">
       <DependentUpon>FrmListadoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\FrmModificarUsuario.resx">
+      <DependentUpon>FrmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -213,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
