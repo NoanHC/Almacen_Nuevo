@@ -60,6 +60,12 @@
             this.lblIVA = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lbModelo = new System.Windows.Forms.Label();
+            this.lblParte = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -106,6 +112,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblPrecio);
+            this.panel3.Controls.Add(this.lblCantidad);
+            this.panel3.Controls.Add(this.lblParte);
+            this.panel3.Controls.Add(this.lbModelo);
+            this.panel3.Controls.Add(this.lblMarca);
+            this.panel3.Controls.Add(this.lblNombre);
             this.panel3.Controls.Add(this.txtMarca);
             this.panel3.Controls.Add(this.lklblAgregar);
             this.panel3.Controls.Add(this.cbNombre);
@@ -122,7 +134,7 @@
             // txtMarca
             // 
             this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMarca.Location = new System.Drawing.Point(216, 20);
+            this.txtMarca.Location = new System.Drawing.Point(215, 47);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(170, 20);
             this.txtMarca.TabIndex = 3;
@@ -132,7 +144,7 @@
             this.lklblAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklblAgregar.AutoSize = true;
             this.lklblAgregar.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklblAgregar.Location = new System.Drawing.Point(1114, 15);
+            this.lklblAgregar.Location = new System.Drawing.Point(1113, 42);
             this.lklblAgregar.Name = "lklblAgregar";
             this.lklblAgregar.Size = new System.Drawing.Size(83, 23);
             this.lklblAgregar.TabIndex = 8;
@@ -147,7 +159,7 @@
             this.cbNombre.FormattingEnabled = true;
             this.cbNombre.Items.AddRange(new object[] {
             ""});
-            this.cbNombre.Location = new System.Drawing.Point(40, 20);
+            this.cbNombre.Location = new System.Drawing.Point(39, 47);
             this.cbNombre.Name = "cbNombre";
             this.cbNombre.Size = new System.Drawing.Size(170, 21);
             this.cbNombre.TabIndex = 2;
@@ -156,7 +168,7 @@
             // txtP_Unitario
             // 
             this.txtP_Unitario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtP_Unitario.Location = new System.Drawing.Point(920, 20);
+            this.txtP_Unitario.Location = new System.Drawing.Point(919, 47);
             this.txtP_Unitario.Name = "txtP_Unitario";
             this.txtP_Unitario.Size = new System.Drawing.Size(170, 20);
             this.txtP_Unitario.TabIndex = 7;
@@ -164,7 +176,7 @@
             // txtModelo
             // 
             this.txtModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtModelo.Location = new System.Drawing.Point(392, 20);
+            this.txtModelo.Location = new System.Drawing.Point(391, 47);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(170, 20);
             this.txtModelo.TabIndex = 4;
@@ -172,7 +184,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCantidad.Location = new System.Drawing.Point(744, 20);
+            this.txtCantidad.Location = new System.Drawing.Point(743, 47);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(170, 20);
             this.txtCantidad.TabIndex = 6;
@@ -180,7 +192,7 @@
             // txtParte
             // 
             this.txtParte.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtParte.Location = new System.Drawing.Point(568, 20);
+            this.txtParte.Location = new System.Drawing.Point(567, 47);
             this.txtParte.Name = "txtParte";
             this.txtParte.Size = new System.Drawing.Size(170, 20);
             this.txtParte.TabIndex = 5;
@@ -302,6 +314,60 @@
             this.lblSubtotal.Size = new System.Drawing.Size(0, 13);
             this.lblSubtotal.TabIndex = 17;
             // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(36, 31);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 10;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(212, 31);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 11;
+            this.lblMarca.Text = "Marca";
+            // 
+            // lbModelo
+            // 
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Location = new System.Drawing.Point(388, 31);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(42, 13);
+            this.lbModelo.TabIndex = 12;
+            this.lbModelo.Text = "Modelo";
+            // 
+            // lblParte
+            // 
+            this.lblParte.AutoSize = true;
+            this.lblParte.Location = new System.Drawing.Point(569, 31);
+            this.lblParte.Name = "lblParte";
+            this.lblParte.Size = new System.Drawing.Size(32, 13);
+            this.lblParte.TabIndex = 13;
+            this.lblParte.Text = "Parte";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(740, 31);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(49, 13);
+            this.lblCantidad.TabIndex = 14;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(916, 31);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(74, 13);
+            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.Text = "Precio unitario";
+            // 
             // Frm_Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +420,11 @@
         private System.Windows.Forms.Label lblIVA;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSubtotal;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Label lblParte;
+        private System.Windows.Forms.Label lbModelo;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
