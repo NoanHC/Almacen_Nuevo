@@ -84,5 +84,7 @@ D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.csproj.CoreC
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.csproj.CopyComplete
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.exe
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.pdb
+D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmListadoUsuarios.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados_Añadir.resources
+D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Emplados_Editar.resources

@@ -20,10 +20,10 @@ namespace Almacen1.Class
             string values = "'" + nombre + "','" + telefono + "','" + correo + "','" + direccion + "','" + puesto + "','" + status + "','" + matricula + "'";
             return method.set(table, campos, values);
         }
-        public bool _update(string nombre, string matricula, string direccion, string celular, string id)
+        public bool _update(string nombre, string telefono, string correo, string direccion, string puesto, string status, string matricula, string id)
         {
-            string set = "nombre='" + nombre + "', matricula='" + matricula + "', direccion='" + direccion + "', celular='" + celular + "'";
-            return method.update(table, set, "id_estudiante", id);
+            string set = "nombre='" + nombre + "', telefono='" + telefono + "', correo='" + correo + "', direccion='" + direccion + "', puesto='" + puesto + "', status ='" + status + "', matricula='" + matricula + "'";
+            return method.update(table, set, "id_empleado ", id);
         }
         public void _get(DataGridView dgv)
         {

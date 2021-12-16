@@ -64,7 +64,8 @@ namespace Almacen1.Main
 
         private void btn_empleados_Click(object sender, EventArgs e)
         {
-            
+            Empleados.Frm_Empleados fh = new Empleados.Frm_Empleados();
+            add_panel(fh);
         }
 
         private void btn_facturas_Click(object sender, EventArgs e)
