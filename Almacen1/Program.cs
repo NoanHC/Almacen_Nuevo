@@ -16,7 +16,7 @@ namespace Almacen1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facturas.Frm_Facturas());
+            Application.Run(new Usuarios.FrmAlta());
         }
     }
 }
