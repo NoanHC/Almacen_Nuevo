@@ -97,6 +97,11 @@ namespace Almacen1.Class
                     datos[0] = "privilegio";
                     datos[1] = "id_privilegio";
                     break;
+
+                case "tb_status_usuario":
+                    datos[0] = "status";
+                    datos[1] = "id_status_usuario";
+                    break;
             }
             return datos;
         }

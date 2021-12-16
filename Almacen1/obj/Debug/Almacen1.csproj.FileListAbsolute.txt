@@ -52,6 +52,9 @@ C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.pdb
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Main.Menu_principal.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Facturas.Frm_Facturas.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmAlta.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmListadoUsuarios.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmModificarUsuario.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmBajaUsuario.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\bin\Debug\Almacen1.exe.config
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\bin\Debug\Almacen1.exe
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\bin\Debug\Almacen1.pdb
