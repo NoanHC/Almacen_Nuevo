@@ -109,6 +109,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Menu_principal.resx">
+      <DependentUpon>Menu_principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_ListadoProductos.resx">
       <DependentUpon>Frm_ListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,7 +140,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Guardar.png" />
+    <None Include="Resources\wislogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empleado-del-mes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
