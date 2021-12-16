@@ -74,8 +74,15 @@
     <Compile Include="Class\ClsLogin.cs" />
     <Compile Include="Class\ClsMethod.cs" />
     <Compile Include="Class\ClsUtilidades.cs" />
+    <Compile Include="Class\Cls_Facturas.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
+    <Compile Include="Facturas\Frm_Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturas\Frm_Facturas.Designer.cs">
+      <DependentUpon>Frm_Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Facturas\Frm_Facturas.resx">
+      <DependentUpon>Frm_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -125,6 +136,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
