@@ -66,9 +66,6 @@ namespace Almacen1.Properties {
         internal static System.Drawing.Bitmap Borrar {
             get {
                 object obj = ResourceManager.GetObject("Borrar", resourceCulture);
-        internal static System.Drawing.Bitmap borrar {
-            get {
-                object obj = ResourceManager.GetObject("borrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -99,9 +96,6 @@ namespace Almacen1.Properties {
         internal static System.Drawing.Bitmap Editar345 {
             get {
                 object obj = ResourceManager.GetObject("Editar345", resourceCulture);
-        internal static System.Drawing.Bitmap editar {
-            get {
-                object obj = ResourceManager.GetObject("editar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

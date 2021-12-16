@@ -20,24 +20,19 @@ namespace Almacen1.Class
             string values = "'" + usuario + "','" + password + "','" + id_privilegio + "','" + id_empleado + "'";
             return method.set(table, campos, values);
         }
-        public bool _update(string user, string password, string id_empleado, string id_privilegio, string id_status,string id)
+        public bool _update(string nombre, string matricula, string direccion, string celular, string id)
         {
-            string set = "user='" + user + "', password='" + password + "', id_empleado='" + id_empleado + "', id_privilegio='" + id_privilegio + "', id_status_usuario='" + id_status + "'";
-            return method.update(table, set, "id_usuario", id);
-        }
-        public bool _update_status_usuario(string id_status, string id)
-        {
-            string set = "id_status_usuario='" + id_status + "'";
-            return method.update(table, set, "id_usuario", id);
+            string set = "nombre='" + nombre + "', matricula='" + matricula + "', direccion='" + direccion + "', celular='" + celular + "'";
+            return method.update(table, set, "id_estudiante", id);
         }
         public void _get(DataGridView dgv)
         {
-            query = "SELECT tu.id_usuario as ID, tu.user as USER, tu.password as PASSWORD, te.nombre as NOMBRE, tp.privilegio as PRIVILEGIO, tsu.status as STATUS FROM tb_usuarios tu INNER JOIN tb_privilegios tp ON tu.id_privilegio = tp.id_privilegio INNER JOIN tb_empleados te ON tu.id_empleado = te.id_empleado INNER JOIN tb_status_usuario tsu ON tu.id_status_usuario = tsu.id_status_usuario";
+            query = "SELECT tu.id_usuario as ID, tu.user as USER, tu.password as PASSWORD, te.nombre as NOMBRE, tp.privilegio as PRIVILEGIO FROM tb_usuarios tu INNER JOIN tb_privilegios tp ON tu.id_privilegio = tp.id_privilegio INNER JOIN tb_empleados te ON tu.id_empleado = te.id_empleado;";
             method.ExecuteQuery(query, dgv);
         }
         public void _consult(DataTable dt, string id)
         {
-            query = "SELECT tu.id_usuario as ID, tu.user as USER, tu.password as PASSWORD, tu.id_empleado as ID_EMPLEADO, tu.id_privilegio as ID_PRIVILEGIO, tu.id_status_usuario as STATUS FROM tb_usuarios tu INNER JOIN tb_privilegios tp ON tu.id_privilegio = tp.id_privilegio INNER JOIN tb_empleados te ON tu.id_empleado = te.id_empleado WHERE tu.id_usuario ='" + id + "'";
+            query = "SELECT id_estudiante, nombre, matricula, direccion, celular FROM " + table + " WHERE id_estudiante='" + id + "'";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)
