@@ -24,7 +24,7 @@ namespace Almacen1.Salidas
         DataTable dt_datagrid = new DataTable();
 
         //Variables
-
+        int cantidad_original;
         public FrmAltaSalidas()
         {
             InitializeComponent();
