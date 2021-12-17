@@ -103,6 +103,16 @@ namespace Almacen1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap descripcion_del_producto {
+            get {
+                object obj = ResourceManager.GetObject("descripcion-del-producto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editar {
             get {
                 object obj = ResourceManager.GetObject("editar", resourceCulture);
@@ -146,6 +156,16 @@ namespace Almacen1.Properties {
         internal static System.Drawing.Bitmap Guardar {
             get {
                 object obj = ResourceManager.GetObject("Guardar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventario {
+            get {
+                object obj = ResourceManager.GetObject("inventario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

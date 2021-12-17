@@ -62,10 +62,10 @@
             this.C_P_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.lblIVA = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -134,7 +134,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(916, 31);
+            this.lblPrecio.Location = new System.Drawing.Point(883, 29);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(74, 13);
             this.lblPrecio.TabIndex = 15;
@@ -143,7 +143,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(740, 31);
+            this.lblCantidad.Location = new System.Drawing.Point(707, 29);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 14;
@@ -152,7 +152,7 @@
             // lblParte
             // 
             this.lblParte.AutoSize = true;
-            this.lblParte.Location = new System.Drawing.Point(569, 31);
+            this.lblParte.Location = new System.Drawing.Point(536, 30);
             this.lblParte.Name = "lblParte";
             this.lblParte.Size = new System.Drawing.Size(32, 13);
             this.lblParte.TabIndex = 13;
@@ -161,7 +161,7 @@
             // lbModelo
             // 
             this.lbModelo.AutoSize = true;
-            this.lbModelo.Location = new System.Drawing.Point(388, 31);
+            this.lbModelo.Location = new System.Drawing.Point(355, 30);
             this.lbModelo.Name = "lbModelo";
             this.lbModelo.Size = new System.Drawing.Size(42, 13);
             this.lbModelo.TabIndex = 12;
@@ -170,7 +170,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(212, 31);
+            this.lblMarca.Location = new System.Drawing.Point(3, 31);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 11;
@@ -179,7 +179,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(36, 31);
+            this.lblNombre.Location = new System.Drawing.Point(179, 30);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 10;
@@ -188,7 +188,7 @@
             // txtMarca
             // 
             this.txtMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMarca.Location = new System.Drawing.Point(215, 47);
+            this.txtMarca.Location = new System.Drawing.Point(6, 47);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(170, 20);
             this.txtMarca.TabIndex = 3;
@@ -213,7 +213,7 @@
             this.cbNombre.FormattingEnabled = true;
             this.cbNombre.Items.AddRange(new object[] {
             ""});
-            this.cbNombre.Location = new System.Drawing.Point(39, 47);
+            this.cbNombre.Location = new System.Drawing.Point(182, 46);
             this.cbNombre.Name = "cbNombre";
             this.cbNombre.Size = new System.Drawing.Size(170, 21);
             this.cbNombre.TabIndex = 2;
@@ -222,7 +222,7 @@
             // txtP_Unitario
             // 
             this.txtP_Unitario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtP_Unitario.Location = new System.Drawing.Point(919, 47);
+            this.txtP_Unitario.Location = new System.Drawing.Point(886, 45);
             this.txtP_Unitario.Name = "txtP_Unitario";
             this.txtP_Unitario.Size = new System.Drawing.Size(170, 20);
             this.txtP_Unitario.TabIndex = 7;
@@ -230,7 +230,7 @@
             // txtModelo
             // 
             this.txtModelo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtModelo.Location = new System.Drawing.Point(391, 47);
+            this.txtModelo.Location = new System.Drawing.Point(358, 46);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(170, 20);
             this.txtModelo.TabIndex = 4;
@@ -238,7 +238,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCantidad.Location = new System.Drawing.Point(743, 47);
+            this.txtCantidad.Location = new System.Drawing.Point(710, 45);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(170, 20);
             this.txtCantidad.TabIndex = 6;
@@ -246,7 +246,7 @@
             // txtParte
             // 
             this.txtParte.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtParte.Location = new System.Drawing.Point(567, 47);
+            this.txtParte.Location = new System.Drawing.Point(534, 46);
             this.txtParte.Name = "txtParte";
             this.txtParte.Size = new System.Drawing.Size(170, 20);
             this.txtParte.TabIndex = 5;
@@ -329,18 +329,6 @@
             this.panel4.Size = new System.Drawing.Size(1235, 183);
             this.panel4.TabIndex = 13;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.BackgroundImage = global::Almacen1.Properties.Resources.Guardar;
-            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 382);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(67, 62);
-            this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // lblIVA
             // 
             this.lblIVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -367,6 +355,18 @@
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(0, 13);
             this.lblSubtotal.TabIndex = 17;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.BackgroundImage = global::Almacen1.Properties.Resources.Guardar;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Location = new System.Drawing.Point(12, 382);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(67, 62);
+            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Frm_Facturas
             // 

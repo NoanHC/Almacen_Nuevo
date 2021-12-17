@@ -79,5 +79,10 @@ namespace Almacen1.Main
             Usuarios.FrmListadoUsuarios fh = new Usuarios.FrmListadoUsuarios();
             add_panel(fh);
         }
+
+        private void pnl_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
