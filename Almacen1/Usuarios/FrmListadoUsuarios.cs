@@ -42,6 +42,8 @@ namespace Almacen1.Usuarios
             btngrid2.HeaderText = "Baja";
             btngrid2.Name = "delete";
             btngrid2.ImageLayout = DataGridViewImageCellLayout.Normal;
+
+
         }
 
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
@@ -52,6 +54,7 @@ namespace Almacen1.Usuarios
         private void FrmListadoUsuarios_Load(object sender, EventArgs e)
         {
             load();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -78,5 +81,6 @@ namespace Almacen1.Usuarios
                 delete.ShowDialog();
             }
         }
+
     }
 }

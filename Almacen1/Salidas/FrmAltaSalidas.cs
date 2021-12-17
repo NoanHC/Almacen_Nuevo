@@ -25,6 +25,9 @@ namespace Almacen1.Salidas
 
         //Variables
         int cantidad_original;
+        int cantidad_modificada;
+        int cantidad_final;
+
         public FrmAltaSalidas()
         {
             InitializeComponent();
@@ -33,6 +36,7 @@ namespace Almacen1.Salidas
         void resta()
         {
             dt_datagrid.Rows.Clear();
+
             if (dt_datagrid.Columns.Count == 0)
             {
                 dt_datagrid.Columns.Add("id_prod", typeof(string));
@@ -41,17 +45,39 @@ namespace Almacen1.Salidas
             }
             foreach (DataGridViewRow row in dgvEntrada.Rows)
             {
-                dt_datagrid.Rows.Add(row.Cells["id_producto"].Value.ToString(), row.Cells["producto"].Value.ToString(), row.Cells["cantidad"].Value.ToString());   
+                dt_datagrid.Rows.Add(row.Cells["id_producto"].Value.ToString(), row.Cells["producto"].Value.ToString(), row.Cells["cantidad"].Value.ToString());
             }
 
             for (int i = 0; i < dt_datagrid.Rows.Count; i++)
             {
+                cantidad_final = cantidad_final + Convert.ToInt32(dt_datagrid.Rows[i][2]);
+
                 if (dt_datagrid.Rows[i][0].ToString() == cbx_producto.SelectedValue.ToString())
                 {
-                    nUD_cantidad.Value = nUD_cantidad.Value - Convert.ToInt16(dt_datagrid.Rows[i][2]);
+
+                   // int cant2 = Convert.ToInt16(dt_datagrid.Rows[i][2]); //no se estan sumando
+                    //int cant2 = Convert.ToInt16(dt_datagrid.Rows[i][2]); //no se estan sumando
+                    cantidad_modificada = cantidad_original - cantidad_final;
+
+
+                    //ver estos if para cantidad
+
+                    if (cantidad_modificada > 1)
+                    {
+                        nUD_cantidad.Value = 1;
+                        nUD_cantidad.Maximum = cantidad_modificada;
+                    }
+                    /*if (cantidad_modificada == 1)
+                    {
+                        nUD_cantidad.Value = 1;
+                        nUD_cantidad.Maximum = 1;
+                    }*/
+                    if (cantidad_modificada == 0)
+                    {
+                        nUD_cantidad.Value = 0;
+                        nUD_cantidad.Maximum = cantidad_modificada;
+                    }
                 }
-                //dt_datagrid.Rows[i][1].ToString()
-                //MessageBox.Show(dt_datagrid.Rows[i][1].ToString());
             }
         }
 
@@ -60,11 +86,25 @@ namespace Almacen1.Salidas
             cbx_empleado.Enabled = false;
             if (cbx_serie.Text == "NINGUNA")
             {
-                dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, 0, cbx_serie.Text, nUD_cantidad.Value);
+                if (nUD_cantidad.Value == 0)
+                {
+                    MessageBox.Show("Este producto no esta en existencia");
+                }
+                if (nUD_cantidad.Value > 0)
+                {
+                    dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, 0, cbx_serie.Text, nUD_cantidad.Value);
+                }
             }
             else
             {
-                dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
+                if (nUD_cantidad.Value == 0)
+                {
+                    MessageBox.Show("Este producto no esta en existencia");
+                }
+                if (nUD_cantidad.Value > 0)
+                {
+                    dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
+                }
             }
         }
         void load()
@@ -90,13 +130,14 @@ namespace Almacen1.Salidas
                     cbx_serie.Text = "NINGUNA";
                     dt_productos = new DataTable();
                     productos._consult(dt_productos, cbx_producto.SelectedValue.ToString());
-                    int cantidad = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
-                    if (cantidad > 0)
+                    cantidad_original = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
+                    if (cantidad_original > 0)
                     {
                         nUD_cantidad.Value = 1;
-                        nUD_cantidad.Maximum = cantidad;
+                        nUD_cantidad.Maximum = cantidad_original;
                     }
                 }
+                resta();
             }
             catch (Exception)
             {
@@ -130,13 +171,14 @@ namespace Almacen1.Salidas
                     nUD_cantidad.Enabled = true;
                     dt_productos = new DataTable();
                     productos._consult(dt_productos, cbx_producto.SelectedValue.ToString());
-                    int cantidad = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
-                    if (cantidad > 0)
+                    int cantidad_original = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
+                    if (cantidad_original > 0)
                     {
                         nUD_cantidad.Value = 1;
-                        nUD_cantidad.Maximum = cantidad;
+                        nUD_cantidad.Maximum = cantidad_original;
                     }
                 }
+                resta();
             }
             catch (Exception)
             {
