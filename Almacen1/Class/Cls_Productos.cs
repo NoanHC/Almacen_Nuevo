@@ -32,7 +32,7 @@ namespace Almacen1.Class
         }
         public void _consult(DataTable dt, string id)
         {
-            query = "SELECT id_estudiante, nombre, matricula, direccion, celular FROM " + table + " WHERE id_estudiante='" + id + "'";
+            query = "SELECT id_producto as ID, nombre as PRODUCTO, id_marca as IDMARCA, modelo as MODELO, parte as PARTE, descripcion as DESCRIPCION, cantidad as CANTIDAD FROM " + table + " WHERE id_producto='" + id + "'";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)

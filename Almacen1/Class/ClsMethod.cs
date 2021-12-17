@@ -101,6 +101,22 @@ namespace Almacen1.Class
                     datos[0] = "status";
                     datos[1] = "id_status_usuario";
                     break;
+                case "tb_marca":
+                    datos[0] = "marca";
+                    datos[1] = "id_marca";
+                    break;
+                case "tb_proveedor":
+                    datos[0] = "nombre";
+                    datos[1] = "id_proveedor";
+                    break;
+                case "tb_productos":
+                    datos[0] = "nombre";
+                    datos[1] = "id_producto";
+                    break;
+                case "tb_series":
+                    datos[0] = "serie";
+                    datos[1] = "id_serie";
+                    break;
             }
             return datos;
         }
@@ -108,6 +124,12 @@ namespace Almacen1.Class
         {
             string[] datos = set_select(table);
             get_cbx(table, datos[0], datos[1], cbx);
+        }
+
+        public void _get_select_cbx_condicion(ComboBox cbx, string table, string condicion)
+        {
+            string[] datos = set_select(table);
+            get_cbx_condition(table, datos[0], datos[1], cbx, condicion);
         }
 
         private string hash_pass(string pass)

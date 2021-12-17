@@ -26,5 +26,11 @@ namespace Almacen1.Class
         {
             method._get_select_cbx(cbx, table);
         }
+
+        public void _get_select_condicion(ComboBox cbx, string table, string condicion)
+        {
+            method._get_select_cbx_condicion(cbx, table, condicion);
+        }
+
     }
 }
