@@ -84,5 +84,11 @@ namespace Almacen1.Main
         {
 
         }
+
+        private void btn_productos_Click(object sender, EventArgs e)
+        {
+            Productos.Frm_ListadoProductos fh = new Productos.Frm_ListadoProductos();
+            add_panel(fh);
+        }
     }
 }

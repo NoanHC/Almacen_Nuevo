@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Almacen1.Empleados
 {
-    public partial class Frm_Empleados_Añadir : Form
+    public partial class Frm_Empleados_Nuevo : Form
     {
         // Clases
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();
@@ -19,7 +19,7 @@ namespace Almacen1.Empleados
         DataTable dtE = new DataTable();
         DataTable dtP = new DataTable();
 
-        public Frm_Empleados_Añadir()
+        public Frm_Empleados_Nuevo()
         {
             InitializeComponent();
         }

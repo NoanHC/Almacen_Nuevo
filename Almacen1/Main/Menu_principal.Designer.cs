@@ -178,6 +178,7 @@ namespace Almacen1.Main
             this.btn_productos.TabIndex = 33;
             this.btn_productos.Text = "Productos";
             this.btn_productos.UseVisualStyleBackColor = true;
+            this.btn_productos.Click += new System.EventHandler(this.btn_productos_Click);
             // 
             // label10
             // 

@@ -14,7 +14,7 @@ namespace Almacen1.Empleados
     {
         //Formas
         Empleados.Frm_Emplados_Editar ObjEmpleadosEditar;
-        Empleados.Frm_Empleados_Añadir ObjEmpleadosAñadir = new Frm_Empleados_Añadir();
+        Empleados.Frm_Empleados_Nuevo ObjEmpleadosAñadir = new Frm_Empleados_Nuevo();
 
         // Clases
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();

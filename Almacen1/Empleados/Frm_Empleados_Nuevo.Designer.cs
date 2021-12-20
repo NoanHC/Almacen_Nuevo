@@ -1,6 +1,6 @@
 ﻿namespace Almacen1.Empleados
 {
-    partial class Frm_Empleados_Añadir
+    partial class Frm_Empleados_Nuevo
     {
         /// <summary>
         /// Required designer variable.
