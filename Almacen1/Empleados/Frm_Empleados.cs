@@ -51,20 +51,26 @@ namespace Almacen1.Empleados
             ObjEmpleadosEditar.ShowDialog();
         }
 
-
+        void Borrar_Empleado(int Fila)
+        {
+            //DialogResult Hola = MessageBox.Show("¿Desea borrar al empleado " + dt2.Rows[Fila][0].ToString() + "?", "Borrar empleado", MessageBoxButtons.YesNo);
+            if (MessageBox.Show("¿Desea borrar al empleado " + dt2.Rows[Fila][0].ToString() + "?", "Borrar empleado", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ObjEmpleados._delete(dt1.Rows[Fila][0].ToString());
+            }
+            
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 if (e.ColumnIndex == 0)
                 {
-                    //Editar();
                     EditarEmpleados(e.RowIndex);
                 }
                 if (e.ColumnIndex == 1)
                 {
-                    //Editar();
-                    MessageBox.Show("Borrar");
+                    Borrar_Empleado(e.RowIndex);
                 }
             }
         }

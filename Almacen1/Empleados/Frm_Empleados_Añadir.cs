@@ -16,14 +16,29 @@ namespace Almacen1.Empleados
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();
         // Datatables
         DataTable dt = new DataTable();
+        DataTable dtE = new DataTable();
+        DataTable dtP = new DataTable();
 
         public Frm_Empleados_Añadir()
         {
             InitializeComponent();
         }
+        string Ids(DataTable dtIds, ComboBox cbIds)
+        {
+            string ids = "";
+            for (int i = 0; i < dtIds.Rows.Count; i++)
+            {
+                if (cbIds.Text == dtIds.Rows[i][1].ToString())
+                {
+                    ids = dtIds.Rows[i][0].ToString();
+                }
+            }
+            return ids;
+        }
+
         void añadir()
         {
-            ObjEmpleados._set(txtNombre.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, txtPuesto.Text, dt.Rows[cbEstatus.SelectedIndex][0].ToString(), txtMatricula.Text);
+            ObjEmpleados._set(txtNombre.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, Ids(dtP,cbPuesto), Ids(dtE,cbEstatus), txtMatricula.Text);
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -33,16 +48,29 @@ namespace Almacen1.Empleados
 
         void Status()
         {
-            ObjEmpleados._consult_status(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            cbEstatus.Items.Clear();
+            dtE.Clear();
+            ObjEmpleados._consult_status(dtE);
+            for (int i = 0; i < dtE.Rows.Count; i++)
             {
-                cbEstatus.Items.Add(dt.Rows[i][1].ToString());
+                cbEstatus.Items.Add(dtE.Rows[i][1].ToString());
+            }
+        }
+        void Puesto ()
+        {
+            cbPuesto.Items.Clear();
+            dtP.Clear();
+            ObjEmpleados._consult_Puesto(dtP);
+            for (int i = 0; i < dtP.Rows.Count; i++)
+            {
+                cbPuesto.Items.Add(dtP.Rows[i][1].ToString());
             }
         }
 
         private void Frm_Empleados_Load(object sender, EventArgs e)
         {
             Status();
+            Puesto();
         }
     }
 }

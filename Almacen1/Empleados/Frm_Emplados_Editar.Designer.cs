@@ -33,7 +33,6 @@
             this.lblMatricula = new System.Windows.Forms.Label();
             this.lblEstatus = new System.Windows.Forms.Label();
             this.cbEstatus = new System.Windows.Forms.ComboBox();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnEditar
@@ -89,13 +89,6 @@
             this.cbEstatus.Name = "cbEstatus";
             this.cbEstatus.Size = new System.Drawing.Size(178, 21);
             this.cbEstatus.TabIndex = 25;
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Location = new System.Drawing.Point(39, 281);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(178, 20);
-            this.txtPuesto.TabIndex = 24;
             // 
             // lblPuesto
             // 
@@ -186,11 +179,20 @@
             this.lblId.TabIndex = 30;
             this.lblId.Text = "Identificador";
             // 
+            // cbPuesto
+            // 
+            this.cbPuesto.FormattingEnabled = true;
+            this.cbPuesto.Location = new System.Drawing.Point(39, 281);
+            this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.Size = new System.Drawing.Size(178, 21);
+            this.cbPuesto.TabIndex = 32;
+            // 
             // Frm_Emplados_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 450);
+            this.Controls.Add(this.cbPuesto);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnEditar);
@@ -198,7 +200,6 @@
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblEstatus);
             this.Controls.Add(this.cbEstatus);
-            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
@@ -223,7 +224,6 @@
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Label lblEstatus;
         private System.Windows.Forms.ComboBox cbEstatus;
-        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
@@ -235,5 +235,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.ComboBox cbPuesto;
     }
 }
