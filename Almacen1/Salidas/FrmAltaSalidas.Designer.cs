@@ -29,12 +29,13 @@ namespace Almacen1.Salidas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvEntrada = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nUD_cantidad = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.cbx_serie = new System.Windows.Forms.ComboBox();
@@ -45,15 +46,6 @@ namespace Almacen1.Salidas
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nUD_cantidad = new System.Windows.Forms.NumericUpDown();
-            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntrada)).BeginInit();
             this.panel2.SuspendLayout();
@@ -77,44 +69,35 @@ namespace Almacen1.Salidas
             this.dgvEntrada.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvEntrada.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntrada.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntrada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_empleado,
-            this.empleado,
-            this.marca,
-            this.id_producto,
-            this.producto,
-            this.id_serie,
-            this.serie,
-            this.cantidad});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntrada.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntrada.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEntrada.EnableHeadersVisualStyles = false;
             this.dgvEntrada.Location = new System.Drawing.Point(12, 6);
             this.dgvEntrada.Name = "dgvEntrada";
             this.dgvEntrada.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntrada.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntrada.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEntrada.RowHeadersVisible = false;
             this.dgvEntrada.Size = new System.Drawing.Size(774, 354);
             this.dgvEntrada.TabIndex = 214;
@@ -137,6 +120,19 @@ namespace Almacen1.Salidas
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 78);
             this.panel2.TabIndex = 219;
+            // 
+            // nUD_cantidad
+            // 
+            this.nUD_cantidad.Location = new System.Drawing.Point(673, 39);
+            this.nUD_cantidad.Name = "nUD_cantidad";
+            this.nUD_cantidad.Size = new System.Drawing.Size(62, 20);
+            this.nUD_cantidad.TabIndex = 11;
+            this.nUD_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nUD_cantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -167,7 +163,8 @@ namespace Almacen1.Salidas
             this.cbx_serie.Name = "cbx_serie";
             this.cbx_serie.Size = new System.Drawing.Size(137, 21);
             this.cbx_serie.TabIndex = 7;
-            this.cbx_serie.SelectedValueChanged += new System.EventHandler(this.cbx_serie_SelectedValueChanged);
+            this.cbx_serie.SelectedIndexChanged += new System.EventHandler(this.cbx_serie_SelectedIndexChanged);
+            this.cbx_serie.TextChanged += new System.EventHandler(this.cbx_serie_TextChanged);
             // 
             // cbx_producto
             // 
@@ -231,75 +228,6 @@ namespace Almacen1.Salidas
             this.label1.TabIndex = 0;
             this.label1.Text = "Empleado:";
             // 
-            // nUD_cantidad
-            // 
-            this.nUD_cantidad.Location = new System.Drawing.Point(673, 39);
-            this.nUD_cantidad.Name = "nUD_cantidad";
-            this.nUD_cantidad.Size = new System.Drawing.Size(62, 20);
-            this.nUD_cantidad.TabIndex = 11;
-            this.nUD_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nUD_cantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // id_empleado
-            // 
-            this.id_empleado.HeaderText = "IDE";
-            this.id_empleado.Name = "id_empleado";
-            this.id_empleado.ReadOnly = true;
-            this.id_empleado.Width = 61;
-            // 
-            // empleado
-            // 
-            this.empleado.HeaderText = "Empleado";
-            this.empleado.Name = "empleado";
-            this.empleado.ReadOnly = true;
-            this.empleado.Width = 111;
-            // 
-            // marca
-            // 
-            this.marca.HeaderText = "Marca";
-            this.marca.Name = "marca";
-            this.marca.ReadOnly = true;
-            this.marca.Width = 80;
-            // 
-            // id_producto
-            // 
-            this.id_producto.HeaderText = "IDP";
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            this.id_producto.Width = 61;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            this.producto.Width = 105;
-            // 
-            // id_serie
-            // 
-            this.id_serie.HeaderText = "IDS";
-            this.id_serie.Name = "id_serie";
-            this.id_serie.ReadOnly = true;
-            this.id_serie.Width = 61;
-            // 
-            // serie
-            // 
-            this.serie.HeaderText = "Serie";
-            this.serie.Name = "serie";
-            this.serie.ReadOnly = true;
-            this.serie.Width = 73;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 103;
-            // 
             // FrmAltaSalidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,13 +266,5 @@ namespace Almacen1.Salidas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nUD_cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_serie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }
