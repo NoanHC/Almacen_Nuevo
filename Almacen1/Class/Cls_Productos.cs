@@ -17,7 +17,7 @@ namespace Almacen1.Class
         public bool _set(string nombre, string id_marca, string modelo, string parte, string id_factura, string descripcion, string cantidad)
         {
             string campos = "nombre, id_marca , modelo, parte , id_factura , descripcion , cantidad";
-            string values = "'" + nombre + "','" + id_marca + "','" + modelo + "'," + parte + "','" + id_factura + "','" + descripcion + "','" + cantidad + "'";
+            string values = "'" + nombre + "','" + id_marca + "','" + modelo + "','" + parte + "','" + id_factura + "','" + descripcion + "','" + cantidad + "'";
             return method.set(table, campos, values);
         }
         public bool _update(string nombre, string matricula, string direccion, string celular, string id)
@@ -43,6 +43,11 @@ namespace Almacen1.Class
         public void _consult_Productos(DataTable dt)
         {
             query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca";
+            method.Consultar(query, dt);
+        }
+        public void _consult_Factura(DataTable dt)
+        {
+            query = "SELECT id_factura_almacen, folio_factura FROM `tb_factura_almacen`";
             method.Consultar(query, dt);
         }
         public bool _delete(string id)

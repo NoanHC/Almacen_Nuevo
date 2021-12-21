@@ -30,7 +30,7 @@
         {
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.btnAñadir = new System.Windows.Forms.Button();
-            this.txtMatricula = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtParte = new System.Windows.Forms.TextBox();
@@ -41,7 +41,7 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbFactura = new System.Windows.Forms.ComboBox();
             this.lblNoFactura = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,12 +63,12 @@
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
-            // txtMatricula
+            // txtCantidad
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(50, 364);
-            this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(178, 20);
-            this.txtMatricula.TabIndex = 28;
+            this.txtCantidad.Location = new System.Drawing.Point(50, 364);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(178, 20);
+            this.txtCantidad.TabIndex = 28;
             // 
             // lblCantidad
             // 
@@ -152,13 +152,13 @@
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre";
             // 
-            // comboBox1
+            // cbFactura
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(50, 263);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 32;
+            this.cbFactura.FormattingEnabled = true;
+            this.cbFactura.Location = new System.Drawing.Point(50, 263);
+            this.cbFactura.Name = "cbFactura";
+            this.cbFactura.Size = new System.Drawing.Size(178, 21);
+            this.cbFactura.TabIndex = 32;
             // 
             // lblNoFactura
             // 
@@ -174,11 +174,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 439);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbFactura);
             this.Controls.Add(this.lblNoFactura);
             this.Controls.Add(this.cbMarca);
             this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.txtMatricula);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.txtParte);
@@ -202,7 +202,7 @@
 
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Button btnAñadir;
-        private System.Windows.Forms.TextBox txtMatricula;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtParte;
@@ -213,7 +213,7 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbFactura;
         private System.Windows.Forms.Label lblNoFactura;
     }
 }
