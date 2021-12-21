@@ -93,50 +93,6 @@ namespace Almacen1.Salidas
 
         }
 
-        void AgregarProducto()
-        {
-            cbx_empleado.Enabled = false;
-            if (cbx_serie.Text == "NINGUNA")
-            {
-                if (nUD_cantidad.Value == 0)
-                {
-                    MessageBox.Show("Este producto no esta en existencia");
-                }
-                if (dgvEntrada.Rows.Count == 0)
-                {
-                    dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, 0, cbx_serie.Text, nUD_cantidad.Value);
-
-                }
-
-                foreach (DataGridViewRow row in dgvEntrada.Rows)
-                {
-                    string id = row.Cells["id_producto"].Value.ToString();
-                    int cant = Convert.ToInt32(row.Cells["cantidad"].Value.ToString());
-
-                    if (id == cbx_producto.SelectedValue.ToString())
-                    {
-                        row.Cells["cantidad"].Value = cant + nUD_cantidad.Value;
-                    }
-                    else
-                    {
-                        dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, 0, cbx_serie.Text, nUD_cantidad.Value);
-                    }
-
-                }
-
-            }
-            else
-            {
-                if (nUD_cantidad.Value == 0)
-                {
-                    MessageBox.Show("Este producto no esta en existencia");
-                }
-                if (nUD_cantidad.Value > 0)
-                {
-                    dgvEntrada.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
-                }
-            }
-        }
         void load()
         {
             utilidades._get_select_condicion(cbx_empleado, "tb_empleados", "WHERE id_puesto = 1");
@@ -165,6 +121,9 @@ namespace Almacen1.Salidas
                     cantidad_original = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
                     if (cantidad_original > 0)
                     {
+                        nUD_cantidad.Maximum = cantidad_original;
+                        nUD_cantidad.Value = 1;
+
                         for (int i = 0; i < dt_datagrid.Rows.Count; i++)
                         {
                             if (cbx_producto.SelectedValue.ToString() == dt_datagrid.Rows[i]["id_prod"].ToString())
@@ -317,46 +276,59 @@ namespace Almacen1.Salidas
 
         private void cbx_serie_TextChanged(object sender, EventArgs e)
         {
-            if (cbx_serie.Text == "NINGUNA")
+            try
             {
-                nUD_cantidad.Enabled = true;
-                dt_productos = new DataTable();
-                productos._consult(dt_productos, cbx_producto.SelectedValue.ToString());
-                int cantidad_original = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
 
-                if (cantidad_original > 0)
+
+                if (cbx_serie.Text == "NINGUNA")
                 {
-                    for (int i = 0; i < dt_datagrid.Rows.Count; i++)
+                    nUD_cantidad.Enabled = true;
+                    dt_productos = new DataTable();
+                    productos._consult(dt_productos, cbx_producto.SelectedValue.ToString());
+                    int cantidad_original = Convert.ToInt32(dt_productos.Rows[0]["CANTIDAD"].ToString());
+                    nUD_cantidad.Maximum = cantidad_original;
+                    nUD_cantidad.Value = 1;
+
+                    if (cantidad_original > 0)
                     {
-                        if (cbx_producto.SelectedValue.ToString() == dt_datagrid.Rows[i]["id_prod"].ToString())
+                        for (int i = 0; i < dt_datagrid.Rows.Count; i++)
                         {
-                            cantidad_modificada = cantidad_original - Convert.ToInt32(dt_datagrid.Rows[i]["cant"]);
-                            //nUD_cantidad.Maximum = cantidad_modificada;
-                            if (cantidad_modificada > 0)
+                            if (cbx_producto.SelectedValue.ToString() == dt_datagrid.Rows[i]["id_prod"].ToString())
                             {
+                                cantidad_modificada = cantidad_original - Convert.ToInt32(dt_datagrid.Rows[i]["cant"]);
+                                //nUD_cantidad.Maximum = cantidad_modificada;
+                                if (cantidad_modificada > 0)
+                                {
+                                    nUD_cantidad.Value = 1;
+                                    nUD_cantidad.Maximum = cantidad_modificada;
+                                    i = dt_datagrid.Rows.Count;
+                                }
+                                if (cantidad_modificada == 0)
+                                {
+                                    nUD_cantidad.Value = 0;
+                                    nUD_cantidad.Maximum = cantidad_modificada;
+
+                                    i = dt_datagrid.Rows.Count;
+                                }
+                            }
+
+                            else
+                            {
+                                nUD_cantidad.Maximum = cantidad_original;
                                 nUD_cantidad.Value = 1;
-                                nUD_cantidad.Maximum = cantidad_modificada;
-                                i = dt_datagrid.Rows.Count;
                             }
-                            if (cantidad_modificada == 0)
-                            {
-                                nUD_cantidad.Value = 0;
-                                nUD_cantidad.Maximum = cantidad_modificada;
 
-                                i = dt_datagrid.Rows.Count;
-                            }
-                        }
-
-                        else
-                        {
-                            nUD_cantidad.Maximum = cantidad_original;
-                            nUD_cantidad.Value = 1;
                         }
 
                     }
-
                 }
+
             }
+            catch (Exception)
+            {
+                
+            }
+
         }
     }
 }
