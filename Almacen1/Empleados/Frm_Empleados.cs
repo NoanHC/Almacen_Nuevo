@@ -53,7 +53,6 @@ namespace Almacen1.Empleados
 
         void Borrar_Empleado(int Fila)
         {
-            //DialogResult Hola = MessageBox.Show("¿Desea borrar al empleado " + dt2.Rows[Fila][0].ToString() + "?", "Borrar empleado", MessageBoxButtons.YesNo);
             if (MessageBox.Show("¿Desea borrar al empleado " + dt2.Rows[Fila][0].ToString() + "?", "Borrar empleado", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 ObjEmpleados._delete(dt1.Rows[Fila][0].ToString());

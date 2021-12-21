@@ -13,7 +13,8 @@ namespace Almacen1.Productos
     public partial class Frm_ListadoProductos : Form
     {
         // Formas
-        Productos.Frm_Productos_Nuevo FormaProductos = new Productos.Frm_Productos_Nuevo();
+        Productos.Frm_Productos_Editar FormaProductosEditar;
+        Productos.Frm_Productos_Nuevo FormaProductosNuevo = new Frm_Productos_Nuevo();
 
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
@@ -22,6 +23,7 @@ namespace Almacen1.Productos
         // Datatable
         DataTable dt1 = new DataTable();
         DataTable dt2 = new DataTable();
+
         public Frm_ListadoProductos()
         {
             InitializeComponent();
@@ -41,12 +43,33 @@ namespace Almacen1.Productos
         }
         void Nuevo()
         {
-            FormaProductos.DelegadoActualizar = Carga;
-            FormaProductos.ShowDialog();
+            FormaProductosNuevo.DelegadoActualizar = Carga;
+            FormaProductosNuevo.ShowDialog();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Nuevo();
+        }
+        void EditarEmpleados(int Id)
+        {
+            FormaProductosEditar = new Productos.Frm_Productos_Editar(Id, dt1);
+            FormaProductosEditar.DelegadoActualizar = Carga;
+            FormaProductosEditar.ShowDialog();
+        }
+
+        private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    EditarEmpleados(e.RowIndex);
+                }
+                if (e.ColumnIndex == 1)
+                {
+                    //Borrar_Empleado(e.RowIndex);
+                }
+            }
         }
     }
 }

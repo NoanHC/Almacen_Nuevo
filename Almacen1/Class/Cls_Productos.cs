@@ -22,7 +22,7 @@ namespace Almacen1.Class
         }
         public bool _update(string nombre, string id_marca, string modelo, string parte, string id_factura, string descripcion, string cantidad, string id)
         {
-            string set = "nombre='" + nombre + "', id_marca='" + id_marca + "', modelo='" + modelo + "', parte='" + parte + "'";
+            string set = "nombre='" + nombre + "', id_marca='" + id_marca + "', modelo='" + modelo + "', parte='" + parte + "', id_factura='" + id_factura + "', descripcion='" + descripcion + "', cantidad='" + cantidad + "'";
             return method.update(table, set, "id_estudiante", id);
         }
         public void _get(DataGridView dgv)
@@ -42,7 +42,7 @@ namespace Almacen1.Class
         }
         public void _consult_Productos(DataTable dt)
         {
-            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca";
+            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_F.folio_factura as Folio, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca INNER JOIN tb_factura_almacen as T_F on T_P.id_factura = T_F.id_factura_almacen";
             method.Consultar(query, dt);
         }
         public void _consult_Factura(DataTable dt)
