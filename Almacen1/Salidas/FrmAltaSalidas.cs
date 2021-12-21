@@ -27,6 +27,7 @@ namespace Almacen1.Salidas
         int cantidad_original;
         int cantidad_modificada;
         int cantidad_final;
+        private object DataHelper;
 
         public FrmAltaSalidas()
         {
@@ -96,7 +97,10 @@ namespace Almacen1.Salidas
         void load()
         {
             utilidades._get_select_condicion(cbx_empleado, "tb_empleados", "WHERE id_puesto = 1");
+            utilidades.autocomplete_combobox(cbx_empleado);
             utilidades._get_select(cbx_marca, "tb_marca");
+            utilidades.autocomplete_combobox(cbx_marca);
+
         }
 
         private void FrmAltaSalidas_Load(object sender, EventArgs e)
@@ -111,7 +115,8 @@ namespace Almacen1.Salidas
                 //Trae series
                 string cbx = cbx_serie.Text;
                 utilidades._get_select_condicion(cbx_serie, "tb_series", "WHERE id_producto = " + cbx_producto.SelectedValue.ToString());
-
+                utilidades.autocomplete_combobox(cbx_serie);
+                
                 if (cbx_serie.Text == cbx)
                 {
                     nUD_cantidad.Enabled = true;
@@ -169,6 +174,7 @@ namespace Almacen1.Salidas
             try
             {
                 utilidades._get_select_condicion(cbx_producto, "tb_productos", "WHERE id_marca = " + cbx_marca.SelectedValue.ToString());
+                utilidades.autocomplete_combobox(cbx_producto);
             }
             catch (Exception)
             {
@@ -278,7 +284,14 @@ namespace Almacen1.Salidas
         {
             try
             {
-
+                if (cbx_serie.Text != "NINGUNA")
+                {
+                    cbx_serie.Enabled = true;
+                }
+                if (cbx_serie.Text == "NINGUNA")
+                {
+                    cbx_serie.Enabled = false;
+                }
 
                 if (cbx_serie.Text == "NINGUNA")
                 {
@@ -291,6 +304,7 @@ namespace Almacen1.Salidas
 
                     if (cantidad_original > 0)
                     {
+                        nUD_cantidad.Value = 1;
                         for (int i = 0; i < dt_datagrid.Rows.Count; i++)
                         {
                             if (cbx_producto.SelectedValue.ToString() == dt_datagrid.Rows[i]["id_prod"].ToString())
