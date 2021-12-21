@@ -102,3 +102,4 @@ D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Fr
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_Editar.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados_Nuevo.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_Nuevo.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_Editar.resources

@@ -279,7 +279,6 @@ namespace Almacen1.Salidas
             try
             {
 
-
                 if (cbx_serie.Text == "NINGUNA")
                 {
                     nUD_cantidad.Enabled = true;
@@ -291,6 +290,7 @@ namespace Almacen1.Salidas
 
                     if (cantidad_original > 0)
                     {
+                        nUD_cantidad.Value = 1;
                         for (int i = 0; i < dt_datagrid.Rows.Count; i++)
                         {
                             if (cbx_producto.SelectedValue.ToString() == dt_datagrid.Rows[i]["id_prod"].ToString())
