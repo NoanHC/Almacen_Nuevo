@@ -47,6 +47,8 @@
             // 
             // cbMarca
             // 
+            this.cbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(50, 118);
             this.cbMarca.Name = "cbMarca";
@@ -154,6 +156,8 @@
             // 
             // cbFactura
             // 
+            this.cbFactura.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbFactura.FormattingEnabled = true;
             this.cbFactura.Location = new System.Drawing.Point(50, 263);
             this.cbFactura.Name = "cbFactura";

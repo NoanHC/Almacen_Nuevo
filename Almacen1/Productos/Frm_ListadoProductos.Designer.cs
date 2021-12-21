@@ -114,7 +114,7 @@ namespace Almacen1.Productos
             // Editar
             // 
             this.Editar.HeaderText = "";
-            this.Editar.Image = global::Almacen1.Properties.Resources.Editar345;
+            this.Editar.Image = global::Almacen1.Properties.Resources.editar;
             this.Editar.Name = "Editar";
             // 
             // Borrar

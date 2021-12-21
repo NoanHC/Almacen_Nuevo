@@ -209,7 +209,7 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Frm_Productos_Editar";
             this.Text = "Frm_Productos_Editar";
             this.Load += new System.EventHandler(this.Frm_Productos_Editar_Load);
