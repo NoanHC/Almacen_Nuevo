@@ -12,9 +12,64 @@ namespace Almacen1.Productos
 {
     public partial class Frm_Productos_Editar : Form
     {
+        // Delegados
+        public Action DelegadoActualizar;
+
+        // Clases
+        Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
+
+        // datatable
+        DataTable dtM = new DataTable();
+        DataTable dtF = new DataTable();
+
         public Frm_Productos_Editar()
         {
             InitializeComponent();
+        }
+
+        void Listas(DataTable dt, ComboBox cb, int Caso)
+        {
+            cb.Items.Clear();
+            dt.Clear();
+            switch (Caso)
+            {
+                case 0:
+                    ObjProductos._consult_Marca(dt);
+                    break;
+                case 1:
+                    ObjProductos._consult_Factura(dt);
+                    break;
+                default:
+                    break;
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb.Items.Add(dt.Rows[i][1].ToString());
+            }
+        }
+
+        private void Frm_Productos_Editar_Load(object sender, EventArgs e)
+        {
+            Listas(dtM, cbMarca, 0);
+            Listas(dtF, cbFactura, 1);
+        }
+
+        string Ids(DataTable dtIds, ComboBox cbIds)
+        {
+            string ids = "";
+            for (int i = 0; i < dtIds.Rows.Count; i++)
+            {
+                if (cbIds.Text == dtIds.Rows[i][1].ToString())
+                {
+                    ids = dtIds.Rows[i][0].ToString();
+                }
+            }
+            return ids;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            //ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text);
         }
     }
 }

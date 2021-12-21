@@ -12,6 +12,9 @@ namespace Almacen1.Productos
 {
     public partial class Frm_Productos_Nuevo : Form
     {
+        // Delegados
+        public Action DelegadoActualizar;
+
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
 
