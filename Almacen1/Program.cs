@@ -18,7 +18,7 @@ namespace Almacen1
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
             
-            Application.Run(new Salidas.FrmAltaSalidas());
+            Application.Run(new Login());
         }
     }
 }

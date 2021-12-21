@@ -1,6 +1,6 @@
 ﻿namespace Almacen1.Empleados
 {
-    partial class Frm_Empleados_Añadir
+    partial class Frm_Empleados_Nuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -36,13 +36,13 @@
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.lblPuesto = new System.Windows.Forms.Label();
             this.cbEstatus = new System.Windows.Forms.ComboBox();
             this.lblEstatus = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
             this.lblMatricula = new System.Windows.Forms.Label();
             this.btnAñadir = new System.Windows.Forms.Button();
+            this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -109,13 +109,6 @@
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Dirección";
             // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Location = new System.Drawing.Point(39, 265);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(178, 20);
-            this.txtPuesto.TabIndex = 9;
-            // 
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
@@ -168,17 +161,25 @@
             this.btnAñadir.UseVisualStyleBackColor = true;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
+            // cbPuesto
+            // 
+            this.cbPuesto.FormattingEnabled = true;
+            this.cbPuesto.Location = new System.Drawing.Point(39, 265);
+            this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.Size = new System.Drawing.Size(178, 21);
+            this.cbPuesto.TabIndex = 15;
+            // 
             // Frm_Empleados_Añadir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 450);
+            this.Controls.Add(this.cbPuesto);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblEstatus);
             this.Controls.Add(this.cbEstatus);
-            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.lblPuesto);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
@@ -208,12 +209,12 @@
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.ComboBox cbEstatus;
         private System.Windows.Forms.Label lblEstatus;
         private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.ComboBox cbPuesto;
     }
 }
