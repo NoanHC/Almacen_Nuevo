@@ -41,6 +41,7 @@ namespace Almacen1.Productos
         }
         void Nuevo()
         {
+            FormaProductos.DelegadoActualizar = Carga;
             FormaProductos.ShowDialog();
         }
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -134,6 +134,12 @@
     <Compile Include="Productos\Frm_ListadoProductos.Designer.cs">
       <DependentUpon>Frm_ListadoProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Frm_Productos_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Frm_Productos_Editar.Designer.cs">
+      <DependentUpon>Frm_Productos_Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Frm_Productos_Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_ListadoProductos.resx">
       <DependentUpon>Frm_ListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Frm_Productos_Editar.resx">
+      <DependentUpon>Frm_Productos_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Productos_Nuevo.resx">
       <DependentUpon>Frm_Productos_Nuevo.cs</DependentUpon>
