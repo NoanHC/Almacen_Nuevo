@@ -173,16 +173,16 @@ namespace Almacen1.Salidas
                                 //nUD_cantidad.Maximum = cantidad_modificada;
                                 if (cantidad_modificada > 0)
                                 {
-                                    nUD_cantidad.Value = 1;
                                     nUD_cantidad.Maximum = cantidad_modificada;
+                                    nUD_cantidad.Value = 1;
                                     i = dt_datagrid.Rows.Count;
 
 
                                 }
                                 if (cantidad_modificada == 0)
                                 {
-                                    nUD_cantidad.Value = 0;
                                     nUD_cantidad.Maximum = cantidad_modificada;
+                                    nUD_cantidad.Value = 0;
 
                                     i = dt_datagrid.Rows.Count;
                                 }

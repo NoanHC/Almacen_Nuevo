@@ -86,7 +86,6 @@ D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Fr
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Emplados_Editar.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Emplados_Editar.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados.resources
-C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados_Añadir.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmBajaUsuario.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmListadoUsuarios.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmModificarUsuario.resources
@@ -100,3 +99,5 @@ D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.Frm
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Usuarios.FrmModificarUsuario.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados_Nuevo.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_Nuevo.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Empleados.Frm_Empleados_Nuevo.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_Nuevo.resources
