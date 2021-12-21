@@ -70,6 +70,7 @@ namespace Almacen1.Productos
         void Nuevo()
         {
             ObjProductos._set(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text);
+            DelegadoActualizar();
         }
         private void btnAñadir_Click(object sender, EventArgs e)
         {

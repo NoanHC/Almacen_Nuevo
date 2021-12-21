@@ -30,6 +30,8 @@ namespace Almacen1.Productos
         }
         void Carga()
         {
+            dt1.Clear();
+            dt2.Clear();
             ObjProductos._consult_Productos(dt1);
             dt2 = dt1.Copy();
             dt2.Columns.Remove("id");
@@ -57,6 +59,15 @@ namespace Almacen1.Productos
             FormaProductosEditar.ShowDialog();
         }
 
+        void Borrar_Producto(int Fila)
+        {
+            if (MessageBox.Show("¿Desea borrar el producto " + dt2.Rows[Fila][0].ToString() + "?", "Borrar producto", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ObjProductos._delete(dt1.Rows[Fila][0].ToString());
+            }
+            Carga();
+        }
+
         private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -67,7 +78,7 @@ namespace Almacen1.Productos
                 }
                 if (e.ColumnIndex == 1)
                 {
-                    //Borrar_Empleado(e.RowIndex);
+                    Borrar_Producto(e.RowIndex);
                 }
             }
         }
