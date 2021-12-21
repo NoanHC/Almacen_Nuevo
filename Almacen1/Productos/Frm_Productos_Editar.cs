@@ -19,12 +19,18 @@ namespace Almacen1.Productos
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
 
         // datatable
+        DataTable dt = new DataTable();
         DataTable dtM = new DataTable();
         DataTable dtF = new DataTable();
+        
+        // Variables
+        int Id;
 
-        public Frm_Productos_Editar()
+        public Frm_Productos_Editar(int Id, DataTable dt)
         {
             InitializeComponent();
+            this.Id = Id;
+            this.dt = dt;
         }
 
         void Listas(DataTable dt, ComboBox cb, int Caso)
@@ -47,11 +53,22 @@ namespace Almacen1.Productos
                 cb.Items.Add(dt.Rows[i][1].ToString());
             }
         }
-
+        void Carga()
+        {
+            txtId.Text = dt.Rows[Id][0].ToString();
+            txtNombre.Text = dt.Rows[Id][1].ToString();
+            cbMarca.Text = dt.Rows[Id][2].ToString();
+            Listas(dtM, cbMarca, 0);
+            txtModelo.Text = dt.Rows[Id][3].ToString();
+            txtParte.Text = dt.Rows[Id][4].ToString();
+            cbFactura.Text = dt.Rows[Id][5].ToString();
+            Listas(dtF, cbFactura, 1);
+            txtDescripcion.Text = dt.Rows[Id][6].ToString();
+            txtCantidad.Text = dt.Rows[Id][7].ToString();
+        }
         private void Frm_Productos_Editar_Load(object sender, EventArgs e)
         {
-            Listas(dtM, cbMarca, 0);
-            Listas(dtF, cbFactura, 1);
+            Carga();
         }
 
         string Ids(DataTable dtIds, ComboBox cbIds)
@@ -69,7 +86,8 @@ namespace Almacen1.Productos
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            //ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text);
+            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text, txtId.Text);
+            DelegadoActualizar();
         }
     }
 }

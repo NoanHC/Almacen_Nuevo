@@ -109,6 +109,7 @@ namespace Almacen1.Productos
             this.DGV1.RowHeadersVisible = false;
             this.DGV1.Size = new System.Drawing.Size(803, 351);
             this.DGV1.TabIndex = 3;
+            this.DGV1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellContentClick);
             // 
             // Editar
             // 
