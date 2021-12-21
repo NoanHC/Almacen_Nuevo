@@ -17,7 +17,7 @@ namespace Almacen1.Productos
 
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
-
+        Class.ClsUtilidades Utilidades = new Class.ClsUtilidades();
         // datatable
         DataTable dtM = new DataTable();
         DataTable dtF = new DataTable();
@@ -51,7 +51,9 @@ namespace Almacen1.Productos
         private void Frm_Productos_Nuevo_Load(object sender, EventArgs e)
         {
             Listas(dtM, cbMarca, 0);
+            Utilidades.autocomplete_combobox(cbMarca);
             Listas(dtF, cbFactura, 1);
+            Utilidades.autocomplete_combobox(cbFactura);
         }
 
         string Ids(DataTable dtIds, ComboBox cbIds)
