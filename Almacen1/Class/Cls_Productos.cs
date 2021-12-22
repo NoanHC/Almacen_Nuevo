@@ -40,6 +40,11 @@ namespace Almacen1.Class
             query = "SELECT * FROM `tb_marca`";
             method.Consultar(query, dt);
         }
+        public void _consult_Modelo(DataTable dt, string id)
+        {
+            query = "SELECT id_producto, modelo FROM tb_productos WHERE id_producto = " + id;
+            method.Consultar(query, dt);
+        }
         public void _consult_Productos(DataTable dt)
         {
             query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_S.serie as Serie, T_F.folio_factura as Folio, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca INNER JOIN tb_factura_almacen as T_F on T_P.id_factura = T_F.id_factura_almacen LEFT JOIN tb_series as T_S ON T_P.id_producto = T_S.id_producto ";

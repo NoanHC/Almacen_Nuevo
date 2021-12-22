@@ -86,11 +86,11 @@ namespace Almacen1.Main
             this.btn_entradas.ForeColor = System.Drawing.Color.White;
             this.btn_entradas.Image = global::Almacen1.Properties.Resources.inventario;
             this.btn_entradas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_entradas.Location = new System.Drawing.Point(10, 148);
+            this.btn_entradas.Location = new System.Drawing.Point(10, 214);
             this.btn_entradas.Name = "btn_entradas";
             this.btn_entradas.Size = new System.Drawing.Size(221, 43);
             this.btn_entradas.TabIndex = 41;
-            this.btn_entradas.Text = "Entradas";
+            this.btn_entradas.Text = "Devoluciones";
             this.btn_entradas.UseVisualStyleBackColor = true;
             // 
             // tbn_salidas
@@ -101,12 +101,13 @@ namespace Almacen1.Main
             this.tbn_salidas.ForeColor = System.Drawing.Color.White;
             this.tbn_salidas.Image = global::Almacen1.Properties.Resources.descripcion_del_producto;
             this.tbn_salidas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tbn_salidas.Location = new System.Drawing.Point(10, 213);
+            this.tbn_salidas.Location = new System.Drawing.Point(10, 152);
             this.tbn_salidas.Name = "tbn_salidas";
             this.tbn_salidas.Size = new System.Drawing.Size(221, 43);
             this.tbn_salidas.TabIndex = 40;
-            this.tbn_salidas.Text = "Salidas";
+            this.tbn_salidas.Text = "Entregas";
             this.tbn_salidas.UseVisualStyleBackColor = true;
+            this.tbn_salidas.Click += new System.EventHandler(this.tbn_salidas_Click);
             // 
             // btn_usuarios
             // 
@@ -267,9 +268,9 @@ namespace Almacen1.Main
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(72, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 39);
+            this.label1.Size = new System.Drawing.Size(238, 39);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Almacen";
+            this.label1.Text = "Almacen WIS";
             // 
             // pB_mobile
             // 

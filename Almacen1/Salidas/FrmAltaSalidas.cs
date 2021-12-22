@@ -27,13 +27,32 @@ namespace Almacen1.Salidas
         int cantidad_original;
         int cantidad_modificada;
         int cantidad_final;
-        private object DataHelper;
 
         public FrmAltaSalidas()
         {
             InitializeComponent();
         }
+        private Task Cargar1000()
+        {
+            return Task.Delay(10);
+        }
 
+        void Listas(DataTable dt, ComboBox cb, int Caso)
+        {
+            cb.Items.Clear();
+            dt.Clear();
+            switch (Caso)
+            {
+                case 0:
+                    productos._consult_Modelo(dt, cbx_producto.SelectedValue.ToString());
+                    break;
+                
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cb.Items.Add(dt.Rows[i][1].ToString());
+            }
+        }
         void AgregarDatatable()
         {
 
@@ -44,6 +63,7 @@ namespace Almacen1.Salidas
                 dt_datagrid.Columns.Add("mar", typeof(string));
                 dt_datagrid.Columns.Add("id_prod", typeof(string));
                 dt_datagrid.Columns.Add("prod", typeof(string));
+                dt_datagrid.Columns.Add("model", typeof(string));
                 dt_datagrid.Columns.Add("id_ser", typeof(string));
                 dt_datagrid.Columns.Add("serie", typeof(string));
                 dt_datagrid.Columns.Add("cant", typeof(string));
@@ -73,7 +93,14 @@ namespace Almacen1.Salidas
 
                 if (existente == "n")
                 {
-                    dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, "", cbx_serie.Text, nUD_cantidad.Value);
+                    if (cbx_serie.Text == "NINGUNA")
+                    {
+                        dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_modelo.Text, "", cbx_serie.Text, nUD_cantidad.Value);
+                    }
+                    if (cbx_serie.Text != "NINGUNA")
+                    {
+                        dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_modelo.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
+                    }
                     existente = "y";
                 }
 
@@ -84,11 +111,11 @@ namespace Almacen1.Salidas
 
                 if (cbx_serie.SelectedValue == null)
                 {
-                    dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, "", cbx_serie.Text, nUD_cantidad.Value);
+                    dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_modelo.Text, "", cbx_serie.Text, nUD_cantidad.Value);
                 }
                 else
                 {
-                    dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
+                    dt_datagrid.Rows.Add(cbx_empleado.SelectedValue.ToString(), cbx_empleado.Text, cbx_marca.Text, cbx_producto.SelectedValue.ToString(), cbx_producto.Text, cbx_modelo.Text, cbx_serie.SelectedValue.ToString(), cbx_serie.Text, nUD_cantidad.Value);
                 }
             }
 
@@ -112,6 +139,13 @@ namespace Almacen1.Salidas
         {
             try
             {
+                DataTable dt_modelo = new DataTable();
+                Listas(dt_modelo, cbx_modelo, 0);
+                cbx_modelo.SelectedIndex = 0;
+                utilidades.autocomplete_combobox(cbx_modelo);
+
+
+
                 //Trae series
                 string cbx = cbx_serie.Text;
                 utilidades._get_select_condicion(cbx_serie, "tb_series", "WHERE id_producto = " + cbx_producto.SelectedValue.ToString());
@@ -182,10 +216,13 @@ namespace Almacen1.Salidas
             }
         }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
+        private async void btn_agregar_Click(object sender, EventArgs e)
         {
+            await Cargar1000();
             AgregarDatatable();
+            await Cargar1000();
             Asignar();
+            await Cargar1000();
             resta();
         }
 
@@ -212,18 +249,18 @@ namespace Almacen1.Salidas
 
             if (cantidad_modificada >= 1)
             {
-                nUD_cantidad.Value = 1;
                 nUD_cantidad.Maximum = cantidad_modificada;
+                nUD_cantidad.Value = 1;
             }
             if (cantidad_modificada == 1)
             {
-                nUD_cantidad.Value = 1;
                 nUD_cantidad.Maximum = 1;
+                nUD_cantidad.Value = 1;
             }
             if (cantidad_modificada == 0)
             {
-                nUD_cantidad.Value = 0;
                 nUD_cantidad.Maximum = cantidad_modificada;
+                nUD_cantidad.Value = 0;
             }
 
         }

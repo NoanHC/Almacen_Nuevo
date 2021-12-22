@@ -90,5 +90,11 @@ namespace Almacen1.Main
             Productos.Frm_ListadoProductos fh = new Productos.Frm_ListadoProductos();
             add_panel(fh);
         }
+
+        private void tbn_salidas_Click(object sender, EventArgs e)
+        {
+            Salidas.FrmAltaSalidas fh = new Salidas.FrmAltaSalidas();
+            add_panel(fh);
+        }
     }
 }

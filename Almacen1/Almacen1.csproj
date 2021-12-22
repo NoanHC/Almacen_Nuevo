@@ -98,11 +98,11 @@
     <Compile Include="Empleados\Frm_Empleados_Nuevo.Designer.cs">
       <DependentUpon>Frm_Empleados_Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entradas\FrmAltaEntrada.cs">
+    <Compile Include="Entradas\FrmAltaEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entradas\FrmAltaEntrada.Designer.cs">
-      <DependentUpon>FrmAltaEntrada.cs</DependentUpon>
+    <Compile Include="Entradas\FrmAltaEntradas.Designer.cs">
+      <DependentUpon>FrmAltaEntradas.cs</DependentUpon>
     </Compile>
     <Compile Include="Entradas\FrmListadoEntradas.cs">
       <SubType>Form</SubType>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="Empleados\Frm_Empleados_Nuevo.resx">
       <DependentUpon>Frm_Empleados_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entradas\FrmAltaEntrada.resx">
-      <DependentUpon>FrmAltaEntrada.cs</DependentUpon>
+    <EmbeddedResource Include="Entradas\FrmAltaEntradas.resx">
+      <DependentUpon>FrmAltaEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entradas\FrmListadoEntradas.resx">
       <DependentUpon>FrmListadoEntradas.cs</DependentUpon>
