@@ -105,3 +105,4 @@ C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Entradas.FrmAlta
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Entradas.FrmAltaEntradas.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_MAC_Serie.resources
 C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Productos_MAC_Serie.resources
+C:\xampp\htdocs\Repos\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.OrdenCompra.FrmAltaOrdenes.resources

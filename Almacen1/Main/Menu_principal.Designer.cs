@@ -164,7 +164,7 @@ namespace Almacen1.Main
             this.btn_orden.TabIndex = 34;
             this.btn_orden.Text = "     Orden de compra";
             this.btn_orden.UseVisualStyleBackColor = true;
-            this.btn_orden.Click += new System.EventHandler(this.btn_facturas_Click);
+            this.btn_orden.Click += new System.EventHandler(this.btn_orden_Click);
             // 
             // btn_productos
             // 

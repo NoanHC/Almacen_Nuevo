@@ -197,7 +197,7 @@ namespace Almacen1.Entradas
             if (cantidad_modificada == 0)
             {
                 //nUD_cantidad.Maximum = cantidad_modificada;
-                nUD_cantidad.Value = 0;
+                nUD_cantidad.Value = 1;
             }
 
         }
@@ -252,7 +252,7 @@ namespace Almacen1.Entradas
                                 if (cantidad_modificada == 0)
                                 {
                                     //nUD_cantidad.Maximum = cantidad_modificada;
-                                    nUD_cantidad.Value = 0;
+                                    nUD_cantidad.Value = 1;
 
                                     i = dt_datagrid.Rows.Count;
                                 }
@@ -313,7 +313,7 @@ namespace Almacen1.Entradas
                             }
                             if (cantidad_modificada == 0)
                             {
-                                nUD_cantidad.Value = 0;
+                                nUD_cantidad.Value = 1;
                                 //nUD_cantidad.Maximum = cantidad_modificada;
 
                                 i = dt_datagrid.Rows.Count;
@@ -379,7 +379,7 @@ namespace Almacen1.Entradas
                                 }
                                 if (cantidad_modificada == 0)
                                 {
-                                    nUD_cantidad.Value = 0;
+                                    nUD_cantidad.Value = 1;
                                     //nUD_cantidad.Maximum = cantidad_modificada;
 
                                     i = dt_datagrid.Rows.Count;

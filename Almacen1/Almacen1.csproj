@@ -80,6 +80,7 @@
     <Compile Include="Class\Cls_Empleados.cs" />
     <Compile Include="Class\Cls_Facturas.cs" />
     <Compile Include="Class\Cls_Facturas_Detalle.cs" />
+    <Compile Include="Class\Cls_Ordenes.cs" />
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
     <Compile Include="Empleados\Frm_Emplados_Editar.cs">
@@ -129,6 +130,12 @@
     </Compile>
     <Compile Include="Main\Menu_principal.Designer.cs">
       <DependentUpon>Menu_principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenCompra\FrmAltaOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenCompra\FrmAltaOrdenes.Designer.cs">
+      <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\Frm_ListadoProductos.cs">
       <SubType>Form</SubType>
@@ -209,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Menu_principal.resx">
       <DependentUpon>Menu_principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenCompra\FrmAltaOrdenes.resx">
+      <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_ListadoProductos.resx">
       <DependentUpon>Frm_ListadoProductos.cs</DependentUpon>

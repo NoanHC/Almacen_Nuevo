@@ -73,13 +73,6 @@ namespace Almacen1.Main
             add_panel(fh);
         }
 
-        private void btn_facturas_Click(object sender, EventArgs e)
-        {
-            LimpiarPanel();
-            Facturas.Frm_Facturas fh = new Facturas.Frm_Facturas();
-            add_panel(fh);
-        }
-
         private void btn_usuarios_Click(object sender, EventArgs e)
         {
             LimpiarPanel();
@@ -110,6 +103,13 @@ namespace Almacen1.Main
         {
             LimpiarPanel();
             Entradas.FrmAltaEntradas fh = new Entradas.FrmAltaEntradas();
+            add_panel(fh);
+        }
+
+        private void btn_orden_Click(object sender, EventArgs e)
+        {
+            LimpiarPanel();
+            OrdenCompra.FrmAltaOrdenes fh = new OrdenCompra.FrmAltaOrdenes();
             add_panel(fh);
         }
     }
