@@ -12,15 +12,20 @@ namespace Almacen1.Productos
 {
     public partial class Frm_Productos_Nuevo : Form
     {
+        // Formas
+        Productos.Frm_Productos_MAC_Serie FormaMACYSerie;
         // Delegados
         public Action DelegadoActualizar;
 
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
         Class.ClsUtilidades Utilidades = new Class.ClsUtilidades();
+
         // datatable
         DataTable dtM = new DataTable();
         DataTable dtF = new DataTable();
+        DataTable dtN = new DataTable();
+        DataTable dtN2 = new DataTable();
 
 
         public Frm_Productos_Nuevo()
@@ -74,9 +79,58 @@ namespace Almacen1.Productos
             ObjProductos._set(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text);
             DelegadoActualizar();
         }
+        void SeriesYMACs ()
+        {
+            if (cbxMAC.Checked && cbxSeries.Checked)
+            {
+                FormaMACYSerie = new Productos.Frm_Productos_MAC_Serie(3, dtN);
+                FormaMACYSerie.ShowDialog();
+            }
+            else
+            {
+                if (cbxMAC.Checked)
+                {
+                    FormaMACYSerie = new Productos.Frm_Productos_MAC_Serie(1, dtN);
+                    FormaMACYSerie.ShowDialog();
+                }
+                else
+                {
+                    if (cbxSeries.Checked)
+                    {
+                        FormaMACYSerie = new Productos.Frm_Productos_MAC_Serie(2, dtN);
+                        FormaMACYSerie.ShowDialog();
+                    }
+                }
+            }
+        }
+        void NuevaMarca ()
+        {
+            bool AuxMarca = true;
+            for (int i = 0; i < dtM.Rows.Count; i++)
+            {
+                if (cbMarca.Text == dtM.Rows[i][1].ToString())
+                {
+                    AuxMarca = false;
+                }
+            }
+            if (AuxMarca)
+            {
+                if (MessageBox.Show("La marca " + cbMarca.Text + " no esta registrada, ¿desea registrarla?", "Registrar marca", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    ObjProductos._set_Marca(cbMarca.Text);
+                }
+            }
+        }
         private void btnAñadir_Click(object sender, EventArgs e)
         {
+            NuevaMarca();
             Nuevo();
+            ObjProductos._consult_Productos_Ultimo(dtN);
+            for (int i = 0; i < Convert.ToInt32(txtCantidad.Text) -1; i++)
+            {
+                dtN.Rows.Add(dtN.Rows[0][0].ToString(), dtN.Rows[0][1].ToString(), dtN.Rows[0][2].ToString(), dtN.Rows[0][3].ToString(), dtN.Rows[0][4].ToString(), dtN.Rows[0][5].ToString(), dtN.Rows[0][6].ToString());
+            }
+            SeriesYMACs();
         }
     }
 }
