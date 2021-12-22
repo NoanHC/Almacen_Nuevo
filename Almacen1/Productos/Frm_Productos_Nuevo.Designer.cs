@@ -43,6 +43,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.cbFactura = new System.Windows.Forms.ComboBox();
             this.lblNoFactura = new System.Windows.Forms.Label();
+            this.cbxSeries = new System.Windows.Forms.CheckBox();
+            this.cbxMAC = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbMarca
@@ -50,7 +52,7 @@
             this.cbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(50, 118);
+            this.cbMarca.Location = new System.Drawing.Point(50, 78);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(178, 21);
             this.cbMarca.TabIndex = 30;
@@ -67,7 +69,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(50, 364);
+            this.txtCantidad.Location = new System.Drawing.Point(50, 324);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(178, 20);
             this.txtCantidad.TabIndex = 28;
@@ -75,7 +77,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(47, 348);
+            this.lblCantidad.Location = new System.Drawing.Point(47, 308);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 27;
@@ -84,7 +86,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(47, 298);
+            this.lblDescripcion.Location = new System.Drawing.Point(47, 258);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 24;
@@ -92,7 +94,7 @@
             // 
             // txtParte
             // 
-            this.txtParte.Location = new System.Drawing.Point(50, 215);
+            this.txtParte.Location = new System.Drawing.Point(50, 175);
             this.txtParte.Name = "txtParte";
             this.txtParte.Size = new System.Drawing.Size(178, 20);
             this.txtParte.TabIndex = 23;
@@ -100,7 +102,7 @@
             // lblParte
             // 
             this.lblParte.AutoSize = true;
-            this.lblParte.Location = new System.Drawing.Point(47, 199);
+            this.lblParte.Location = new System.Drawing.Point(47, 159);
             this.lblParte.Name = "lblParte";
             this.lblParte.Size = new System.Drawing.Size(32, 13);
             this.lblParte.TabIndex = 22;
@@ -108,7 +110,7 @@
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(50, 166);
+            this.txtModelo.Location = new System.Drawing.Point(50, 126);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(178, 20);
             this.txtModelo.TabIndex = 21;
@@ -116,7 +118,7 @@
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(47, 150);
+            this.lblModelo.Location = new System.Drawing.Point(47, 110);
             this.lblModelo.Name = "lblModelo";
             this.lblModelo.Size = new System.Drawing.Size(42, 13);
             this.lblModelo.TabIndex = 20;
@@ -124,7 +126,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(50, 314);
+            this.txtDescripcion.Location = new System.Drawing.Point(50, 274);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(178, 20);
             this.txtDescripcion.TabIndex = 19;
@@ -132,7 +134,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(47, 102);
+            this.lblMarca.Location = new System.Drawing.Point(47, 62);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 18;
@@ -140,7 +142,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(50, 70);
+            this.txtNombre.Location = new System.Drawing.Point(50, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(178, 20);
             this.txtNombre.TabIndex = 17;
@@ -148,7 +150,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(47, 54);
+            this.lblNombre.Location = new System.Drawing.Point(47, 14);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 16;
@@ -159,7 +161,7 @@
             this.cbFactura.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbFactura.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbFactura.FormattingEnabled = true;
-            this.cbFactura.Location = new System.Drawing.Point(50, 263);
+            this.cbFactura.Location = new System.Drawing.Point(50, 223);
             this.cbFactura.Name = "cbFactura";
             this.cbFactura.Size = new System.Drawing.Size(178, 21);
             this.cbFactura.TabIndex = 32;
@@ -167,17 +169,39 @@
             // lblNoFactura
             // 
             this.lblNoFactura.AutoSize = true;
-            this.lblNoFactura.Location = new System.Drawing.Point(47, 247);
+            this.lblNoFactura.Location = new System.Drawing.Point(47, 207);
             this.lblNoFactura.Name = "lblNoFactura";
             this.lblNoFactura.Size = new System.Drawing.Size(63, 13);
             this.lblNoFactura.TabIndex = 31;
             this.lblNoFactura.Text = "No. Factura";
+            // 
+            // cbxSeries
+            // 
+            this.cbxSeries.AutoSize = true;
+            this.cbxSeries.Location = new System.Drawing.Point(30, 373);
+            this.cbxSeries.Name = "cbxSeries";
+            this.cbxSeries.Size = new System.Drawing.Size(50, 17);
+            this.cbxSeries.TabIndex = 33;
+            this.cbxSeries.Text = "Serie";
+            this.cbxSeries.UseVisualStyleBackColor = true;
+            // 
+            // cbxMAC
+            // 
+            this.cbxMAC.AutoSize = true;
+            this.cbxMAC.Location = new System.Drawing.Point(204, 373);
+            this.cbxMAC.Name = "cbxMAC";
+            this.cbxMAC.Size = new System.Drawing.Size(49, 17);
+            this.cbxMAC.TabIndex = 34;
+            this.cbxMAC.Text = "MAC";
+            this.cbxMAC.UseVisualStyleBackColor = true;
             // 
             // Frm_Productos_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 439);
+            this.Controls.Add(this.cbxMAC);
+            this.Controls.Add(this.cbxSeries);
             this.Controls.Add(this.cbFactura);
             this.Controls.Add(this.lblNoFactura);
             this.Controls.Add(this.cbMarca);
@@ -219,5 +243,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ComboBox cbFactura;
         private System.Windows.Forms.Label lblNoFactura;
+        private System.Windows.Forms.CheckBox cbxSeries;
+        private System.Windows.Forms.CheckBox cbxMAC;
     }
 }

@@ -140,6 +140,12 @@
     <Compile Include="Productos\Frm_Productos_Editar.Designer.cs">
       <DependentUpon>Frm_Productos_Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Frm_Productos_MAC_Serie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Frm_Productos_MAC_Serie.Designer.cs">
+      <DependentUpon>Frm_Productos_MAC_Serie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Frm_Productos_Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Productos_Editar.resx">
       <DependentUpon>Frm_Productos_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Frm_Productos_MAC_Serie.resx">
+      <DependentUpon>Frm_Productos_MAC_Serie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Productos_Nuevo.resx">
       <DependentUpon>Frm_Productos_Nuevo.cs</DependentUpon>

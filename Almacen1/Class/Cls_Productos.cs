@@ -20,6 +20,13 @@ namespace Almacen1.Class
             string values = "'" + nombre + "','" + id_marca + "','" + modelo + "','" + parte + "','" + id_factura + "','" + descripcion + "','" + cantidad + "'";
             return method.set(table, campos, values);
         }
+        public bool _set_Marca (string marca)
+        {
+            string campos = "marca";
+            string values = "'" + marca + "'";
+            return method.set("tb_marca", campos, values);
+        }
+
         public bool _update(string nombre, string id_marca, string modelo, string parte, string id_factura, string descripcion, string cantidad, string id_producto)
         {
             string set = "nombre='" + nombre + "', id_marca='" + id_marca + "', modelo='" + modelo + "', parte='" + parte + "', id_factura='" + id_factura + "', descripcion='" + descripcion + "', cantidad='" + cantidad + "'";
@@ -47,7 +54,12 @@ namespace Almacen1.Class
         }
         public void _consult_Productos(DataTable dt)
         {
-            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_S.serie as Serie, T_F.folio_factura as Folio, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca INNER JOIN tb_factura_almacen as T_F on T_P.id_factura = T_F.id_factura_almacen LEFT JOIN tb_series as T_S ON T_P.id_producto = T_S.id_producto ";
+            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_S.serie as Serie, T_Mac.mac as MAC, T_F.folio_factura as Folio, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca INNER JOIN tb_factura_almacen as T_F on T_P.id_factura = T_F.id_factura_almacen LEFT JOIN tb_series as T_S ON T_P.id_producto = T_S.id_producto LEFT JOIN tb_macs as T_Mac ON T_S.id_serie = T_Mac.id_serie";
+            method.Consultar(query, dt);
+        }
+        public void _consult_Productos_Ultimo(DataTable dt)
+        {
+            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_S.serie as Serie, T_Mac.mac as MAC, T_F.folio_factura as Folio, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca INNER JOIN tb_factura_almacen as T_F on T_P.id_factura = T_F.id_factura_almacen LEFT JOIN tb_series as T_S ON T_P.id_producto = T_S.id_producto LEFT JOIN tb_macs as T_Mac ON T_S.id_serie = T_Mac.id_serie GROUP BY T_P.id_producto DESC, T_S.id_serie LIMIT 1";
             method.Consultar(query, dt);
         }
         public void _consult_Factura(DataTable dt)

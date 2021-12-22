@@ -61,10 +61,10 @@ namespace Almacen1.Productos
             Listas(dtM, cbMarca, 0);
             txtModelo.Text = dt.Rows[Id][3].ToString();
             txtParte.Text = dt.Rows[Id][4].ToString();
-            cbFactura.Text = dt.Rows[Id][5].ToString();
+            cbFactura.Text = dt.Rows[Id][7].ToString();
             Listas(dtF, cbFactura, 1);
-            txtDescripcion.Text = dt.Rows[Id][6].ToString();
-            txtCantidad.Text = dt.Rows[Id][7].ToString();
+            txtDescripcion.Text = dt.Rows[Id][8].ToString();
+            txtCantidad.Text = dt.Rows[Id][9].ToString();
         }
         private void Frm_Productos_Editar_Load(object sender, EventArgs e)
         {
