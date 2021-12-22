@@ -22,6 +22,10 @@ namespace Almacen1.Main
             InitializeComponent();
         }
 
+        public void LimpiarPanel()
+        {
+            this.panel_forms.Controls.Clear();
+        }
         void add_panel(Form fh)
         {
             this.panel_forms.Controls.Clear();
@@ -64,18 +68,21 @@ namespace Almacen1.Main
 
         private void btn_empleados_Click(object sender, EventArgs e)
         {
+            LimpiarPanel();
             Empleados.Frm_Empleados fh = new Empleados.Frm_Empleados();
             add_panel(fh);
         }
 
         private void btn_facturas_Click(object sender, EventArgs e)
         {
+            LimpiarPanel();
             Facturas.Frm_Facturas fh = new Facturas.Frm_Facturas();
             add_panel(fh);
         }
 
         private void btn_usuarios_Click(object sender, EventArgs e)
         {
+            LimpiarPanel();
             Usuarios.FrmListadoUsuarios fh = new Usuarios.FrmListadoUsuarios();
             add_panel(fh);
         }
@@ -87,13 +94,22 @@ namespace Almacen1.Main
 
         private void btn_productos_Click(object sender, EventArgs e)
         {
+            LimpiarPanel();
             Productos.Frm_ListadoProductos fh = new Productos.Frm_ListadoProductos();
             add_panel(fh);
         }
 
         private void tbn_salidas_Click(object sender, EventArgs e)
         {
+            LimpiarPanel();
             Salidas.FrmAltaSalidas fh = new Salidas.FrmAltaSalidas();
+            add_panel(fh);
+        }
+
+        private void btn_entradas_Click(object sender, EventArgs e)
+        {
+            LimpiarPanel();
+            Entradas.FrmAltaEntradas fh = new Entradas.FrmAltaEntradas();
             add_panel(fh);
         }
     }

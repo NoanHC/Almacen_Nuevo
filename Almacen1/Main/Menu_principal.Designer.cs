@@ -92,6 +92,7 @@ namespace Almacen1.Main
             this.btn_entradas.TabIndex = 41;
             this.btn_entradas.Text = "Devoluciones";
             this.btn_entradas.UseVisualStyleBackColor = true;
+            this.btn_entradas.Click += new System.EventHandler(this.btn_entradas_Click);
             // 
             // tbn_salidas
             // 
