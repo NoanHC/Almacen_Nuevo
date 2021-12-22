@@ -32,6 +32,11 @@ namespace Almacen1.Class
             string set = "nombre='" + nombre + "', id_marca='" + id_marca + "', modelo='" + modelo + "', parte='" + parte + "', id_factura='" + id_factura + "', descripcion='" + descripcion + "', cantidad='" + cantidad + "'";
             return method.update(table, set, "id_producto", id_producto);
         }
+        public bool _update_cantidad(string cantidad, string id_producto)
+        {
+            string set = "cantidad='" + cantidad + "'";
+            return method.update(table, set, "id_producto", id_producto);
+        }
         public void _get(DataGridView dgv)
         {
             query = "SELECT id_estudiante as 'Id', nombre as 'Nombre', matricula as 'Matricula', direccion as 'Direccion', celular as 'Celular' FROM tb_estudiante";

@@ -16,6 +16,7 @@ namespace Almacen1.Entradas
         Class.Cls_Empleados empleados = new Class.Cls_Empleados();
         Class.Cls_Productos productos = new Class.Cls_Productos();
         Class.ClsUtilidades utilidades = new Class.ClsUtilidades();
+        Class.ClsDevoluciones devoluciones = new Class.ClsDevoluciones();
 
         //Datatables
         DataTable dt_empleados = new DataTable();
@@ -31,6 +32,28 @@ namespace Almacen1.Entradas
         public FrmAltaEntradas()
         {
             InitializeComponent();
+        }
+
+        void guardar()
+        {
+            try
+            {
+                foreach (DataRow item in dt_datagrid.Rows)
+                {
+                    DataTable dt = new DataTable();
+                    productos._consult(dt, item["id_prod"].ToString());
+                    int cantidad_final = Convert.ToInt32(dt.Rows[0]["CANTIDAD"].ToString()) + Convert.ToInt32(item["cant"].ToString());
+                    devoluciones._set(item["cant"].ToString(), item["id_emp"].ToString(), item["id_prod"].ToString(), item["id_ser"].ToString());
+                    productos._update_cantidad(cantidad_final.ToString(), item["id_prod"].ToString());
+                }
+
+                MessageBox.Show("Guardado con exito");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al guardar");
+            }
+
         }
 
         private Task Cargar1000()
@@ -82,7 +105,7 @@ namespace Almacen1.Entradas
 
                     if (id == cbx_producto.SelectedValue.ToString())
                     {
-                        //dt_datagrid.Rows[i]["cant"] = cant + nUD_cantidad.Value;
+                        dt_datagrid.Rows[i]["cant"] = cant + nUD_cantidad.Value;
                         existente = "y";
                         i = dt_datagrid.Rows.Count;
                     }
@@ -379,6 +402,11 @@ namespace Almacen1.Entradas
             {
 
             }
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            guardar();
         }
     }
 }
