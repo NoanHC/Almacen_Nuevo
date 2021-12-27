@@ -10,7 +10,7 @@ namespace Almacen1.Class
     {
         ClsMethod method = new ClsMethod();
         string table = "tb_devoluciones";
-        string query = "";
+        //string query = "";
 
         public bool _set(string cantidad, string id_empleado, string id_producto, string id_serie)
         {

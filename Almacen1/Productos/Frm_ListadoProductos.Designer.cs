@@ -134,6 +134,7 @@ namespace Almacen1.Productos
             this.Name = "Frm_ListadoProductos";
             this.Text = "Frm_ListadoProductos";
             this.Load += new System.EventHandler(this.Frm_ListadoProductos_Load);
+            this.SizeChanged += new System.EventHandler(this.Frm_ListadoProductos_SizeChanged);
             this.PanelSuperior.ResumeLayout(false);
             this.PanelSuperior.PerformLayout();
             this.PanelDGV1.ResumeLayout(false);

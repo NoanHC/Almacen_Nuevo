@@ -45,6 +45,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.lblEstatus = new System.Windows.Forms.Label();
+            this.cbEstatus = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cbFactura
@@ -74,7 +76,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(72, 422);
+            this.btnActualizar.Location = new System.Drawing.Point(71, 461);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 44;
@@ -84,7 +86,7 @@
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(26, 382);
+            this.txtCantidad.Location = new System.Drawing.Point(26, 381);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(178, 20);
             this.txtCantidad.TabIndex = 43;
@@ -92,7 +94,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(23, 366);
+            this.lblCantidad.Location = new System.Drawing.Point(23, 365);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(49, 13);
             this.lblCantidad.TabIndex = 42;
@@ -187,11 +189,30 @@
             this.lblId.TabIndex = 48;
             this.lblId.Text = "Id";
             // 
+            // lblEstatus
+            // 
+            this.lblEstatus.AutoSize = true;
+            this.lblEstatus.Location = new System.Drawing.Point(23, 410);
+            this.lblEstatus.Name = "lblEstatus";
+            this.lblEstatus.Size = new System.Drawing.Size(42, 13);
+            this.lblEstatus.TabIndex = 50;
+            this.lblEstatus.Text = "Estatus";
+            // 
+            // cbEstatus
+            // 
+            this.cbEstatus.FormattingEnabled = true;
+            this.cbEstatus.Location = new System.Drawing.Point(26, 426);
+            this.cbEstatus.Name = "cbEstatus";
+            this.cbEstatus.Size = new System.Drawing.Size(178, 21);
+            this.cbEstatus.TabIndex = 51;
+            // 
             // Frm_Productos_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 450);
+            this.ClientSize = new System.Drawing.Size(236, 487);
+            this.Controls.Add(this.cbEstatus);
+            this.Controls.Add(this.lblEstatus);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.cbFactura);
@@ -237,5 +258,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblEstatus;
+        private System.Windows.Forms.ComboBox cbEstatus;
     }
 }

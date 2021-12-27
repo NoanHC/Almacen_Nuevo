@@ -38,17 +38,7 @@ namespace Almacen1.Productos
             DGV1.DataSource = dt2;
             this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
             this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
-            for (int i = 0; i < DGV1.Rows.Count; i++)
-            {
-                if (DGV1[9, i].Value.ToString() == "Disponible")
-                {
-                    DGV1[9, i].Style.ForeColor = Color.Green;
-                }
-                else
-                {
-                    DGV1[9, i].Style.ForeColor = Color.Red;
-                }
-            }
+            Disponibilidad();
         }
         private void Frm_ListadoProductos_Load(object sender, EventArgs e)
         {
@@ -74,7 +64,7 @@ namespace Almacen1.Productos
         {
             if (MessageBox.Show("¿Desea borrar el producto " + dt2.Rows[Fila][0].ToString() + "?", "Borrar producto", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                ObjProductos._delete(dt1.Rows[Fila][0].ToString());
+                ObjProductos._update_Status("3", dt1.Rows[Fila][0].ToString());
             }
             Carga();
         }
@@ -92,6 +82,24 @@ namespace Almacen1.Productos
                     Borrar_Producto(e.RowIndex);
                 }
             }
+        }
+        void Disponibilidad ()
+        {
+            for (int i = 0; i < DGV1.Rows.Count; i++)
+            {
+                if (DGV1[11, i].Value.ToString() == "Disponible")
+                {
+                    this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Green));
+                }
+                else
+                {
+                    this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Red));
+                }
+            }
+        }
+        private void Frm_ListadoProductos_SizeChanged(object sender, EventArgs e)
+        {
+            Disponibilidad(); 
         }
     }
 }

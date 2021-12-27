@@ -22,7 +22,8 @@ namespace Almacen1.Productos
         DataTable dt = new DataTable();
         DataTable dtM = new DataTable();
         DataTable dtF = new DataTable();
-        
+        DataTable dtS = new DataTable();
+
         // Variables
         int Id;
 
@@ -45,6 +46,9 @@ namespace Almacen1.Productos
                 case 1:
                     ObjProductos._consult_Factura(dt);
                     break;
+                case 2:
+                    ObjProductos._consult_Status(dt);
+                    break;
                 default:
                     break;
             }
@@ -65,6 +69,8 @@ namespace Almacen1.Productos
             Listas(dtF, cbFactura, 1);
             txtDescripcion.Text = dt.Rows[Id][8].ToString();
             txtCantidad.Text = dt.Rows[Id][9].ToString();
+            cbEstatus.Text = dt.Rows[Id][10].ToString();
+            Listas(dtS, cbEstatus, 2);
         }
         private void Frm_Productos_Editar_Load(object sender, EventArgs e)
         {
@@ -86,7 +92,7 @@ namespace Almacen1.Productos
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text, txtId.Text);
+            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text, Ids(dtS, cbEstatus), txtId.Text);
             DelegadoActualizar();
         }
     }

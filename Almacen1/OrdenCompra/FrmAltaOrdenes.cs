@@ -23,10 +23,10 @@ namespace Almacen1.OrdenCompra
         DataTable dt_productos = new DataTable();
 
         // Variables
-        double Subtotal = 0;
-        double IVA;
-        double Total;
-        double Importe = 0;
+        //double Subtotal = 0;
+        //double IVA;
+        //double Total;
+        //double Importe = 0;
         public FrmAltaOrdenes()
         {
             InitializeComponent();
@@ -49,9 +49,9 @@ namespace Almacen1.OrdenCompra
             }
             dgv_orden.Rows.Clear();
             
-            Subtotal = 0;
-            IVA = 0;
-            Total = 0;
+            //Subtotal = 0;
+            //IVA = 0;
+            //Total = 0;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
