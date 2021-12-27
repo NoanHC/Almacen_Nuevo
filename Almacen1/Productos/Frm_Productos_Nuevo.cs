@@ -81,6 +81,14 @@ namespace Almacen1.Productos
         }
         void SeriesYMACs ()
         {
+            dtN.Columns.Clear();
+            dtN.Rows.Clear();
+            ObjProductos._consult_Productos_Ultimo(dtN);
+            for (int i = 0; i < Convert.ToInt32(txtCantidad.Text) - 1; i++)
+            {
+                string Pal = dtN.Rows[0][0].ToString();
+                dtN.Rows.Add(dtN.Rows[0][0].ToString(), dtN.Rows[0][1].ToString(), dtN.Rows[0][2].ToString(), dtN.Rows[0][3].ToString(), dtN.Rows[0][4].ToString(), dtN.Rows[0][5].ToString(), dtN.Rows[0][6].ToString(), dtN.Rows[0][7].ToString(), dtN.Rows[0][8].ToString(), dtN.Rows[0][9].ToString());
+            }
             if (cbxMAC.Checked && cbxSeries.Checked)
             {
                 FormaMACYSerie = new Productos.Frm_Productos_MAC_Serie(3, dtN);
@@ -120,16 +128,13 @@ namespace Almacen1.Productos
                     ObjProductos._set_Marca(cbMarca.Text);
                 }
             }
+            Listas(dtM, cbMarca, 0);
+            Utilidades.autocomplete_combobox(cbMarca);
         }
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             NuevaMarca();
-            Nuevo();
-            ObjProductos._consult_Productos_Ultimo(dtN);
-            for (int i = 0; i < Convert.ToInt32(txtCantidad.Text) -1; i++)
-            {
-                dtN.Rows.Add(dtN.Rows[0][0].ToString(), dtN.Rows[0][1].ToString(), dtN.Rows[0][2].ToString(), dtN.Rows[0][3].ToString(), dtN.Rows[0][4].ToString(), dtN.Rows[0][5].ToString(), dtN.Rows[0][6].ToString());
-            }
+            //Nuevo();
             SeriesYMACs();
         }
     }

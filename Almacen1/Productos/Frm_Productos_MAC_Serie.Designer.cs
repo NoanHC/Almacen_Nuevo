@@ -46,12 +46,16 @@
             // 
             // DGV1
             // 
+            this.DGV1.AllowUserToAddRows = false;
+            this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV1.Location = new System.Drawing.Point(0, 0);
             this.DGV1.Name = "DGV1";
             this.DGV1.Size = new System.Drawing.Size(617, 450);
             this.DGV1.TabIndex = 0;
+            this.DGV1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellClick);
             // 
             // PanelDGV
             // 
@@ -92,6 +96,7 @@
             this.btnAgregarSerie.TabIndex = 4;
             this.btnAgregarSerie.Text = "Agregar Serie";
             this.btnAgregarSerie.UseVisualStyleBackColor = true;
+            this.btnAgregarSerie.Click += new System.EventHandler(this.btnAgregarSerie_Click);
             // 
             // btnAgregarMAC
             // 
@@ -104,6 +109,7 @@
             this.btnAgregarMAC.TabIndex = 7;
             this.btnAgregarMAC.Text = "Agregar MAC";
             this.btnAgregarMAC.UseVisualStyleBackColor = true;
+            this.btnAgregarMAC.Click += new System.EventHandler(this.btnAgregarMAC_Click);
             // 
             // txtMAC
             // 
@@ -127,7 +133,7 @@
             this.PanelSerie.Controls.Add(this.txtSerie);
             this.PanelSerie.Controls.Add(this.lblSerie);
             this.PanelSerie.Controls.Add(this.btnAgregarSerie);
-            this.PanelSerie.Location = new System.Drawing.Point(-3, 0);
+            this.PanelSerie.Location = new System.Drawing.Point(0, 0);
             this.PanelSerie.Name = "PanelSerie";
             this.PanelSerie.Size = new System.Drawing.Size(180, 123);
             this.PanelSerie.TabIndex = 8;
@@ -137,7 +143,7 @@
             this.PanelMAC.Controls.Add(this.lblMAC);
             this.PanelMAC.Controls.Add(this.txtMAC);
             this.PanelMAC.Controls.Add(this.btnAgregarMAC);
-            this.PanelMAC.Location = new System.Drawing.Point(-3, 138);
+            this.PanelMAC.Location = new System.Drawing.Point(0, 130);
             this.PanelMAC.Name = "PanelMAC";
             this.PanelMAC.Size = new System.Drawing.Size(180, 104);
             this.PanelMAC.TabIndex = 9;

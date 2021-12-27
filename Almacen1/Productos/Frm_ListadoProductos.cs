@@ -38,6 +38,17 @@ namespace Almacen1.Productos
             DGV1.DataSource = dt2;
             this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
             this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
+            for (int i = 0; i < DGV1.Rows.Count; i++)
+            {
+                if (DGV1[9, i].Value.ToString() == "Disponible")
+                {
+                    DGV1[9, i].Style.ForeColor = Color.Green;
+                }
+                else
+                {
+                    DGV1[9, i].Style.ForeColor = Color.Red;
+                }
+            }
         }
         private void Frm_ListadoProductos_Load(object sender, EventArgs e)
         {
