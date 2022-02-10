@@ -190,7 +190,6 @@
             this.Controls.Add(this.PanelSerie);
             this.Controls.Add(this.PanelDGV);
             this.Name = "Frm_Productos_MAC_Serie";
-            this.Load += new System.EventHandler(this.Frm_Productos_MAC_Serie_Load);
             this.PanelDGV.ResumeLayout(false);
             this.PanelSerie.ResumeLayout(false);
             this.PanelSerie.PerformLayout();

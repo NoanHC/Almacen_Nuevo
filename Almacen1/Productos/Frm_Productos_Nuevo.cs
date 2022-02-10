@@ -150,9 +150,9 @@ namespace Almacen1.Productos
         void NuevaMarca ()
         {
             bool AuxMarca = true;
+            string CbText = Utilidades.QuitarEspacios(cbMarca.Text);
             for (int i = 0; i < dtM.Rows.Count; i++)
             {
-                string CbText = Utilidades.QuitarEspacios(cbMarca.Text);
                 if (CbText == dtM.Rows[i][1].ToString())
                 {
                     AuxMarca = false;
@@ -160,9 +160,9 @@ namespace Almacen1.Productos
             }
             if (AuxMarca)
             {
-                if (MessageBox.Show("La marca " + cbMarca.Text + " no esta registrada, ¿desea registrarla?", "Registrar marca", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("La marca " + CbText + " no esta registrada, ¿desea registrarla?", "Registrar marca", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    ObjProductos._set_Marca(cbMarca.Text);
+                    ObjProductos._set_Marca(CbText);
                 }
             }
             Listas(dtM, cbMarca, 0);

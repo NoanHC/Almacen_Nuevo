@@ -12,6 +12,8 @@ namespace Almacen1.Productos
 {
     public partial class Frm_Productos_MAC_Serie : Form
     {
+        // Ventanas
+        Productos.Frm_Agregar_Serie VentanaSerie;
         // Acciones 
         public Action Cerrar;
 
@@ -61,10 +63,6 @@ namespace Almacen1.Productos
             InitializeComponent();
         }
 
-        private void Frm_Productos_MAC_Serie_Load(object sender, EventArgs e)
-        {
-
-        }
         void AgregarSerie ()
         {
             bool ComprobarSerie = true;
@@ -228,33 +226,69 @@ namespace Almacen1.Productos
         {
             if (e.RowIndex != -1)
             {
-                if (AuxPrimera == 1)
+                switch (AuxPrimera)
                 {
-                    if (e.ColumnIndex == 4)
-                    {
-                        if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                    case 1:
+                        if (e.ColumnIndex == 4)
                         {
-                            BorrarMAC(e.RowIndex);
+                                MessageBox.Show("MAC");
+                                //VentanaSerie = new Frm_Agregar_Serie();
+                                //VentanaSerie.ShowDialog();
                         }
-                    }
-                }
-                else
-                {
-                    if (e.ColumnIndex == 4)
-                    {
-                        if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                        break;
+                    case 2:
+                        if (e.ColumnIndex == 4)
                         {
-                            BorrarSerie(e.RowIndex);
+                                MessageBox.Show("Serie");
+                                //VentanaSerie = new Frm_Agregar_Serie();
+                                //VentanaSerie.ShowDialog();
                         }
-                    }
+                        break;
+                    case 3:
+                        if (e.ColumnIndex == 4)
+                        {
+                                MessageBox.Show("Serie");
+                                //VentanaSerie = new Frm_Agregar_Serie();
+                                //VentanaSerie.ShowDialog();
+                        }
+                        if (e.ColumnIndex == 5)
+                        {
+                                MessageBox.Show("MAC");
+                        }
+                        break;
+                    default:
+                        break;
                 }
-                if (e.ColumnIndex == 5)
-                {
-                    if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
-                    {
-                        BorrarMAC(e.RowIndex);
-                    }
-                }
+                //if (AuxPrimera == 1)
+                //{
+                //    if (e.ColumnIndex == 4)
+                //    {
+                //        if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                //        {
+                //            VentanaSerie = new Frm_Agregar_Serie();
+                //            VentanaSerie.ShowDialog();
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    if (e.ColumnIndex == 4)
+                //    {
+                //        if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                //        {
+                //            VentanaSerie = new Frm_Agregar_Serie();
+                //            VentanaSerie.ShowDialog();
+                //        }
+                //    }
+                //}
+                //if (e.ColumnIndex == 5)
+                //{
+                //    if (DGV1[e.ColumnIndex, e.RowIndex].Value.ToString() != "")
+                //    {
+                //        VentanaSerie = new Frm_Agregar_Serie();
+                //        VentanaSerie.ShowDialog();
+                //    }
+                //}
             }
         }
 
