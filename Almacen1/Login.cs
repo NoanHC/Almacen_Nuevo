@@ -25,6 +25,7 @@ namespace Almacen1
         public static string ciudad = "";
         public static int id_privilegio = 0;
         public static string id_empleado;
+        public static string Empleado;
         public Login()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace Almacen1
             {
                 id_privilegio = Convert.ToInt32(dt.Rows[0]["id_privilegio"]);
                 id_usuario = Convert.ToInt32(dt.Rows[0]["id_usuario"]);
+                id_empleado = dt.Rows[0]["id_empleado"].ToString();
                 user = dt.Rows[0]["user"].ToString();
                 Main.Menu_principal menu = new Main.Menu_principal();
                 menu.Show();

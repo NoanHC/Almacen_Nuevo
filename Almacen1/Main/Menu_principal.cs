@@ -112,5 +112,12 @@ namespace Almacen1.Main
             OrdenCompra.FrmAltaOrdenes fh = new OrdenCompra.FrmAltaOrdenes();
             add_panel(fh);
         }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            LimpiarPanel();
+            Registro.Frm_Escanear_Producto fh = new Registro.Frm_Escanear_Producto();
+            add_panel(fh);
+        }
     }
 }

@@ -30,34 +30,38 @@ namespace Almacen1.Main
         private void InitializeComponent()
         {
             this.pnl_menu = new System.Windows.Forms.Panel();
-            this.btn_entradas = new System.Windows.Forms.Button();
-            this.tbn_salidas = new System.Windows.Forms.Button();
-            this.btn_usuarios = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_empleados = new System.Windows.Forms.Button();
-            this.btn_orden = new System.Windows.Forms.Button();
-            this.btn_productos = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_forms = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pB_mobile = new System.Windows.Forms.PictureBox();
+            this.btnRegistro = new System.Windows.Forms.Button();
+            this.btn_entradas = new System.Windows.Forms.Button();
+            this.tbn_salidas = new System.Windows.Forms.Button();
+            this.btn_usuarios = new System.Windows.Forms.Button();
+            this.btn_empleados = new System.Windows.Forms.Button();
+            this.btn_orden = new System.Windows.Forms.Button();
+            this.btn_productos = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_mobile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_menu
             // 
             this.pnl_menu.BackColor = System.Drawing.Color.DarkGreen;
+            this.pnl_menu.Controls.Add(this.label6);
+            this.pnl_menu.Controls.Add(this.btnRegistro);
             this.pnl_menu.Controls.Add(this.btn_entradas);
             this.pnl_menu.Controls.Add(this.tbn_salidas);
             this.pnl_menu.Controls.Add(this.btn_usuarios);
@@ -78,53 +82,13 @@ namespace Almacen1.Main
             this.pnl_menu.TabIndex = 0;
             this.pnl_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_menu_Paint);
             // 
-            // btn_entradas
+            // label6
             // 
-            this.btn_entradas.FlatAppearance.BorderSize = 0;
-            this.btn_entradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_entradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_entradas.ForeColor = System.Drawing.Color.White;
-            this.btn_entradas.Image = global::Almacen1.Properties.Resources.inventario;
-            this.btn_entradas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_entradas.Location = new System.Drawing.Point(10, 214);
-            this.btn_entradas.Name = "btn_entradas";
-            this.btn_entradas.Size = new System.Drawing.Size(221, 43);
-            this.btn_entradas.TabIndex = 41;
-            this.btn_entradas.Text = "Devoluciones";
-            this.btn_entradas.UseVisualStyleBackColor = true;
-            this.btn_entradas.Click += new System.EventHandler(this.btn_entradas_Click);
-            // 
-            // tbn_salidas
-            // 
-            this.tbn_salidas.FlatAppearance.BorderSize = 0;
-            this.tbn_salidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tbn_salidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbn_salidas.ForeColor = System.Drawing.Color.White;
-            this.tbn_salidas.Image = global::Almacen1.Properties.Resources.descripcion_del_producto;
-            this.tbn_salidas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.tbn_salidas.Location = new System.Drawing.Point(10, 152);
-            this.tbn_salidas.Name = "tbn_salidas";
-            this.tbn_salidas.Size = new System.Drawing.Size(221, 43);
-            this.tbn_salidas.TabIndex = 40;
-            this.tbn_salidas.Text = "Entregas";
-            this.tbn_salidas.UseVisualStyleBackColor = true;
-            this.tbn_salidas.Click += new System.EventHandler(this.tbn_salidas_Click);
-            // 
-            // btn_usuarios
-            // 
-            this.btn_usuarios.FlatAppearance.BorderSize = 0;
-            this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_usuarios.ForeColor = System.Drawing.Color.White;
-            this.btn_usuarios.Image = global::Almacen1.Properties.Resources.programador;
-            this.btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_usuarios.Location = new System.Drawing.Point(10, 421);
-            this.btn_usuarios.Name = "btn_usuarios";
-            this.btn_usuarios.Size = new System.Drawing.Size(221, 43);
-            this.btn_usuarios.TabIndex = 39;
-            this.btn_usuarios.Text = "Usuarios";
-            this.btn_usuarios.UseVisualStyleBackColor = true;
-            this.btn_usuarios.Click += new System.EventHandler(this.btn_usuarios_Click);
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Location = new System.Drawing.Point(7, 612);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(227, 2);
+            this.label6.TabIndex = 43;
             // 
             // label5
             // 
@@ -133,54 +97,6 @@ namespace Almacen1.Main
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 2);
             this.label5.TabIndex = 38;
-            // 
-            // btn_empleados
-            // 
-            this.btn_empleados.FlatAppearance.BorderSize = 0;
-            this.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_empleados.ForeColor = System.Drawing.Color.White;
-            this.btn_empleados.Image = global::Almacen1.Properties.Resources.empleado_del_mes;
-            this.btn_empleados.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_empleados.Location = new System.Drawing.Point(10, 492);
-            this.btn_empleados.Name = "btn_empleados";
-            this.btn_empleados.Size = new System.Drawing.Size(221, 43);
-            this.btn_empleados.TabIndex = 37;
-            this.btn_empleados.Text = "Empleados";
-            this.btn_empleados.UseVisualStyleBackColor = true;
-            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
-            // 
-            // btn_orden
-            // 
-            this.btn_orden.FlatAppearance.BorderSize = 0;
-            this.btn_orden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_orden.ForeColor = System.Drawing.Color.White;
-            this.btn_orden.Image = global::Almacen1.Properties.Resources.factura;
-            this.btn_orden.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_orden.Location = new System.Drawing.Point(10, 349);
-            this.btn_orden.Name = "btn_orden";
-            this.btn_orden.Size = new System.Drawing.Size(221, 43);
-            this.btn_orden.TabIndex = 34;
-            this.btn_orden.Text = "     Orden de compra";
-            this.btn_orden.UseVisualStyleBackColor = true;
-            this.btn_orden.Click += new System.EventHandler(this.btn_orden_Click);
-            // 
-            // btn_productos
-            // 
-            this.btn_productos.FlatAppearance.BorderSize = 0;
-            this.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_productos.ForeColor = System.Drawing.Color.White;
-            this.btn_productos.Image = global::Almacen1.Properties.Resources.caja__1_;
-            this.btn_productos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_productos.Location = new System.Drawing.Point(10, 280);
-            this.btn_productos.Name = "btn_productos";
-            this.btn_productos.Size = new System.Drawing.Size(221, 43);
-            this.btn_productos.TabIndex = 33;
-            this.btn_productos.Text = "Productos";
-            this.btn_productos.UseVisualStyleBackColor = true;
-            this.btn_productos.Click += new System.EventHandler(this.btn_productos_Click);
             // 
             // label10
             // 
@@ -221,16 +137,6 @@ namespace Almacen1.Main
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(227, 2);
             this.label8.TabIndex = 28;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Almacen1.Properties.Resources.wislogo;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 72);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -284,6 +190,128 @@ namespace Almacen1.Main
             this.pB_mobile.TabStop = false;
             this.pB_mobile.Click += new System.EventHandler(this.pB_mobile_Click);
             // 
+            // btnRegistro
+            // 
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnRegistro.Image = global::Almacen1.Properties.Resources.RegistroV2;
+            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistro.Location = new System.Drawing.Point(10, 561);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(221, 43);
+            this.btnRegistro.TabIndex = 42;
+            this.btnRegistro.Text = "Registro";
+            this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            // 
+            // btn_entradas
+            // 
+            this.btn_entradas.FlatAppearance.BorderSize = 0;
+            this.btn_entradas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_entradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_entradas.ForeColor = System.Drawing.Color.White;
+            this.btn_entradas.Image = global::Almacen1.Properties.Resources.inventario;
+            this.btn_entradas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_entradas.Location = new System.Drawing.Point(10, 214);
+            this.btn_entradas.Name = "btn_entradas";
+            this.btn_entradas.Size = new System.Drawing.Size(221, 43);
+            this.btn_entradas.TabIndex = 41;
+            this.btn_entradas.Text = "Devoluciones";
+            this.btn_entradas.UseVisualStyleBackColor = true;
+            this.btn_entradas.Click += new System.EventHandler(this.btn_entradas_Click);
+            // 
+            // tbn_salidas
+            // 
+            this.tbn_salidas.FlatAppearance.BorderSize = 0;
+            this.tbn_salidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tbn_salidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbn_salidas.ForeColor = System.Drawing.Color.White;
+            this.tbn_salidas.Image = global::Almacen1.Properties.Resources.descripcion_del_producto;
+            this.tbn_salidas.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tbn_salidas.Location = new System.Drawing.Point(10, 152);
+            this.tbn_salidas.Name = "tbn_salidas";
+            this.tbn_salidas.Size = new System.Drawing.Size(221, 43);
+            this.tbn_salidas.TabIndex = 40;
+            this.tbn_salidas.Text = "Entregas";
+            this.tbn_salidas.UseVisualStyleBackColor = true;
+            this.tbn_salidas.Click += new System.EventHandler(this.tbn_salidas_Click);
+            // 
+            // btn_usuarios
+            // 
+            this.btn_usuarios.FlatAppearance.BorderSize = 0;
+            this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_usuarios.ForeColor = System.Drawing.Color.White;
+            this.btn_usuarios.Image = global::Almacen1.Properties.Resources.programador;
+            this.btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_usuarios.Location = new System.Drawing.Point(10, 421);
+            this.btn_usuarios.Name = "btn_usuarios";
+            this.btn_usuarios.Size = new System.Drawing.Size(221, 43);
+            this.btn_usuarios.TabIndex = 39;
+            this.btn_usuarios.Text = "Usuarios";
+            this.btn_usuarios.UseVisualStyleBackColor = true;
+            this.btn_usuarios.Click += new System.EventHandler(this.btn_usuarios_Click);
+            // 
+            // btn_empleados
+            // 
+            this.btn_empleados.FlatAppearance.BorderSize = 0;
+            this.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleados.ForeColor = System.Drawing.Color.White;
+            this.btn_empleados.Image = global::Almacen1.Properties.Resources.empleado_del_mes;
+            this.btn_empleados.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_empleados.Location = new System.Drawing.Point(10, 492);
+            this.btn_empleados.Name = "btn_empleados";
+            this.btn_empleados.Size = new System.Drawing.Size(221, 43);
+            this.btn_empleados.TabIndex = 37;
+            this.btn_empleados.Text = "Empleados";
+            this.btn_empleados.UseVisualStyleBackColor = true;
+            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
+            // 
+            // btn_orden
+            // 
+            this.btn_orden.FlatAppearance.BorderSize = 0;
+            this.btn_orden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_orden.ForeColor = System.Drawing.Color.White;
+            this.btn_orden.Image = global::Almacen1.Properties.Resources.factura;
+            this.btn_orden.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_orden.Location = new System.Drawing.Point(10, 349);
+            this.btn_orden.Name = "btn_orden";
+            this.btn_orden.Size = new System.Drawing.Size(221, 43);
+            this.btn_orden.TabIndex = 34;
+            this.btn_orden.Text = "     Orden de compra";
+            this.btn_orden.UseVisualStyleBackColor = true;
+            this.btn_orden.Click += new System.EventHandler(this.btn_orden_Click);
+            // 
+            // btn_productos
+            // 
+            this.btn_productos.FlatAppearance.BorderSize = 0;
+            this.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_productos.ForeColor = System.Drawing.Color.White;
+            this.btn_productos.Image = global::Almacen1.Properties.Resources.caja__1_;
+            this.btn_productos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_productos.Location = new System.Drawing.Point(10, 280);
+            this.btn_productos.Name = "btn_productos";
+            this.btn_productos.Size = new System.Drawing.Size(221, 43);
+            this.btn_productos.TabIndex = 33;
+            this.btn_productos.Text = "Productos";
+            this.btn_productos.UseVisualStyleBackColor = true;
+            this.btn_productos.Click += new System.EventHandler(this.btn_productos_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Almacen1.Properties.Resources.wislogo;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Menu_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,11 +325,11 @@ namespace Almacen1.Main
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_principal_FormClosing);
             this.Load += new System.EventHandler(this.Menu_principal_Load);
             this.pnl_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_mobile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,5 +355,7 @@ namespace Almacen1.Main
         private System.Windows.Forms.Button btn_usuarios;
         private System.Windows.Forms.Button btn_entradas;
         private System.Windows.Forms.Button tbn_salidas;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRegistro;
     }
 }

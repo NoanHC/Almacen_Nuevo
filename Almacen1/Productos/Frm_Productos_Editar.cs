@@ -17,6 +17,7 @@ namespace Almacen1.Productos
 
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
+        Class.ClsUtilidades Utilidades = new Class.ClsUtilidades();
 
         // datatable
         DataTable dt = new DataTable();
@@ -63,14 +64,10 @@ namespace Almacen1.Productos
             txtNombre.Text = dt.Rows[Id][1].ToString();
             cbMarca.Text = dt.Rows[Id][2].ToString();
             Listas(dtM, cbMarca, 0);
+            Utilidades.CentrarComboBox(cbMarca);
             txtModelo.Text = dt.Rows[Id][3].ToString();
             txtParte.Text = dt.Rows[Id][4].ToString();
-            cbFactura.Text = dt.Rows[Id][7].ToString();
-            Listas(dtF, cbFactura, 1);
-            txtDescripcion.Text = dt.Rows[Id][8].ToString();
-            txtCantidad.Text = dt.Rows[Id][9].ToString();
-            cbEstatus.Text = dt.Rows[Id][10].ToString();
-            Listas(dtS, cbEstatus, 2);
+            txtDescripcion.Text = dt.Rows[Id][5].ToString();
         }
         private void Frm_Productos_Editar_Load(object sender, EventArgs e)
         {
@@ -80,9 +77,10 @@ namespace Almacen1.Productos
         string Ids(DataTable dtIds, ComboBox cbIds)
         {
             string ids = "";
+            string CbText = Utilidades.QuitarEspacios(cbIds.Text);
             for (int i = 0; i < dtIds.Rows.Count; i++)
             {
-                if (cbIds.Text == dtIds.Rows[i][1].ToString())
+                if (CbText == dtIds.Rows[i][1].ToString())
                 {
                     ids = dtIds.Rows[i][0].ToString();
                 }
@@ -92,8 +90,29 @@ namespace Almacen1.Productos
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, Ids(dtF, cbFactura), txtDescripcion.Text, txtCantidad.Text, Ids(dtS, cbEstatus), txtId.Text);
+            
+        }
+
+        private void txtModificar_Click(object sender, EventArgs e)
+        {
+            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, txtDescripcion.Text, txtId.Text);
             DelegadoActualizar();
+            this.Close();
+        }
+
+        private void cbMarca_Leave(object sender, EventArgs e)
+        {
+            Utilidades.CentrarComboBox(cbMarca);
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

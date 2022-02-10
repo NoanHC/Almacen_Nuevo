@@ -15,14 +15,17 @@ namespace Almacen1.Empleados
         //Formas
         Empleados.Frm_Emplados_Editar ObjEmpleadosEditar;
         Empleados.Frm_Empleados_Nuevo ObjEmpleadosAñadir = new Frm_Empleados_Nuevo();
+        Registro.Frm_Codigo_QR Ventana_QR;
 
         // Clases
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();
+        Class.Cls_Registro ObjRegistro = new Class.Cls_Registro();
         
 
         // Datatable
         DataTable dt1 = new DataTable();
         DataTable dt2 = new DataTable();
+        DataTable dtCodigo = new DataTable();
         public Frm_Empleados()
         {
             InitializeComponent();
@@ -77,6 +80,21 @@ namespace Almacen1.Empleados
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Añadir();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                if (e.ColumnIndex > 1)
+                {
+                    dtCodigo.Clear();
+                    ObjRegistro._consult_QR_Empleado(dtCodigo, dt1.Rows[e.RowIndex]["Id"].ToString());
+                    string Codigo = dtCodigo.Rows[0][0].ToString();
+                    Ventana_QR = new Registro.Frm_Codigo_QR(Codigo);
+                    Ventana_QR.ShowDialog();
+                }
+            }
         }
     }
 }

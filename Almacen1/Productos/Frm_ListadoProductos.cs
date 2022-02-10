@@ -15,6 +15,8 @@ namespace Almacen1.Productos
         // Formas
         Productos.Frm_Productos_Editar FormaProductosEditar;
         Productos.Frm_Productos_Nuevo FormaProductosNuevo = new Frm_Productos_Nuevo();
+        Productos.Frm_Productos__Observar FormaObservar;
+        Productos.Frm_Borrar_Producto FormaBorrar;
 
         // Clases
         Class.Cls_Productos ObjProductos = new Class.Cls_Productos();
@@ -23,6 +25,7 @@ namespace Almacen1.Productos
         // Datatable
         DataTable dt1 = new DataTable();
         DataTable dt2 = new DataTable();
+        DataTable dtO1= new DataTable();
 
         public Frm_ListadoProductos()
         {
@@ -30,7 +33,7 @@ namespace Almacen1.Productos
         }
         void Carga()
         {
-            dt1.Clear();
+           dt1.Clear();
             dt2.Clear();
             ObjProductos._consult_Productos(dt1);
             dt2 = dt1.Copy();
@@ -38,15 +41,25 @@ namespace Almacen1.Productos
             DGV1.DataSource = dt2;
             this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
             this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
-            Disponibilidad();
+            //Disponibilidad();
         }
         private void Frm_ListadoProductos_Load(object sender, EventArgs e)
         {
             Carga();
         }
+        void Producto (DataTable dt)
+        {
+            dt2 = dt;
+            dt1 = dt;
+            dt2.Columns.Remove("id");
+            DGV1.DataSource = dt2;
+            this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
+            this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
+        }
         void Nuevo()
         {
-            FormaProductosNuevo.DelegadoActualizar = Carga;
+            FormaProductosNuevo.Actualizar = Carga;
+            FormaProductosNuevo.Producto = Producto;
             FormaProductosNuevo.ShowDialog();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -64,42 +77,89 @@ namespace Almacen1.Productos
         {
             if (MessageBox.Show("¿Desea borrar el producto " + dt2.Rows[Fila][0].ToString() + "?", "Borrar producto", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                ObjProductos._update_Status("3", dt1.Rows[Fila][0].ToString());
+                ObjProductos._delete(dt1.Rows[Fila][0].ToString());
+                string Nose = dt1.Rows[Fila][0].ToString();
             }
             Carga();
         }
-
-        private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //void Disponibilidad ()
+        //{
+        //    for (int i = 0; i < DGV1.Rows.Count; i++)
+        //    {
+        //        switch (DGV1[11, i].Value.ToString())
+        //        {
+        //            case "Disponible":
+        //                this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Green));
+        //                break;
+        //            case "En espera":
+        //                this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.DarkOrange));
+        //                break;
+        //            default:
+        //                this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Red));
+        //                break;
+        //        }
+        //    }
+        //}
+        private void Frm_ListadoProductos_SizeChanged(object sender, EventArgs e)
         {
+            //Disponibilidad(); 
+        }
+
+        private void DGV1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
             if (e.RowIndex != -1)
             {
-                if (e.ColumnIndex == 0)
+                if (e.ColumnIndex > 1)
                 {
-                    EditarEmpleados(e.RowIndex);
-                }
-                if (e.ColumnIndex == 1)
-                {
-                    Borrar_Producto(e.RowIndex);
-                }
-            }
-        }
-        void Disponibilidad ()
-        {
-            for (int i = 0; i < DGV1.Rows.Count; i++)
-            {
-                if (DGV1[11, i].Value.ToString() == "Disponible")
-                {
-                    this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Green));
+                    dtO1.Clear();
+                    ObjProductos._consult_Productos_Series_MACs(dtO1, dt1.Rows[e.RowIndex][0].ToString());
+                    if (dtO1.Rows.Count != 0)
+                    {
+                        FormaObservar = new Frm_Productos__Observar(dtO1);
+                        FormaObservar.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este producto no cuenta con serie o MAC");
+                    }
                 }
                 else
                 {
-                    this.Invoke(new Action(() => DGV1[11, i].Style.ForeColor = Color.Red));
+                    if (e.ColumnIndex == 0)
+                    {
+                        EditarEmpleados(e.RowIndex);
+                    }
+                    if (e.ColumnIndex == 1)
+                    {
+                        FormaBorrar = new Frm_Borrar_Producto(dt1.Rows[e.RowIndex][0].ToString(), dt1.Rows[e.RowIndex][1].ToString());
+                        FormaBorrar.ShowDialog();
+                        Carga();
+                    }
                 }
             }
         }
-        private void Frm_ListadoProductos_SizeChanged(object sender, EventArgs e)
+        void Buscar()
         {
-            Disponibilidad(); 
+            dt1.Clear();
+            dt2.Clear();
+            ObjProductos._consult_Buscar(dt1, txtBuscar.Text);
+            dt2 = dt1.Copy();
+            dt2.Columns.Remove("id");
+            DGV1.DataSource = dt2;
+            this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
+            this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
+        }
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                Carga();
+            }
+            else
+            {
+                Buscar();
+            }
         }
     }
 }

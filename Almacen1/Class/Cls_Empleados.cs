@@ -14,10 +14,10 @@ namespace Almacen1.Class
         string table = "tb_empleados";
         string query = "";
 
-        public bool _set(string nombre, string telefono, string correo, string direccion, string id_puesto, string status, string matricula)
+        public bool _set(string nombre, string telefono, string correo, string direccion, string id_puesto, string status, string matricula, string qr_code)
         {
-            string campos = "nombre, telefono, correo, direccion, id_puesto, status , matricula";
-            string values = "'" + nombre + "','" + telefono + "','" + correo + "','" + direccion + "','" + id_puesto + "','" + status + "','" + matricula + "'";
+            string campos = "nombre, telefono, correo, direccion, id_puesto, status , matricula, qr_code";
+            string values = "'" + nombre + "','" + telefono + "','" + correo + "','" + direccion + "','" + id_puesto + "','" + status + "','" + matricula + "','" + qr_code + "'";
             return method.set(table, campos, values);
         }
         public bool _update(string nombre, string telefono, string correo, string direccion, string id_puesto, string status, string matricula, string id)

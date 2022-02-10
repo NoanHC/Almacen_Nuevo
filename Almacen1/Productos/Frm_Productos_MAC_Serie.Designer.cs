@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGV1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelDGV = new System.Windows.Forms.Panel();
             this.lblSerie = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
@@ -38,24 +40,12 @@
             this.lblMAC = new System.Windows.Forms.Label();
             this.PanelSerie = new System.Windows.Forms.Panel();
             this.PanelMAC = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
+            this.DGV1 = new System.Windows.Forms.DataGridView();
             this.PanelDGV.SuspendLayout();
             this.PanelSerie.SuspendLayout();
             this.PanelMAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DGV1
-            // 
-            this.DGV1.AllowUserToAddRows = false;
-            this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGV1.Location = new System.Drawing.Point(0, 0);
-            this.DGV1.Name = "DGV1";
-            this.DGV1.Size = new System.Drawing.Size(617, 450);
-            this.DGV1.TabIndex = 0;
-            this.DGV1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellClick);
             // 
             // PanelDGV
             // 
@@ -148,6 +138,49 @@
             this.PanelMAC.Size = new System.Drawing.Size(180, 104);
             this.PanelMAC.TabIndex = 9;
             // 
+            // DGV1
+            // 
+            this.DGV1.AllowUserToAddRows = false;
+            this.DGV1.AllowUserToDeleteRows = false;
+            this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV1.BackgroundColor = System.Drawing.Color.Silver;
+            this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV1.EnableHeadersVisualStyles = false;
+            this.DGV1.Location = new System.Drawing.Point(0, 0);
+            this.DGV1.Name = "DGV1";
+            this.DGV1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.DGV1.RowHeadersVisible = false;
+            this.DGV1.Size = new System.Drawing.Size(617, 450);
+            this.DGV1.TabIndex = 216;
+            this.DGV1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellClick);
+            // 
             // Frm_Productos_MAC_Serie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,19 +191,17 @@
             this.Controls.Add(this.PanelDGV);
             this.Name = "Frm_Productos_MAC_Serie";
             this.Load += new System.EventHandler(this.Frm_Productos_MAC_Serie_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.PanelDGV.ResumeLayout(false);
             this.PanelSerie.ResumeLayout(false);
             this.PanelSerie.PerformLayout();
             this.PanelMAC.ResumeLayout(false);
             this.PanelMAC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DGV1;
         private System.Windows.Forms.Panel PanelDGV;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.TextBox txtSerie;
@@ -180,5 +211,6 @@
         private System.Windows.Forms.Label lblMAC;
         private System.Windows.Forms.Panel PanelSerie;
         private System.Windows.Forms.Panel PanelMAC;
+        private System.Windows.Forms.DataGridView DGV1;
     }
 }

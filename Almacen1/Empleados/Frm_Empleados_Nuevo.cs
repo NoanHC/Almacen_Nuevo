@@ -14,6 +14,7 @@ namespace Almacen1.Empleados
     {
         // Clases
         Class.Cls_Empleados ObjEmpleados = new Class.Cls_Empleados();
+        Class.ClsUtilidades ObjUtilidades = new Class.ClsUtilidades();
         // Datatables
         DataTable dt = new DataTable();
         DataTable dtE = new DataTable();
@@ -38,7 +39,7 @@ namespace Almacen1.Empleados
 
         void añadir()
         {
-            ObjEmpleados._set(txtNombre.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, Ids(dtP,cbPuesto), Ids(dtE,cbEstatus), txtMatricula.Text);
+            ObjEmpleados._set(txtNombre.Text, txtTelefono.Text, txtCorreo.Text, txtDireccion.Text, Ids(dtP, cbPuesto), Ids(dtE, cbEstatus), txtMatricula.Text, ObjUtilidades.Codigo_QR(9));
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)

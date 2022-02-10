@@ -33,11 +33,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,6 +99,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 381);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "";
+            this.Editar.Image = global::Almacen1.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "";
+            this.Borrar.Image = global::Almacen1.Properties.Resources.Borrar;
+            this.Borrar.Name = "Borrar";
             // 
             // panel1
             // 
@@ -125,18 +138,6 @@
             this.dataGridViewImageColumn2.Image = global::Almacen1.Properties.Resources.Borrar;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 398;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::Almacen1.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "";
-            this.Borrar.Image = global::Almacen1.Properties.Resources.Borrar;
-            this.Borrar.Name = "Borrar";
             // 
             // Frm_Empleados
             // 
