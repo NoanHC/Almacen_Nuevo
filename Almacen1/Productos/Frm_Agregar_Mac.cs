@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 
 namespace Almacen1.Productos
 {
-    public partial class Frm_Agregar_Serie : Form
+    public partial class Frm_Agregar_Mac : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public Frm_Agregar_Serie()
+        public Frm_Agregar_Mac()
         {
             InitializeComponent();
         }

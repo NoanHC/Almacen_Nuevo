@@ -14,6 +14,7 @@ namespace Almacen1.Productos
     {
         // Ventanas
         Productos.Frm_Agregar_Serie VentanaSerie;
+        Productos.Frm_Agregar_Mac VentanaMAC;
         // Acciones 
         public Action Cerrar;
 
@@ -231,29 +232,27 @@ namespace Almacen1.Productos
                     case 1:
                         if (e.ColumnIndex == 4)
                         {
-                                MessageBox.Show("MAC");
-                                //VentanaSerie = new Frm_Agregar_Serie();
-                                //VentanaSerie.ShowDialog();
+                            VentanaMAC = new Frm_Agregar_Mac();
+                            VentanaMAC.ShowDialog();
                         }
                         break;
                     case 2:
                         if (e.ColumnIndex == 4)
                         {
-                                MessageBox.Show("Serie");
-                                //VentanaSerie = new Frm_Agregar_Serie();
-                                //VentanaSerie.ShowDialog();
+                            VentanaSerie = new Frm_Agregar_Serie();
+                            VentanaSerie.ShowDialog();
                         }
                         break;
                     case 3:
                         if (e.ColumnIndex == 4)
                         {
-                                MessageBox.Show("Serie");
-                                //VentanaSerie = new Frm_Agregar_Serie();
-                                //VentanaSerie.ShowDialog();
+                                VentanaSerie = new Frm_Agregar_Serie();
+                                VentanaSerie.ShowDialog();
                         }
                         if (e.ColumnIndex == 5)
                         {
-                                MessageBox.Show("MAC");
+                            VentanaMAC = new Frm_Agregar_Mac();
+                            VentanaMAC.ShowDialog();
                         }
                         break;
                     default:

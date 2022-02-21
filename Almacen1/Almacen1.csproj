@@ -153,6 +153,12 @@
     <Compile Include="OrdenCompra\FrmAltaOrdenes.Designer.cs">
       <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Frm_Agregar_Mac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Frm_Agregar_Mac.Designer.cs">
+      <DependentUpon>Frm_Agregar_Mac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Frm_Agregar_Serie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenCompra\FrmAltaOrdenes.resx">
       <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Frm_Agregar_Mac.resx">
+      <DependentUpon>Frm_Agregar_Mac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Agregar_Serie.resx">
       <DependentUpon>Frm_Agregar_Serie.cs</DependentUpon>
