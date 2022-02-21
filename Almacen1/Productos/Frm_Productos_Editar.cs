@@ -58,13 +58,25 @@ namespace Almacen1.Productos
                 cb.Items.Add(dt.Rows[i][1].ToString());
             }
         }
+        void CargarNombre ()
+        {
+            lblNombre.Text = dt.Rows[Id][1].ToString();
+            lblNombre.Left = (panel1.Width / 2) - (lblNombre.Width / 2);
+            if (lblNombre.Width > panel1.Width)
+            {
+                lblNombre.Font = new Font("Arial Narrow ", lblNombre.Font.Size - 1, FontStyle.Underline);
+                CargarNombre();
+            }
+        }
         void Carga()
         {
-            txtId.Text = dt.Rows[Id][0].ToString();
-            txtNombre.Text = dt.Rows[Id][1].ToString();
+            lblId.Text = dt.Rows[Id][0].ToString();
+            CargarNombre();
+            lblId.Left = lblNombre.Width - lblId.Width + lblNombre.Left;
+            lblId.Top = lblNombre.Height + lblNombre.Top;
             cbMarca.Text = dt.Rows[Id][2].ToString();
             Listas(dtM, cbMarca, 0);
-            Utilidades.CentrarComboBox(cbMarca);
+            //Utilidades.CentrarComboBox(cbMarca);
             txtModelo.Text = dt.Rows[Id][3].ToString();
             txtParte.Text = dt.Rows[Id][4].ToString();
             txtDescripcion.Text = dt.Rows[Id][5].ToString();
@@ -95,14 +107,14 @@ namespace Almacen1.Productos
 
         private void txtModificar_Click(object sender, EventArgs e)
         {
-            ObjProductos._update(txtNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, txtDescripcion.Text, txtId.Text);
+            ObjProductos._update(lblNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, txtDescripcion.Text, lblId.Text);
             DelegadoActualizar();
             this.Close();
         }
 
         private void cbMarca_Leave(object sender, EventArgs e)
         {
-            Utilidades.CentrarComboBox(cbMarca);
+            //Utilidades.CentrarComboBox(cbMarca);
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -113,6 +125,16 @@ namespace Almacen1.Productos
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

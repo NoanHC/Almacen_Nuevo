@@ -39,10 +39,10 @@ namespace Almacen1.Productos
             this.btnAgregar = new System.Windows.Forms.Button();
             this.PanelDGV1 = new System.Windows.Forms.Panel();
             this.DGV1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelSuperior.SuspendLayout();
             this.panel4.SuspendLayout();
             this.PanelDGV1.SuspendLayout();
@@ -162,20 +162,6 @@ namespace Almacen1.Productos
             this.DGV1.TabIndex = 215;
             this.DGV1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellDoubleClick);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::Almacen1.Properties.Resources.editar;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 399;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::Almacen1.Properties.Resources.Borrar;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 399;
-            // 
             // Editar
             // 
             this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -197,6 +183,20 @@ namespace Almacen1.Productos
             this.Borrar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Borrar.Width = 83;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Almacen1.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 399;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::Almacen1.Properties.Resources.Borrar;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 399;
             // 
             // Frm_ListadoProductos
             // 
