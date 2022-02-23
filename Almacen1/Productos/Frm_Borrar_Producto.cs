@@ -40,5 +40,10 @@ namespace Almacen1.Productos
         {
             e.Handled = true;
         }
+
+        private void txt_usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

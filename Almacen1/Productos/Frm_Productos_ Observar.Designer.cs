@@ -208,7 +208,7 @@
             // 
             this.PicMedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PicMedio.BackColor = System.Drawing.Color.Transparent;
-            this.PicMedio.BackgroundImage = global::Almacen1.Properties.Resources.Max_0;
+            this.PicMedio.BackgroundImage = global::Almacen1.Properties.Resources.Minimizar;
             this.PicMedio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PicMedio.Location = new System.Drawing.Point(741, 3);
             this.PicMedio.Name = "PicMedio";

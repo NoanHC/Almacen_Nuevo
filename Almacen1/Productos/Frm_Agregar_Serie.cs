@@ -18,9 +18,17 @@ namespace Almacen1.Productos
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public Frm_Agregar_Serie()
+        //Variables
+        DataGridView Tabla;
+        int Fila, Columna;
+
+        public Frm_Agregar_Serie(DataGridView Tabla, int Fila, int Columna)
         {
             InitializeComponent();
+            lblFila.Text = Fila.ToString();
+            this.Tabla = Tabla;
+            this.Fila = Fila;
+            this.Columna = Columna;
         }
 
         private void lbl_cerrar_Click(object sender, EventArgs e)
@@ -31,6 +39,39 @@ namespace Almacen1.Productos
         private void lbl_minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            Tabla[Columna, Fila].Value = txtSerie.Text;
+            txtSerie.Text = "";
+            if (Fila == Tabla.Rows.Count - 1)
+            {
+                MessageBox.Show("Series llenas");
+            }
+            else
+            {
+                this.Fila = Fila + 1;
+                lblFila.Text = Fila.ToString();
+            }
+            txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            Tabla[Columna,Fila].Value = txtSerie.Text;
+            txtSerie.Text = "";
+            if (Fila == 0)
+            {
+                MessageBox.Show("No se puede regresar más");
+            }
+            else
+            {
+                this.Fila = Fila - 1;
+                lblFila.Text = Fila.ToString();
+            }
+            txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
         }
 
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)

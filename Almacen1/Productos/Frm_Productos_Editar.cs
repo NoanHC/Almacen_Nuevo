@@ -79,7 +79,7 @@ namespace Almacen1.Productos
             //Utilidades.CentrarComboBox(cbMarca);
             txtModelo.Text = dt.Rows[Id][3].ToString();
             txtParte.Text = dt.Rows[Id][4].ToString();
-            txtDescripcion.Text = dt.Rows[Id][5].ToString();
+            rtxDescripcion.Text = dt.Rows[Id][5].ToString();
         }
         private void Frm_Productos_Editar_Load(object sender, EventArgs e)
         {
@@ -107,7 +107,7 @@ namespace Almacen1.Productos
 
         private void txtModificar_Click(object sender, EventArgs e)
         {
-            ObjProductos._update(lblNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, txtDescripcion.Text, lblId.Text);
+            ObjProductos._update(lblNombre.Text, Ids(dtM, cbMarca), txtModelo.Text, txtParte.Text, rtxDescripcion.Text, lblId.Text);
             DelegadoActualizar();
             this.Close();
         }

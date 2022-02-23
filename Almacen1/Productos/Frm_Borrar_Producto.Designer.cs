@@ -106,9 +106,11 @@
             this.txt_usuario.MaxLength = 50;
             this.txt_usuario.Multiline = true;
             this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.ShortcutsEnabled = false;
             this.txt_usuario.Size = new System.Drawing.Size(452, 29);
             this.txt_usuario.TabIndex = 2;
             this.txt_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_usuario.TextChanged += new System.EventHandler(this.txt_usuario_TextChanged);
             this.txt_usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_usuario_KeyPress);
             // 
             // lblSubtitulo1

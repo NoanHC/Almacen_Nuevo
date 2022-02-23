@@ -30,9 +30,9 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtParte = new System.Windows.Forms.TextBox();
@@ -40,12 +40,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.lblModelo = new System.Windows.Forms.Label();
-            this.cbMarca = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.txtModificar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.rtxDescripcion = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,9 +64,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_cancelar);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.lblDescripcion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtParte);
@@ -73,17 +74,26 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtModelo);
             this.panel1.Controls.Add(this.lblModelo);
-            this.panel1.Controls.Add(this.cbMarca);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblMarca);
             this.panel1.Controls.Add(this.txtModificar);
             this.panel1.Controls.Add(this.lblId);
             this.panel1.Controls.Add(this.lblNombre);
+            this.panel1.Controls.Add(this.cbMarca);
+            this.panel1.Controls.Add(this.rtxDescripcion);
             this.panel1.Location = new System.Drawing.Point(7, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 450);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(16, 357);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(434, 2);
+            this.label1.TabIndex = 76;
             // 
             // btn_cancelar
             // 
@@ -101,27 +111,15 @@
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(18, 345);
+            this.label4.Location = new System.Drawing.Point(16, 335);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(452, 2);
+            this.label4.Size = new System.Drawing.Size(434, 2);
             this.label4.TabIndex = 63;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(18, 315);
-            this.txtDescripcion.MaxLength = 50;
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(452, 29);
-            this.txtDescripcion.TabIndex = 61;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.Black;
             this.lblDescripcion.Location = new System.Drawing.Point(16, 285);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -132,9 +130,9 @@
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(80, 245);
+            this.label2.Location = new System.Drawing.Point(90, 235);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(390, 2);
+            this.label2.Size = new System.Drawing.Size(360, 2);
             this.label2.TabIndex = 60;
             // 
             // txtParte
@@ -142,30 +140,30 @@
             this.txtParte.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtParte.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtParte.Location = new System.Drawing.Point(80, 215);
+            this.txtParte.Location = new System.Drawing.Point(90, 215);
             this.txtParte.MaxLength = 50;
             this.txtParte.Multiline = true;
             this.txtParte.Name = "txtParte";
-            this.txtParte.Size = new System.Drawing.Size(390, 29);
+            this.txtParte.Size = new System.Drawing.Size(360, 29);
             this.txtParte.TabIndex = 56;
             // 
             // lblParte
             // 
             this.lblParte.AutoSize = true;
-            this.lblParte.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParte.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParte.ForeColor = System.Drawing.Color.Black;
-            this.lblParte.Location = new System.Drawing.Point(23, 215);
+            this.lblParte.Location = new System.Drawing.Point(32, 215);
             this.lblParte.Name = "lblParte";
-            this.lblParte.Size = new System.Drawing.Size(51, 23);
+            this.lblParte.Size = new System.Drawing.Size(50, 23);
             this.lblParte.TabIndex = 59;
             this.lblParte.Text = "Parte:";
             // 
             // label6
             // 
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(80, 175);
+            this.label6.Location = new System.Drawing.Point(90, 165);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(390, 2);
+            this.label6.Size = new System.Drawing.Size(360, 2);
             this.label6.TabIndex = 58;
             // 
             // txtModelo
@@ -173,51 +171,38 @@
             this.txtModelo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModelo.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtModelo.Location = new System.Drawing.Point(80, 145);
+            this.txtModelo.Location = new System.Drawing.Point(90, 145);
             this.txtModelo.MaxLength = 50;
             this.txtModelo.Multiline = true;
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(390, 29);
+            this.txtModelo.Size = new System.Drawing.Size(360, 29);
             this.txtModelo.TabIndex = 55;
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModelo.ForeColor = System.Drawing.Color.Black;
             this.lblModelo.Location = new System.Drawing.Point(16, 145);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(67, 23);
+            this.lblModelo.Size = new System.Drawing.Size(66, 23);
             this.lblModelo.TabIndex = 57;
             this.lblModelo.Text = "Modelo:";
-            // 
-            // cbMarca
-            // 
-            this.cbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbMarca.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(80, 75);
-            this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(390, 30);
-            this.cbMarca.TabIndex = 54;
-            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
-            this.cbMarca.Leave += new System.EventHandler(this.cbMarca_Leave);
             // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(80, 105);
+            this.label5.Location = new System.Drawing.Point(90, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(371, 2);
+            this.label5.Size = new System.Drawing.Size(360, 2);
             this.label5.TabIndex = 50;
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarca.ForeColor = System.Drawing.Color.Black;
-            this.lblMarca.Location = new System.Drawing.Point(16, 75);
+            this.lblMarca.Location = new System.Drawing.Point(25, 75);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(58, 23);
             this.lblMarca.TabIndex = 49;
@@ -251,11 +236,36 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.Black;
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lblNombre.Location = new System.Drawing.Point(3, 10);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(0, 37);
             this.lblNombre.TabIndex = 28;
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMarca.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(90, 75);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(380, 30);
+            this.cbMarca.TabIndex = 54;
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
+            this.cbMarca.Leave += new System.EventHandler(this.cbMarca_Leave);
+            // 
+            // rtxDescripcion
+            // 
+            this.rtxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12.75F);
+            this.rtxDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.rtxDescripcion.Location = new System.Drawing.Point(16, 315);
+            this.rtxDescripcion.Name = "rtxDescripcion";
+            this.rtxDescripcion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtxDescripcion.Size = new System.Drawing.Size(434, 44);
+            this.rtxDescripcion.TabIndex = 77;
+            this.rtxDescripcion.Text = "";
             // 
             // Frm_Productos_Editar
             // 
@@ -292,8 +302,9 @@
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.Label lblModelo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox rtxDescripcion;
     }
 }

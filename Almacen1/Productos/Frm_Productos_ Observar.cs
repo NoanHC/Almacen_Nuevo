@@ -111,12 +111,13 @@ namespace Almacen1.Productos
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-                PicMedio.BackgroundImage = Properties.Resources.Minimizar;
+                PicMedio.BackgroundImage = Properties.Resources.Max_0;
+
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
-                PicMedio.BackgroundImage = Properties.Resources.Max_0;
+                PicMedio.BackgroundImage = Properties.Resources.Minimizar;
             }
 
         }
