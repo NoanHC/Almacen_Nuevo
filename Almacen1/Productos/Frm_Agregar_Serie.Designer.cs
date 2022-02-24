@@ -34,8 +34,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnReintentar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.lblFila = new System.Windows.Forms.Label();
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(12, 90);
+            this.label3.Location = new System.Drawing.Point(12, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(450, 2);
             this.label3.TabIndex = 222;
@@ -89,12 +89,11 @@
             // txtSerie
             // 
             this.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F);
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSerie.Location = new System.Drawing.Point(10, 60);
             this.txtSerie.MaxLength = 50;
-            this.txtSerie.Multiline = true;
             this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(450, 29);
+            this.txtSerie.Size = new System.Drawing.Size(450, 22);
             this.txtSerie.TabIndex = 220;
             this.txtSerie.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -109,38 +108,38 @@
             this.lblNombre.TabIndex = 221;
             this.lblNombre.Text = "Serie";
             // 
-            // btnAnterior
+            // btnReintentar
             // 
-            this.btnAnterior.BackColor = System.Drawing.Color.Green;
-            this.btnAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnterior.ForeColor = System.Drawing.Color.White;
-            this.btnAnterior.Location = new System.Drawing.Point(42, 100);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(150, 44);
-            this.btnAnterior.TabIndex = 223;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = false;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            this.btnReintentar.BackColor = System.Drawing.Color.Green;
+            this.btnReintentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReintentar.ForeColor = System.Drawing.Color.White;
+            this.btnReintentar.Location = new System.Drawing.Point(42, 100);
+            this.btnReintentar.Name = "btnReintentar";
+            this.btnReintentar.Size = new System.Drawing.Size(150, 44);
+            this.btnReintentar.TabIndex = 223;
+            this.btnReintentar.Text = "Reintentar";
+            this.btnReintentar.UseVisualStyleBackColor = false;
+            this.btnReintentar.Click += new System.EventHandler(this.btnReintentar_Click);
             // 
-            // btnSiguiente
+            // btnGuardar
             // 
-            this.btnSiguiente.BackColor = System.Drawing.Color.Green;
-            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.ForeColor = System.Drawing.Color.White;
-            this.btnSiguiente.Location = new System.Drawing.Point(277, 100);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(150, 44);
-            this.btnSiguiente.TabIndex = 224;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.Green;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(277, 100);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(150, 44);
+            this.btnGuardar.TabIndex = 224;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblFila
             // 
             this.lblFila.AutoSize = true;
             this.lblFila.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFila.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblFila.Location = new System.Drawing.Point(439, 33);
+            this.lblFila.Location = new System.Drawing.Point(316, 33);
             this.lblFila.Name = "lblFila";
             this.lblFila.Size = new System.Drawing.Size(23, 16);
             this.lblFila.TabIndex = 225;
@@ -152,8 +151,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 151);
             this.Controls.Add(this.lblFila);
-            this.Controls.Add(this.btnSiguiente);
-            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnReintentar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSerie);
             this.Controls.Add(this.lblNombre);
@@ -177,8 +176,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnReintentar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblFila;
     }
 }

@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Almacen1.Productos
 {
     public partial class Frm_Productos_MAC_Serie : Form
     {
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         // Ventanas
         Productos.Frm_Agregar_Serie VentanaSerie;
         Productos.Frm_Agregar_Mac VentanaMAC;
+        Productos.Frm_Modificar_SerieYMAC VentanaModificarMACYSerie;
         // Acciones 
         public Action Cerrar;
 
@@ -45,9 +52,16 @@ namespace Almacen1.Productos
             lblModelo2.Text = dtN.Rows[0][3].ToString();
             lblParte2.Text = dtN.Rows[0][4].ToString();
             rtxDescripcion.Text = dtN.Rows[0][7].ToString();
+            lblOrden2.Text = dtN.Rows[0][8].ToString();
             Id = dtN.Rows[0][0].ToString();
             dtN.Columns.Remove("id");
             dtN.Columns.Remove("Cantidad");
+            dtN.Columns.Remove("Nombre");
+            dtN.Columns.Remove("Marca");
+            dtN.Columns.Remove("Modelo");
+            dtN.Columns.Remove("Parte");
+            dtN.Columns.Remove("Descripción");
+            dtN.Columns.Remove("Orden");
             this.AuxPrimera = AuxPrimera;
             switch (AuxPrimera)
             {
@@ -61,12 +75,43 @@ namespace Almacen1.Productos
                     break;
             }
             DGV1.DataSource = dtN;
+            DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1;
         }
         public Frm_Productos_MAC_Serie()
         {
             InitializeComponent();
         }
+        void BDGV1 ()
+        {
 
+            int CountDGV1 = DGV1.ColumnHeadersHeight;
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0);
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0) / DGV1.Rows.Count;
+            PanelDGV.Height = CountDGV1;
+            btnMAC.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnSeries.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnMAC.Left = PanelDGV.Left + DGV1.Columns["Serie"].Width + ((DGV1.Columns["MAC"].Width / 2) - btnMAC.Width / 2);
+            btnSeries.Left = PanelDGV.Left + ((DGV1.Columns["Serie"].Width / 2) - btnMAC.Width / 2);
+            if (btnSeries.Top + btnSeries.Height >= this.Height || btnMAC.Top + btnMAC.Height >= this.Height)
+            {
+                if (this.WindowState == FormWindowState.Normal)
+                {
+
+                    btnMAC.Location = new Point(728, 220);
+                    btnSeries.Location = new Point(10, 220);
+                }
+                else
+                {
+                    int Hola = this.Width - btnMAC.Width - 10;
+                    btnMAC.Location = new Point(1234, 220);
+                    btnSeries.Location = new Point(10, 220);
+                }
+            }
+            if (PanelDGV.Top + PanelDGV.Height >= this.Height)
+            {
+                PanelDGV.Height = this.Height - PanelDGV.Top - 25;
+            }
+        }
         //void AgregarSerie ()
         //{
         //    bool ComprobarSerie = true;
@@ -230,37 +275,42 @@ namespace Almacen1.Productos
         {
             if (e.RowIndex != -1)
             {
-                switch (AuxPrimera)
+                if (e.ColumnIndex == 0)
                 {
-                    case 1:
-                        if (e.ColumnIndex == 4)
-                        {
-                            VentanaMAC = new Frm_Agregar_Mac();
-                            VentanaMAC.ShowDialog();
-                        }
-                        break;
-                    case 2:
-                        if (e.ColumnIndex == 4)
-                        {
-                            VentanaSerie = new Frm_Agregar_Serie(DGV1, e.RowIndex, e.ColumnIndex);
-                            VentanaSerie.ShowDialog();
-                        }
-                        break;
-                    case 3:
-                        if (e.ColumnIndex == 4)
-                        {
-                            VentanaSerie = new Frm_Agregar_Serie(DGV1, e.RowIndex, e.ColumnIndex);
-                            VentanaSerie.ShowDialog();
-                        }
-                        if (e.ColumnIndex == 5)
-                        {
-                            VentanaMAC = new Frm_Agregar_Mac();
-                            VentanaMAC.ShowDialog();
-                        }
-                        break;
-                    default:
-                        break;
+                    VentanaModificarMACYSerie = new Productos.Frm_Modificar_SerieYMAC(DGV1, e.RowIndex);
+                    VentanaModificarMACYSerie.ShowDialog();
                 }
+                //switch (AuxPrimera)
+                //{
+                //    case 1:
+                //        if (e.ColumnIndex == 0)
+                //        {
+                //            VentanaMAC = new Frm_Agregar_Mac();
+                //            VentanaMAC.ShowDialog();
+                //        }
+                //        break;
+                //    case 2:
+                //        if (e.ColumnIndex == 0)
+                //        {
+                //            VentanaSerie = new Frm_Agregar_Serie(DGV1, e.RowIndex, e.ColumnIndex);
+                //            VentanaSerie.ShowDialog();
+                //        }
+                //        break;
+                //    case 3:
+                //        if (e.ColumnIndex == 0)
+                //        {
+                //            VentanaSerie = new Frm_Agregar_Serie(DGV1, e.RowIndex, e.ColumnIndex);
+                //            VentanaSerie.ShowDialog();
+                //        }
+                //        if (e.ColumnIndex == 1)
+                //        {
+                //            VentanaMAC = new Frm_Agregar_Mac();
+                //            VentanaMAC.ShowDialog();
+                //        }
+                //        break;
+                //    default:
+                //        break;
+                //}
                 //if (AuxPrimera == 1)
                 //{
                 //    if (e.ColumnIndex == 4)
@@ -395,6 +445,7 @@ namespace Almacen1.Productos
                 this.WindowState = FormWindowState.Normal;
                 PicMedio.BackgroundImage = Properties.Resources.Minimizar;
             }
+            BDGV1();
         }
 
         private void rtxDescripcion_KeyPress(object sender, KeyPressEventArgs e)
@@ -405,6 +456,40 @@ namespace Almacen1.Productos
         private void rtxDescripcion_KeyDown(object sender, KeyEventArgs e)
         {
 
+        }
+
+        private void btnSeries_Click(object sender, EventArgs e)
+        {
+            VentanaSerie = new Frm_Agregar_Serie(DGV1, 0, 1);
+            VentanaSerie.ShowDialog();
+        }
+
+        private void btnMAC_Click(object sender, EventArgs e)
+        {
+            switch (AuxPrimera)
+            {
+                case 1:
+                    VentanaMAC = new Frm_Agregar_Mac(DGV1, 0, 1);
+                    VentanaMAC.ShowDialog();
+                    break;
+                case 3:
+                    VentanaMAC = new Frm_Agregar_Mac(DGV1, 0, 2);
+                    VentanaMAC.ShowDialog();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Frm_Productos_MAC_Serie_Load(object sender, EventArgs e)
+        {
+            BDGV1();
+        }
+
+        private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

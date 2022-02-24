@@ -25,10 +25,11 @@ namespace Almacen1.Productos
         public Frm_Agregar_Serie(DataGridView Tabla, int Fila, int Columna)
         {
             InitializeComponent();
-            lblFila.Text = Fila.ToString();
+            lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
             this.Tabla = Tabla;
             this.Fila = Fila;
             this.Columna = Columna;
+            txtSerie.Text = Tabla[Columna, Fila].Value.ToString(); 
         }
 
         private void lbl_cerrar_Click(object sender, EventArgs e)
@@ -42,36 +43,26 @@ namespace Almacen1.Productos
         }
 
 
-        private void btnSiguiente_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             Tabla[Columna, Fila].Value = txtSerie.Text;
             txtSerie.Text = "";
             if (Fila == Tabla.Rows.Count - 1)
             {
-                MessageBox.Show("Series llenas");
+                MessageBox.Show("Series completas");
+                this.Close();
             }
             else
             {
                 this.Fila = Fila + 1;
-                lblFila.Text = Fila.ToString();
+                lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
             }
             txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnReintentar_Click(object sender, EventArgs e)
         {
-            Tabla[Columna,Fila].Value = txtSerie.Text;
             txtSerie.Text = "";
-            if (Fila == 0)
-            {
-                MessageBox.Show("No se puede regresar más");
-            }
-            else
-            {
-                this.Fila = Fila - 1;
-                lblFila.Text = Fila.ToString();
-            }
-            txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
         }
 
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)

@@ -124,3 +124,4 @@ D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Fr
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Nuevo_MSF.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Agregar_Serie.resources
 D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Agregar_Mac.resources
+D:\Desktop\Trabajo\Github\Almacen_Nuevo\Almacen1\obj\Debug\Almacen1.Productos.Frm_Modificar_SerieYMAC.resources

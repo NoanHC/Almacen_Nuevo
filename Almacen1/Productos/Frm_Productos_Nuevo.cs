@@ -93,9 +93,9 @@ namespace Almacen1.Productos
             dtN.Columns.Clear();
             dtN.Rows.Clear();
             ObjProductos._consult_Productos_Ultimo(dtN);
-            dtN.Columns.Add("Orden");
-            dtN.Columns["Orden"].SetOrdinal(dtN.Columns.Count - 2);
-            dtN.Rows[0]["Orden"] = Id_Orden;
+            //dtN.Columns.Add("Orden");
+            //dtN.Columns["Orden"].SetOrdinal(dtN.Columns.Count - 2);
+            //dtN.Rows[0]["Orden"] = Id_Orden;
             for (int i = 0; i < Convert.ToInt32(txtCantidad.Text) - 1; i++)
             {
                 dtN.Rows.Add(dtN.Rows[0][0].ToString(), dtN.Rows[0][1].ToString(), dtN.Rows[0][2].ToString() , dtN.Rows[0][3].ToString(), dtN.Rows[0][4].ToString(), dtN.Rows[0][5].ToString(), dtN.Rows[0][6].ToString(), dtN.Rows[0][7].ToString(), Id_Orden, dtN.Rows[0][8].ToString());
