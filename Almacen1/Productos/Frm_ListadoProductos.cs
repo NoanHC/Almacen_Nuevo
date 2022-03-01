@@ -42,6 +42,10 @@ namespace Almacen1.Productos
             this.Invoke(new Action(() => DGV1.Columns["Editar"].DisplayIndex = DGV1.Columns.Count - 1));
             this.Invoke(new Action(() => DGV1.Columns["Borrar"].DisplayIndex = DGV1.Columns.Count - 1));
             DGV1.Columns["Cantidad"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            foreach (DataGridViewColumn Col in DGV1.Columns)
+            {
+                Col.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
             //Disponibilidad();
         }
         private void Frm_ListadoProductos_Load(object sender, EventArgs e)

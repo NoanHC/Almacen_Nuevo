@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelDGV = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.DGV1 = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelSuperior = new System.Windows.Forms.Panel();
             this.lbl_minimize = new System.Windows.Forms.Label();
+            this.PicMedio = new System.Windows.Forms.PictureBox();
             this.lbl_cerrar = new System.Windows.Forms.Label();
             this.PanelInfo = new System.Windows.Forms.Panel();
             this.lblOrden2 = new System.Windows.Forms.Label();
             this.lblOrden = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.rtxDescripcion = new System.Windows.Forms.RichTextBox();
             this.lblParte2 = new System.Windows.Forms.Label();
             this.lblParte = new System.Windows.Forms.Label();
@@ -58,14 +54,12 @@
             this.btnMAC = new System.Windows.Forms.Button();
             this.btnSeries = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.PicMedio = new System.Windows.Forms.PictureBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelDGV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.PanelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).BeginInit();
             this.PanelInfo.SuspendLayout();
             this.PanellblNombre.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelDGV
@@ -79,6 +73,19 @@
             this.PanelDGV.Size = new System.Drawing.Size(560, 220);
             this.PanelDGV.TabIndex = 1;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.Green;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(728, 398);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(122, 40);
+            this.btnGuardar.TabIndex = 227;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
             // DGV1
             // 
             this.DGV1.AllowUserToAddRows = false;
@@ -87,42 +94,51 @@
             this.DGV1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGV1.BackgroundColor = System.Drawing.Color.White;
             this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV1.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV1.EnableHeadersVisualStyles = false;
             this.DGV1.Location = new System.Drawing.Point(0, 0);
             this.DGV1.Name = "DGV1";
             this.DGV1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV1.RowHeadersVisible = false;
             this.DGV1.Size = new System.Drawing.Size(560, 220);
             this.DGV1.TabIndex = 216;
             this.DGV1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV1_CellClick);
+            // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::Almacen1.Properties.Resources.editar;
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Width = 60;
             // 
             // PanelSuperior
             // 
@@ -149,6 +165,19 @@
             this.lbl_minimize.Text = "_";
             this.lbl_minimize.Click += new System.EventHandler(this.lbl_minimize_Click);
             // 
+            // PicMedio
+            // 
+            this.PicMedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicMedio.BackColor = System.Drawing.Color.Transparent;
+            this.PicMedio.BackgroundImage = global::Almacen1.Properties.Resources.Minimizar;
+            this.PicMedio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicMedio.Location = new System.Drawing.Point(801, 3);
+            this.PicMedio.Name = "PicMedio";
+            this.PicMedio.Size = new System.Drawing.Size(21, 24);
+            this.PicMedio.TabIndex = 220;
+            this.PicMedio.TabStop = false;
+            this.PicMedio.Click += new System.EventHandler(this.PicMedio_Click);
+            // 
             // lbl_cerrar
             // 
             this.lbl_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -167,13 +196,6 @@
             this.PanelInfo.BackColor = System.Drawing.Color.White;
             this.PanelInfo.Controls.Add(this.lblOrden2);
             this.PanelInfo.Controls.Add(this.lblOrden);
-            this.PanelInfo.Controls.Add(this.label7);
-            this.PanelInfo.Controls.Add(this.label6);
-            this.PanelInfo.Controls.Add(this.label5);
-            this.PanelInfo.Controls.Add(this.label3);
-            this.PanelInfo.Controls.Add(this.label2);
-            this.PanelInfo.Controls.Add(this.label1);
-            this.PanelInfo.Controls.Add(this.label4);
             this.PanelInfo.Controls.Add(this.rtxDescripcion);
             this.PanelInfo.Controls.Add(this.lblParte2);
             this.PanelInfo.Controls.Add(this.lblParte);
@@ -210,74 +232,11 @@
             this.lblOrden.TabIndex = 224;
             this.lblOrden.Text = "Orden:";
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Location = new System.Drawing.Point(550, 162);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(300, 2);
-            this.label7.TabIndex = 223;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(550, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(300, 2);
-            this.label6.TabIndex = 222;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(550, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 2);
-            this.label5.TabIndex = 221;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(550, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 2);
-            this.label3.TabIndex = 82;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(550, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 2);
-            this.label2.TabIndex = 81;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(550, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 2);
-            this.label1.TabIndex = 79;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(550, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 2);
-            this.label4.TabIndex = 78;
-            // 
             // rtxDescripcion
             // 
             this.rtxDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtxDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12.75F);
+            this.rtxDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.rtxDescripcion.Location = new System.Drawing.Point(550, 10);
             this.rtxDescripcion.Name = "rtxDescripcion";
@@ -403,29 +362,6 @@
             this.dataGridViewImageColumn1.HeaderText = "Editar";
             this.dataGridViewImageColumn1.Image = global::Almacen1.Properties.Resources.editar;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 60;
-            // 
-            // PicMedio
-            // 
-            this.PicMedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PicMedio.BackColor = System.Drawing.Color.Transparent;
-            this.PicMedio.BackgroundImage = global::Almacen1.Properties.Resources.Minimizar;
-            this.PicMedio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicMedio.Location = new System.Drawing.Point(801, 3);
-            this.PicMedio.Name = "PicMedio";
-            this.PicMedio.Size = new System.Drawing.Size(21, 24);
-            this.PicMedio.TabIndex = 220;
-            this.PicMedio.TabStop = false;
-            this.PicMedio.Click += new System.EventHandler(this.PicMedio_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::Almacen1.Properties.Resources.editar;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 60;
             // 
             // Frm_Productos_MAC_Serie
             // 
@@ -433,6 +369,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 450);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSeries);
             this.Controls.Add(this.btnMAC);
             this.Controls.Add(this.PanelInfo);
@@ -446,11 +383,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.PanelSuperior.ResumeLayout(false);
             this.PanelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).EndInit();
             this.PanelInfo.ResumeLayout(false);
             this.PanelInfo.PerformLayout();
             this.PanellblNombre.ResumeLayout(false);
             this.PanellblNombre.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,16 +411,10 @@
         private System.Windows.Forms.RichTextBox rtxDescripcion;
         private System.Windows.Forms.Label lblOrden2;
         private System.Windows.Forms.Label lblOrden;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnMAC;
         private System.Windows.Forms.Button btnSeries;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

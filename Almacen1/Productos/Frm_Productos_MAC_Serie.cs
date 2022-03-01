@@ -81,37 +81,7 @@ namespace Almacen1.Productos
         {
             InitializeComponent();
         }
-        void BDGV1 ()
-        {
-
-            int CountDGV1 = DGV1.ColumnHeadersHeight;
-            CountDGV1 += DGV1.Rows.GetRowsHeight(0);
-            CountDGV1 += DGV1.Rows.GetRowsHeight(0) / DGV1.Rows.Count;
-            PanelDGV.Height = CountDGV1;
-            btnMAC.Top = PanelDGV.Top + PanelDGV.Height - 10;
-            btnSeries.Top = PanelDGV.Top + PanelDGV.Height - 10;
-            btnMAC.Left = PanelDGV.Left + DGV1.Columns["Serie"].Width + ((DGV1.Columns["MAC"].Width / 2) - btnMAC.Width / 2);
-            btnSeries.Left = PanelDGV.Left + ((DGV1.Columns["Serie"].Width / 2) - btnMAC.Width / 2);
-            if (btnSeries.Top + btnSeries.Height >= this.Height || btnMAC.Top + btnMAC.Height >= this.Height)
-            {
-                if (this.WindowState == FormWindowState.Normal)
-                {
-
-                    btnMAC.Location = new Point(728, 220);
-                    btnSeries.Location = new Point(10, 220);
-                }
-                else
-                {
-                    int Hola = this.Width - btnMAC.Width - 10;
-                    btnMAC.Location = new Point(1234, 220);
-                    btnSeries.Location = new Point(10, 220);
-                }
-            }
-            if (PanelDGV.Top + PanelDGV.Height >= this.Height)
-            {
-                PanelDGV.Height = this.Height - PanelDGV.Top - 25;
-            }
-        }
+        
         //void AgregarSerie ()
         //{
         //    bool ComprobarSerie = true;
@@ -277,7 +247,7 @@ namespace Almacen1.Productos
             {
                 if (e.ColumnIndex == 0)
                 {
-                    VentanaModificarMACYSerie = new Productos.Frm_Modificar_SerieYMAC(DGV1, e.RowIndex);
+                    VentanaModificarMACYSerie = new Productos.Frm_Modificar_SerieYMAC(DGV1, e.RowIndex, AuxPrimera);
                     VentanaModificarMACYSerie.ShowDialog();
                 }
                 //switch (AuxPrimera)
@@ -445,7 +415,7 @@ namespace Almacen1.Productos
                 this.WindowState = FormWindowState.Normal;
                 PicMedio.BackgroundImage = Properties.Resources.Minimizar;
             }
-            BDGV1();
+            condicional();
         }
 
         private void rtxDescripcion_KeyPress(object sender, KeyPressEventArgs e)
@@ -480,10 +450,100 @@ namespace Almacen1.Productos
                     break;
             }
         }
+        void BDGV1SM()
+        {
 
+            int CountDGV1 = DGV1.ColumnHeadersHeight;
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0);
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0) / DGV1.Rows.Count;
+            PanelDGV.Height = CountDGV1;
+            btnMAC.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnSeries.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnMAC.Left = PanelDGV.Left + DGV1.Columns["Serie"].Width + ((DGV1.Columns["MAC"].Width / 2) - btnMAC.Width / 2);
+            btnSeries.Left = PanelDGV.Left + ((DGV1.Columns["Serie"].Width / 2) - btnMAC.Width / 2);
+            if (btnSeries.Top + btnSeries.Height >= this.Height || btnMAC.Top + btnMAC.Height >= this.Height)
+            {
+                if (this.WindowState == FormWindowState.Normal)
+                {
+
+                    btnMAC.Location = new Point(728, 220);
+                    btnSeries.Location = new Point(10, 220);
+                }
+                else
+                {
+                    int Hola = this.Width - btnMAC.Width - 10;
+                    btnMAC.Location = new Point(1234, 220);
+                    btnSeries.Location = new Point(10, 220);
+                }
+            }
+            if (PanelDGV.Top + PanelDGV.Height >= this.Height)
+            {
+                PanelDGV.Height = this.Height - PanelDGV.Top - 25;
+            }
+        }
+        void BDGV1S()
+        {
+            btnMAC.Visible = false;
+            int CountDGV1 = DGV1.ColumnHeadersHeight;
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0);
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0) / DGV1.Rows.Count;
+            PanelDGV.Height = CountDGV1;
+            btnSeries.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnSeries.Left = PanelDGV.Left + (DGV1.Columns["Serie"].Width / 2) - (btnSeries.Width / 2);
+            if (btnSeries.Top + btnSeries.Height >= this.Height || btnMAC.Top + btnMAC.Height >= this.Height)
+            {
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    btnSeries.Location = new Point(10, 220);
+                }
+                else
+                {
+                    btnSeries.Location = new Point(10, 220);
+                }
+            }
+            if (PanelDGV.Top + PanelDGV.Height >= this.Height)
+            {
+                PanelDGV.Height = this.Height - PanelDGV.Top - 25;
+            }
+        }
+        void BDGV1M()
+        {
+            btnSeries.Visible = false;
+            int CountDGV1 = DGV1.ColumnHeadersHeight;
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0);
+            CountDGV1 += DGV1.Rows.GetRowsHeight(0) / DGV1.Rows.Count;
+            PanelDGV.Height = CountDGV1;
+            btnMAC.Top = PanelDGV.Top + PanelDGV.Height - 10;
+            btnMAC.Left = PanelDGV.Left + ((DGV1.Columns["MAC"].Width / 2) - btnMAC.Width / 2);
+            if (btnMAC.Top + btnMAC.Height >= this.Height)
+            {
+                if (this.WindowState == FormWindowState.Normal)
+                {
+
+                    btnMAC.Location = new Point(728, 220);
+                }
+                else
+                {
+                    btnMAC.Location = new Point(1234, 220);
+                }
+            }
+            if (PanelDGV.Top + PanelDGV.Height >= this.Height)
+            {
+                PanelDGV.Height = this.Height - PanelDGV.Top - 25;
+            }
+        }
+        void condicional ()
+        {
+            if (AuxPrimera == 3)
+                BDGV1SM();
+            if (AuxPrimera == 1)
+                BDGV1M();
+            if (AuxPrimera == 2)
+                BDGV1S();
+        }
         private void Frm_Productos_MAC_Serie_Load(object sender, EventArgs e)
         {
-            BDGV1();
+            condicional();
         }
 
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)

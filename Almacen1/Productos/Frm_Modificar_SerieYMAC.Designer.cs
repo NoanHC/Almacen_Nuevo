@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btnModificar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblBarra1 = new System.Windows.Forms.Label();
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.lblSerie = new System.Windows.Forms.Label();
             this.PanelSuperior = new System.Windows.Forms.Panel();
             this.lbl_minimize = new System.Windows.Forms.Label();
             this.lbl_cerrar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBarra2 = new System.Windows.Forms.Label();
             this.txtMAC = new System.Windows.Forms.TextBox();
             this.lblMAC = new System.Windows.Forms.Label();
             this.PanelSuperior.SuspendLayout();
@@ -54,13 +54,13 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // label3
+            // lblBarra1
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(64, 57);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(450, 2);
-            this.label3.TabIndex = 229;
+            this.lblBarra1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBarra1.Location = new System.Drawing.Point(65, 57);
+            this.lblBarra1.Name = "lblBarra1";
+            this.lblBarra1.Size = new System.Drawing.Size(450, 2);
+            this.lblBarra1.TabIndex = 229;
             // 
             // txtSerie
             // 
@@ -93,6 +93,7 @@
             this.PanelSuperior.Name = "PanelSuperior";
             this.PanelSuperior.Size = new System.Drawing.Size(530, 30);
             this.PanelSuperior.TabIndex = 226;
+            this.PanelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseDown);
             // 
             // lbl_minimize
             // 
@@ -105,6 +106,7 @@
             this.lbl_minimize.Size = new System.Drawing.Size(21, 24);
             this.lbl_minimize.TabIndex = 219;
             this.lbl_minimize.Text = "_";
+            this.lbl_minimize.Click += new System.EventHandler(this.lbl_minimize_Click);
             // 
             // lbl_cerrar
             // 
@@ -119,13 +121,13 @@
             this.lbl_cerrar.Text = "X";
             this.lbl_cerrar.Click += new System.EventHandler(this.lbl_cerrar_Click);
             // 
-            // label1
+            // lblBarra2
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(64, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(450, 2);
-            this.label1.TabIndex = 234;
+            this.lblBarra2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBarra2.Location = new System.Drawing.Point(65, 98);
+            this.lblBarra2.Name = "lblBarra2";
+            this.lblBarra2.Size = new System.Drawing.Size(450, 2);
+            this.lblBarra2.TabIndex = 234;
             // 
             // txtMAC
             // 
@@ -153,14 +155,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(530, 175);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBarra2);
             this.Controls.Add(this.txtMAC);
             this.Controls.Add(this.lblMAC);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblBarra1);
             this.Controls.Add(this.txtSerie);
             this.Controls.Add(this.lblSerie);
             this.Controls.Add(this.PanelSuperior);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Modificar_SerieYMAC";
             this.Text = "Frm_Modificar_SerieYMAC";
@@ -175,13 +178,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblBarra1;
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Panel PanelSuperior;
         private System.Windows.Forms.Label lbl_minimize;
         private System.Windows.Forms.Label lbl_cerrar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBarra2;
         private System.Windows.Forms.TextBox txtMAC;
         private System.Windows.Forms.Label lblMAC;
     }
