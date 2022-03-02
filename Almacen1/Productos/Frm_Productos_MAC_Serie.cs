@@ -551,5 +551,24 @@ namespace Almacen1.Productos
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void DGV1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            bool Comprobador = true;
+            for (int i = 0; i < DGV1.Rows.Count; i++)
+            {
+                for (int j = 0; j < DGV1.Columns.Count-1; j++)
+                {
+                    if (DGV1[j, i].Value == "")
+                    {
+                        Comprobador = false;
+                    }
+                }
+            }
+            if (Comprobador)
+            {
+                btnGuardar.Visible = true;
+            }
+        }
     }
 }
