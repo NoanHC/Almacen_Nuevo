@@ -557,9 +557,9 @@ namespace Almacen1.Productos
             bool Comprobador = true;
             for (int i = 0; i < DGV1.Rows.Count; i++)
             {
-                for (int j = 0; j < DGV1.Columns.Count-1; j++)
+                for (int j = 1; j < DGV1.Columns.Count; j++)
                 {
-                    if (DGV1[j, i].Value == "")
+                    if (DGV1[j, i].Value.ToString() == "")
                     {
                         Comprobador = false;
                     }
@@ -568,6 +568,10 @@ namespace Almacen1.Productos
             if (Comprobador)
             {
                 btnGuardar.Visible = true;
+            }
+            else
+            {
+                btnGuardar.Visible = false;
             }
         }
     }

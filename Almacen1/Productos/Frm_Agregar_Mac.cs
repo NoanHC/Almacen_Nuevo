@@ -47,8 +47,23 @@ namespace Almacen1.Productos
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        void Verificar()
+        {
+            bool Comprobar = false;
+            for (int i = 0; i < Tabla.Rows.Count; i++)
+            {
+                if (txtMac.Text == Tabla[0,i].Value.ToString())
+                {
+                    Comprobar = true;
+                    break;
+                }
+            }
+            if (Comprobar)
+            {
+                MessageBox.Show("Ya esta");
+            }
+        }
+        void Guardar ()
         {
             Tabla[Columna, Fila].Value = txtMac.Text;
             txtMac.Text = "";
@@ -63,6 +78,11 @@ namespace Almacen1.Productos
                 lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
             }
             txtMac.Text = Tabla[Columna, Fila].Value.ToString();
+        }
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Verificar();
+            Guardar();
         }
 
         private void btnReintentar_Click(object sender, EventArgs e)
