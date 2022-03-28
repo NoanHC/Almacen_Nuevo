@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace Almacen1.Main
 {
@@ -18,6 +19,12 @@ namespace Almacen1.Main
 
         //Datatables
         //Variables
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         public Menu_principal()
         {
             InitializeComponent();
@@ -85,16 +92,12 @@ namespace Almacen1.Main
         {
 
         }
-        void Productos()
+
+        private void btn_productos_Click(object sender, EventArgs e)
         {
             LimpiarPanel();
             Productos.Frm_ListadoProductos fh = new Productos.Frm_ListadoProductos();
             add_panel(fh);
-        }
-        private void btn_productos_Click(object sender, EventArgs e)
-        {
-            Thread HiloProductos = new Thread(Productos);
-            HiloProductos.Start();
         }
 
         private void tbn_salidas_Click(object sender, EventArgs e)
@@ -123,6 +126,50 @@ namespace Almacen1.Main
             LimpiarPanel();
             Registro.Frm_Escanear_Producto fh = new Registro.Frm_Escanear_Producto();
             add_panel(fh);
+        }
+
+        private void PicMedio_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                PicMedio.BackgroundImage = Properties.Resources.Max_0;
+
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                PicMedio.BackgroundImage = Properties.Resources.Minimizar;
+            }
+        }
+
+        private void lbl_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbl_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Clicks == 2)
+            {
+                if (this.WindowState == FormWindowState.Normal)
+                {
+                    this.WindowState = FormWindowState.Maximized;
+                    PicMedio.BackgroundImage = Properties.Resources.Minimizar;
+                }
+                else
+                {
+                    this.WindowState = FormWindowState.Normal;
+                    PicMedio.BackgroundImage = Properties.Resources.Max_0;
+                }
+            }
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

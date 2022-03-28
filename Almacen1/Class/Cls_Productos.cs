@@ -144,6 +144,11 @@ namespace Almacen1.Class
             query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_S_M.serie as Serie, T_S_M.mac as MAC, T_P.descripcion as Descripción, T_O_A.folio_orden as Orden, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_orden_almacen as T_O_A INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca LEFT JOIN tb_series_mac as T_S_M ON T_P.id_producto = T_S_M.id_producto GROUP BY T_P.id_producto DESC, T_S_M.id_serie_mac LIMIT 1";
             method.Consultar(query, dt);
         }
+        public void _consult_Producto(DataTable dt, string Id)
+        {
+            query = "SELECT T_P.id_producto as id, T_P.nombre as Nombre, T_M.marca as Marca, T_P.modelo as Modelo, T_P.parte as Parte, T_P.descripcion as Descripción, T_P.cantidad as Cantidad FROM `tb_productos` as T_P INNER JOIN tb_marca as T_M ON T_P.id_marca = T_M.id_marca WHERE id_producto = " + Id + " GROUP BY T_P.id_producto";
+            method.Consultar(query, dt);
+        }
         public void _consult_Factura(DataTable dt)
         {
             query = "SELECT id_orden_almacen , folio_orden FROM `tb_orden_almacen`";

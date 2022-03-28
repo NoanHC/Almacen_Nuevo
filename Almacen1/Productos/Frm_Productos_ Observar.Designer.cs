@@ -117,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGV1.BackgroundColor = System.Drawing.Color.Silver;
+            this.DGV1.BackgroundColor = System.Drawing.Color.White;
             this.DGV1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Teal;

@@ -45,24 +45,60 @@ namespace Almacen1.Productos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Tabla[Columna, Fila].Value = txtSerie.Text;
-            txtSerie.Text = "";
-            if (Fila == Tabla.Rows.Count - 1)
+            bool CondiSerie = true;
+            for (int i = 0; i < Fila; i++)
             {
-                MessageBox.Show("Series completas");
-                this.Close();
+                if (Tabla["Serie", i].Value.ToString() == txtSerie.Text)
+                {
+                    CondiSerie = false;
+                }
+            }
+            if (CondiSerie)
+            {
+                if (txtSerie.Text == "")
+                {
+                    lblErrorSerie.Text = "La serie no puede estar vacia.";
+                    lblErrorSerie.Visible = true;
+                    tmError.Stop();
+                    tmError.Start();
+                }
+                else
+                {
+                    Tabla[Columna, Fila].Value = txtSerie.Text;
+                    txtSerie.Text = "";
+                    if (Fila == Tabla.Rows.Count - 1)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Fila++;
+                        lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
+                    }
+                    txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
+                }
+                txtSerie.Focus();
             }
             else
             {
-                this.Fila = Fila + 1;
-                lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
+                lblErrorSerie.Text = "La serie no pude ser repetida.";
+                lblErrorSerie.Visible = true;
+                tmError.Stop();
+                tmError.Start();
             }
-            txtSerie.Text = Tabla[Columna, Fila].Value.ToString();
+            
         }
 
         private void btnReintentar_Click(object sender, EventArgs e)
         {
             txtSerie.Text = "";
+            txtSerie.Focus();
+        }
+
+        private void tmError_Tick(object sender, EventArgs e)
+        {
+            lblErrorSerie.Visible = false;
+            tmError.Stop();
         }
 
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)

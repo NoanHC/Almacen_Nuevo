@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblFila = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnReintentar = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.PanelSuperior = new System.Windows.Forms.Panel();
             this.lbl_minimize = new System.Windows.Forms.Label();
             this.lbl_cerrar = new System.Windows.Forms.Label();
+            this.lblErrorMAC = new System.Windows.Forms.Label();
+            this.tmError = new System.Windows.Forms.Timer(this.components);
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Green;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(277, 100);
+            this.btnGuardar.Location = new System.Drawing.Point(277, 115);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(150, 44);
             this.btnGuardar.TabIndex = 231;
@@ -69,7 +72,7 @@
             this.btnReintentar.BackColor = System.Drawing.Color.Green;
             this.btnReintentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintentar.ForeColor = System.Drawing.Color.White;
-            this.btnReintentar.Location = new System.Drawing.Point(42, 100);
+            this.btnReintentar.Location = new System.Drawing.Point(42, 115);
             this.btnReintentar.Name = "btnReintentar";
             this.btnReintentar.Size = new System.Drawing.Size(150, 44);
             this.btnReintentar.TabIndex = 230;
@@ -80,7 +83,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(12, 83);
+            this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(450, 2);
             this.label3.TabIndex = 229;
@@ -145,11 +148,29 @@
             this.lbl_cerrar.Text = "X";
             this.lbl_cerrar.Click += new System.EventHandler(this.lbl_cerrar_Click);
             // 
+            // lblErrorMAC
+            // 
+            this.lblErrorMAC.AutoSize = true;
+            this.lblErrorMAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorMAC.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblErrorMAC.Location = new System.Drawing.Point(12, 88);
+            this.lblErrorMAC.Name = "lblErrorMAC";
+            this.lblErrorMAC.Size = new System.Drawing.Size(187, 16);
+            this.lblErrorMAC.TabIndex = 234;
+            this.lblErrorMAC.Text = "La MAC no puede estar vacia.";
+            this.lblErrorMAC.Visible = false;
+            // 
+            // tmError
+            // 
+            this.tmError.Interval = 5000;
+            this.tmError.Tick += new System.EventHandler(this.tmError_Tick);
+            // 
             // Frm_Agregar_Mac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 151);
+            this.ClientSize = new System.Drawing.Size(470, 170);
+            this.Controls.Add(this.lblErrorMAC);
             this.Controls.Add(this.lblFila);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnReintentar);
@@ -159,6 +180,7 @@
             this.Controls.Add(this.PanelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Agregar_Mac";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Agregar_Mac";
             this.PanelSuperior.ResumeLayout(false);
             this.PanelSuperior.PerformLayout();
@@ -178,5 +200,7 @@
         private System.Windows.Forms.Panel PanelSuperior;
         private System.Windows.Forms.Label lbl_minimize;
         private System.Windows.Forms.Label lbl_cerrar;
+        private System.Windows.Forms.Label lblErrorMAC;
+        private System.Windows.Forms.Timer tmError;
     }
 }

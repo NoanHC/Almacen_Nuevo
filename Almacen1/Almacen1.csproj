@@ -32,7 +32,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -69,6 +69,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -113,6 +114,9 @@
     <Compile Include="Class\Cls_Productos.cs" />
     <Compile Include="Class\Cls_Registro.cs" />
     <Compile Include="Class\Cls_Usuarios.cs" />
+    <Compile Include="Diseño\ComboBox_Gabriel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Empleados\Frm_Emplados_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +177,12 @@
     <Compile Include="OrdenCompra\FrmAltaOrdenes.Designer.cs">
       <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Frm_Agregar_Mac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +212,12 @@
     </Compile>
     <Compile Include="Productos\Frm_Nuevo_MSF.Designer.cs">
       <DependentUpon>Frm_Nuevo_MSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Observar_Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Observar_Prueba.Designer.cs">
+      <DependentUpon>Observar_Prueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Registro\Frm_Codigo_QR.cs">
       <SubType>Form</SubType>
@@ -319,6 +335,9 @@
     <EmbeddedResource Include="OrdenCompra\FrmAltaOrdenes.resx">
       <DependentUpon>FrmAltaOrdenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Agregar_Mac.resx">
       <DependentUpon>Frm_Agregar_Mac.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Frm_Nuevo_MSF.resx">
       <DependentUpon>Frm_Nuevo_MSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\Observar_Prueba.resx">
+      <DependentUpon>Observar_Prueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro\Frm_Codigo_QR.resx">
       <DependentUpon>Frm_Codigo_QR.cs</DependentUpon>
@@ -477,6 +499,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha-izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha-derecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

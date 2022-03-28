@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelSuperior = new System.Windows.Forms.Panel();
             this.lbl_minimize = new System.Windows.Forms.Label();
             this.lbl_cerrar = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.btnReintentar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblFila = new System.Windows.Forms.Label();
+            this.lblErrorSerie = new System.Windows.Forms.Label();
+            this.tmError = new System.Windows.Forms.Timer(this.components);
             this.PanelSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +84,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(12, 83);
+            this.label3.Location = new System.Drawing.Point(12, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(450, 2);
             this.label3.TabIndex = 222;
@@ -113,7 +116,7 @@
             this.btnReintentar.BackColor = System.Drawing.Color.Green;
             this.btnReintentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReintentar.ForeColor = System.Drawing.Color.White;
-            this.btnReintentar.Location = new System.Drawing.Point(42, 100);
+            this.btnReintentar.Location = new System.Drawing.Point(42, 115);
             this.btnReintentar.Name = "btnReintentar";
             this.btnReintentar.Size = new System.Drawing.Size(150, 44);
             this.btnReintentar.TabIndex = 223;
@@ -126,7 +129,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.Green;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(277, 100);
+            this.btnGuardar.Location = new System.Drawing.Point(277, 115);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(150, 44);
             this.btnGuardar.TabIndex = 224;
@@ -145,11 +148,29 @@
             this.lblFila.TabIndex = 225;
             this.lblFila.Text = "Fila";
             // 
+            // lblErrorSerie
+            // 
+            this.lblErrorSerie.AutoSize = true;
+            this.lblErrorSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorSerie.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblErrorSerie.Location = new System.Drawing.Point(12, 88);
+            this.lblErrorSerie.Name = "lblErrorSerie";
+            this.lblErrorSerie.Size = new System.Drawing.Size(188, 16);
+            this.lblErrorSerie.TabIndex = 235;
+            this.lblErrorSerie.Text = "La serie no puede estar vacia.";
+            this.lblErrorSerie.Visible = false;
+            // 
+            // tmError
+            // 
+            this.tmError.Interval = 5000;
+            this.tmError.Tick += new System.EventHandler(this.tmError_Tick);
+            // 
             // Frm_Agregar_Serie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 151);
+            this.ClientSize = new System.Drawing.Size(470, 170);
+            this.Controls.Add(this.lblErrorSerie);
             this.Controls.Add(this.lblFila);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnReintentar);
@@ -160,6 +181,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "Frm_Agregar_Serie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Agregar_Serie";
             this.PanelSuperior.ResumeLayout(false);
             this.PanelSuperior.PerformLayout();
@@ -179,5 +201,7 @@
         private System.Windows.Forms.Button btnReintentar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblFila;
+        private System.Windows.Forms.Label lblErrorSerie;
+        private System.Windows.Forms.Timer tmError;
     }
 }

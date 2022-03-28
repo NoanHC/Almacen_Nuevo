@@ -49,7 +49,7 @@
             this.btnModificar.Location = new System.Drawing.Point(190, 119);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(150, 44);
-            this.btnModificar.TabIndex = 230;
+            this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -70,7 +70,7 @@
             this.txtSerie.MaxLength = 50;
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(450, 22);
-            this.txtSerie.TabIndex = 227;
+            this.txtSerie.TabIndex = 0;
             // 
             // lblSerie
             // 
@@ -137,7 +137,7 @@
             this.txtMAC.MaxLength = 50;
             this.txtMAC.Name = "txtMAC";
             this.txtMAC.Size = new System.Drawing.Size(450, 22);
-            this.txtMAC.TabIndex = 232;
+            this.txtMAC.TabIndex = 1;
             // 
             // lblMAC
             // 

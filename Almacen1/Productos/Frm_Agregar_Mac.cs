@@ -60,34 +60,70 @@ namespace Almacen1.Productos
             }
             if (Comprobar)
             {
-                MessageBox.Show("Ya esta");
+                lblErrorMAC.Text = "La MAC no puede ser repetida.";
+                lblErrorMAC.Visible = true;
+                tmError.Start();
             }
         }
         void Guardar ()
         {
-            Tabla[Columna, Fila].Value = txtMac.Text;
-            txtMac.Text = "";
-            if (Fila == Tabla.Rows.Count - 1)
-            {
-                MessageBox.Show("Series completas");
-                this.Close();
-            }
-            else
-            {
-                this.Fila = Fila + 1;
-                lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
-            }
-            txtMac.Text = Tabla[Columna, Fila].Value.ToString();
+            
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Verificar();
-            Guardar();
+            bool CondiMAC = true;
+            for (int i = 0; i < Fila; i++)
+            {
+                if (Tabla["MAC", i].Value.ToString() == txtMac.Text)
+                {
+                    CondiMAC = false;
+                }
+            }
+            if (CondiMAC)
+            {
+                if (txtMac.Text == "")
+                {
+                    lblErrorMAC.Text = "La MAC no puede estar vacia.";
+                    lblErrorMAC.Visible = true;
+                    tmError.Stop();
+                    tmError.Start();
+                }
+                else
+                {
+                    Tabla[Columna, Fila].Value = txtMac.Text;
+                    txtMac.Text = "";
+                    if (Fila == Tabla.Rows.Count - 1)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Fila = Fila + 1;
+                        lblFila.Text = (Fila + 1).ToString() + "/" + Tabla.Rows.Count.ToString();
+                    }
+                    txtMac.Text = Tabla[Columna, Fila].Value.ToString();
+                }
+                txtMac.Focus();
+            }
+            else
+            {
+                lblErrorMAC.Text = "La MAC no puede ser repetida.";
+                lblErrorMAC.Visible = true;
+                tmError.Stop();
+                tmError.Start();
+            }
+        }
+
+        private void tmError_Tick(object sender, EventArgs e)
+        {
+            lblErrorMAC.Visible = false;
+            tmError.Stop();
         }
 
         private void btnReintentar_Click(object sender, EventArgs e)
         {
             txtMac.Text = "";
+            txtMac.Focus();
         }
     }
 }

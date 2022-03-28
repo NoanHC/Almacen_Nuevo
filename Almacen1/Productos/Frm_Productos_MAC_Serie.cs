@@ -81,7 +81,7 @@ namespace Almacen1.Productos
         {
             InitializeComponent();
         }
-        
+
         //void AgregarSerie ()
         //{
         //    bool ComprobarSerie = true;
@@ -112,29 +112,29 @@ namespace Almacen1.Productos
         //    }
         //    FilaS++;
         //}
-        //string Codigo_QR()
-        //{
-        //    Random ObjRandom = new Random();
-        //    string Resultado = "";
-        //    for (int i = 0; i < 8; i++)
-        //    {
-        //        int NumOLet = ObjRandom.Next(0, 2);
-        //        if (NumOLet == 1)
-        //        {
-        //            Resultado += ObjRandom.Next(9);
-        //        }
-        //        else
-        //        {
-        //            int aux = ObjRandom.Next(65, 123);
-        //            while (aux > 90 && aux < 97)
-        //            {
-        //                aux = ObjRandom.Next(65, 123);
-        //            }
-        //            Resultado += Convert.ToChar(aux);
-        //        }
-        //    }
-        //    return Resultado;
-        //}
+        string Codigo_QR()
+        {
+            Random ObjRandom = new Random();
+            string Resultado = "";
+            for (int i = 0; i < 8; i++)
+            {
+                int NumOLet = ObjRandom.Next(0, 2);
+                if (NumOLet == 1)
+                {
+                    Resultado += ObjRandom.Next(9);
+                }
+                else
+                {
+                    int aux = ObjRandom.Next(65, 123);
+                    while (aux > 90 && aux < 97)
+                    {
+                        aux = ObjRandom.Next(65, 123);
+                    }
+                    Resultado += Convert.ToChar(aux);
+                }
+            }
+            return Resultado;
+        }
         //void Observar()
         //{
         //    switch (AuxPrimera)
@@ -572,6 +572,40 @@ namespace Almacen1.Productos
             else
             {
                 btnGuardar.Visible = false;
+            }
+        }
+
+        private void PanelSuperior_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //MAC
+            if (AuxPrimera == 1)
+            {
+                for (int i = 0; i < DGV1.Rows.Count; i++)
+                {
+                    ObjProductos._set_MAC(DGV1["MAC", i].Value.ToString(), Id, id_orden_almacen, Codigo_QR());
+                }
+            }
+            //Serie
+            if (AuxPrimera == 2)
+            {
+                for (int i = 0; i < DGV1.Rows.Count; i++)
+                {
+                    ObjProductos._set_Serie(DGV1["Serie", i].Value.ToString(), Id, id_orden_almacen, Codigo_QR());
+                }
+            }
+            // MAC y Serie
+            if (AuxPrimera == 3)
+            {
+                for (int i = 0; i < DGV1.Rows.Count; i++)
+                {
+                    ObjProductos._set_Serie_MAC(DGV1["Serie", i].Value.ToString(), DGV1["MAC", i].Value.ToString(), Id, id_orden_almacen, Codigo_QR());
+                }
             }
         }
     }

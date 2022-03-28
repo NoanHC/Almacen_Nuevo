@@ -48,12 +48,18 @@ namespace Almacen1.Main
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_forms = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.PanelSuperior = new System.Windows.Forms.Panel();
+            this.lbl_minimize = new System.Windows.Forms.Label();
+            this.PicMedio = new System.Windows.Forms.PictureBox();
+            this.lbl_cerrar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pB_mobile = new System.Windows.Forms.PictureBox();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.PanelSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_mobile)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,27 +281,80 @@ namespace Almacen1.Main
             // 
             this.panel_forms.BackColor = System.Drawing.Color.White;
             this.panel_forms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_forms.Location = new System.Drawing.Point(0, 74);
+            this.panel_forms.Location = new System.Drawing.Point(0, 100);
             this.panel_forms.Name = "panel_forms";
-            this.panel_forms.Size = new System.Drawing.Size(646, 552);
+            this.panel_forms.Size = new System.Drawing.Size(646, 526);
             this.panel_forms.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.PanelSuperior);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pB_mobile);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(646, 74);
+            this.panel3.Size = new System.Drawing.Size(646, 100);
             this.panel3.TabIndex = 0;
+            // 
+            // PanelSuperior
+            // 
+            this.PanelSuperior.BackColor = System.Drawing.Color.DarkGreen;
+            this.PanelSuperior.Controls.Add(this.lbl_minimize);
+            this.PanelSuperior.Controls.Add(this.PicMedio);
+            this.PanelSuperior.Controls.Add(this.lbl_cerrar);
+            this.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.PanelSuperior.Name = "PanelSuperior";
+            this.PanelSuperior.Size = new System.Drawing.Size(646, 30);
+            this.PanelSuperior.TabIndex = 219;
+            this.PanelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelSuperior_MouseDown);
+            // 
+            // lbl_minimize
+            // 
+            this.lbl_minimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_minimize.AutoSize = true;
+            this.lbl_minimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_minimize.ForeColor = System.Drawing.Color.White;
+            this.lbl_minimize.Location = new System.Drawing.Point(560, -5);
+            this.lbl_minimize.Name = "lbl_minimize";
+            this.lbl_minimize.Size = new System.Drawing.Size(21, 24);
+            this.lbl_minimize.TabIndex = 219;
+            this.lbl_minimize.Text = "_";
+            this.lbl_minimize.Click += new System.EventHandler(this.lbl_minimize_Click);
+            // 
+            // PicMedio
+            // 
+            this.PicMedio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PicMedio.BackColor = System.Drawing.Color.Transparent;
+            this.PicMedio.BackgroundImage = global::Almacen1.Properties.Resources.Minimizar;
+            this.PicMedio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicMedio.Location = new System.Drawing.Point(587, 3);
+            this.PicMedio.Name = "PicMedio";
+            this.PicMedio.Size = new System.Drawing.Size(21, 24);
+            this.PicMedio.TabIndex = 220;
+            this.PicMedio.TabStop = false;
+            this.PicMedio.Click += new System.EventHandler(this.PicMedio_Click);
+            // 
+            // lbl_cerrar
+            // 
+            this.lbl_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_cerrar.AutoSize = true;
+            this.lbl_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cerrar.ForeColor = System.Drawing.Color.White;
+            this.lbl_cerrar.Location = new System.Drawing.Point(618, 3);
+            this.lbl_cerrar.Name = "lbl_cerrar";
+            this.lbl_cerrar.Size = new System.Drawing.Size(25, 24);
+            this.lbl_cerrar.TabIndex = 219;
+            this.lbl_cerrar.Text = "X";
+            this.lbl_cerrar.Click += new System.EventHandler(this.lbl_cerrar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 18);
+            this.label1.Location = new System.Drawing.Point(71, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(238, 39);
             this.label1.TabIndex = 1;
@@ -304,7 +363,7 @@ namespace Almacen1.Main
             // pB_mobile
             // 
             this.pB_mobile.Image = global::Almacen1.Properties.Resources.mobile;
-            this.pB_mobile.Location = new System.Drawing.Point(6, 12);
+            this.pB_mobile.Location = new System.Drawing.Point(5, 38);
             this.pB_mobile.Name = "pB_mobile";
             this.pB_mobile.Size = new System.Drawing.Size(54, 51);
             this.pB_mobile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -317,11 +376,12 @@ namespace Almacen1.Main
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 626);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_menu);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu_principal";
-            this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_principal_FormClosing);
             this.Load += new System.EventHandler(this.Menu_principal_Load);
@@ -330,6 +390,9 @@ namespace Almacen1.Main
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.PanelSuperior.ResumeLayout(false);
+            this.PanelSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicMedio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pB_mobile)).EndInit();
             this.ResumeLayout(false);
 
@@ -358,5 +421,9 @@ namespace Almacen1.Main
         private System.Windows.Forms.Button tbn_salidas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRegistro;
+        private System.Windows.Forms.Panel PanelSuperior;
+        private System.Windows.Forms.Label lbl_minimize;
+        private System.Windows.Forms.PictureBox PicMedio;
+        private System.Windows.Forms.Label lbl_cerrar;
     }
 }
